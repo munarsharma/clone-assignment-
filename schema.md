@@ -21,19 +21,13 @@
 | user_id      | integer   | references users(id)  |
 | timestamp    | date time | not null              |
 
-## followers
+## follow
 
-| column name | data type | details               |
-| ----------- | --------- | --------------------- |
-| id          | integer   | not null, primary key |
-| user_id     | integer   | references users(id)  |
-
-## following
-
-| column name | data type | details               |
-| ----------- | --------- | --------------------- |
-| id          | integer   | not null, primary key |
-| user_id     | integer   | references users(id)  |
+| column name  | data type | details               |
+| ------------ | --------- | --------------------- |
+| id           | integer   | not null, primary key |
+| follower_id  | integer   | references users(id)  |
+| following_id | integer   | references users(id)  |
 
 ## likes
 
@@ -49,10 +43,13 @@
 | ----------- | --------- | --------------------- |
 | id          | integer   | not null, primary key |
 | post_id     | integer   | references posts(id)  |
+| user_id     | integer   | references users(id)  |
+| body        | text      | not null              |
 
-## userAvatars
+## tags
 
 | column name | data type | details               |
 | ----------- | --------- | --------------------- |
 | id          | integer   | not null, primary key |
-| user_id     | integer   | references users(id)  |
+| post_id     | integer   | references posts(id)  |
+| tag_name    | string    | not null              |
