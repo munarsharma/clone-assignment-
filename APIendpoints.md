@@ -65,3 +65,14 @@
   - adds a new comment (allows users to add new comment)
 - `PATCH /api/posts/comments/:commentId`
   - allows a user to edit a comment
+- `DELETE/api/posts//comments/:commentId`
+  - delete single comment (allows a user to delete a comment)
+
+### tags
+
+- `GET/api/tags`
+  - get all tags
+- `GET/api/posts/:postId/tags`
+  - get all tags on post
+- `POST /api/posts/:postId/tag`
+  - adds a tag to a post (allows users to input their own tags for their posts)
