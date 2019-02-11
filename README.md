@@ -4,9 +4,11 @@ Nomblr is a Tumblr clone application that allows users to express their love for
 
 # Minimum Viable Product
 
-- New user account creations:
-- Existing user login
-- search bar: allows users to browse all content ie. users, posts, etc
-- user profile page with all user info
-- posting a blog post
-- user dashboard feed with posts from followed users
+- User can create an account
+- User can delete an account
+- User can log in to their account
+- User can create, edit, and post a post
+- User can create and post a new post using the post-navbar
+- Users can follow one another
+- User can like and comment on posts
+- User can search for content: users, posts, etc. using the search bar
