@@ -66,6 +66,7 @@
     - links
 
 ** users **
+
 |Route: nomblr/users/username
 
 - user profile:
@@ -77,12 +78,9 @@
 - user login
 - user signin
 
-** posts **
-
-- posts likes Route: (nomblr/posts/postId/likes)
-
 ** header **
 
+- logo
 - search box
 - main nav bar
 
