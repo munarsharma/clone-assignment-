@@ -30,7 +30,7 @@
   - password
   - username
 
-** search bar **
+##search bar
 
 - input box
 - submit button
