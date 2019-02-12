@@ -22,22 +22,40 @@ Nomblr is a Tumblr clone application that allows users to express their love for
 
 # Implementation Timeline
 
-## Phase 1: Backend setup and Frontend User Authentication (2 days)
+## Phase 1: Backend setup and Frontend User Authentication (4 days)
 
-- **Objective:** Functioning rails project with frontend authentication
+- begin setting up backend user routes and queries
+- create and seed database
+- build homepage, login page, and signup page
+- users can be created
 
-## Phase 2: User Model, API, Search, and Components (2 days)
+## Phase 2: Frontend User Profile (4 days)
 
-- **Objective:** Users can be created, indexed, searched for, and viewed individually. User attributes can be edited by that user.
+- create a basic user profile page using react
+- allow a user to login, view, and edit personal information
+- style user profile and home page
 
-## Phase 3: Questions, Answers, and Matching (3 days)
+## Phase 3: Backend and basic dashboard frontend set up for posts, likes, comments, and tags (6 days)
 
-- **Objective:** Questions can be indexed and responded to. Answers are available to calculate match percentages. Match percentages appear on user profiles and index items.
+- set up backend follows, posts, comments, likes. and tags routes and queries
+- create post temp with the ability to take in comments, tags, and likes
+- create and link dashboard navbar and posts navbar
+- build a functional search bar where a user can search all content
 
-## Phase 4: Threads and Messaging (2 days)
+## Phase 4: frontend dashboard (3 days)
 
-- **Objective:** Threads can be created, indexed, and replied to through messages.
+- bring all pieces of dashboard together
+- style and organize dashboard as a whole
+- add an infinite scroll to the dashBoard
+- add recommended boxes
+- add rader box
 
-## Phase 5: Advanced Search/Pagination for Users Index (1 day)
+## Phase 5: Brining it all together (4 day)
 
-- **Objective:** Add pagination/infinite scroll to users index. Add search by more parameters (username, summary, etc.).
+- finish up linking all navbars
+- test application: adding a new post, a new comment, a new user, a new follower, an new like
+
+# Bonus Features
+
+- send private messages
+- chat portal
