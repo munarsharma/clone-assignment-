@@ -1,6 +1,6 @@
 # Component Hierarchy
 
-** MainPage **
+### MainPage
 
 |Route: nomblr/
 
@@ -9,7 +9,7 @@
 - login link | Route: nomblr/login
 - sign up link | Route: nomblr/signup
 
-** login **
+### login
 
 |Route: nomblr/login
 
@@ -19,7 +19,7 @@
   - email
   - password
 
-** signup **
+### signup
 
 |Route: nomblr/signup
 
@@ -35,7 +35,7 @@
 - input box
 - submit button
 
-** DashBoard **
+### DashBoard
 
 |Route: nomblr/dashboard
 
@@ -47,7 +47,7 @@
 - rader box
 - recommendations box
 
-** dash navbar **
+### dash navbar
 
 - Links to:
 
@@ -58,14 +58,14 @@
   - account: links to - what user has liked, following, settings
   - postnav
 
-  ** post navbar **
+### post navbar
 
-  - Links to input boxes where a user can post:
-    - text posts
-    - photos
-    - links
+- Links to input boxes where a user can post:
+  - text posts
+  - photos
+  - links
 
-** users **
+### users
 
 |Route: nomblr/users/username
 
@@ -78,13 +78,13 @@
 - user login
 - user signin
 
-** header **
+### header
 
 - logo
 - search box
 - main nav bar
 
-** footer **
+### footer
 
 - links to the about page
 - links to help page
