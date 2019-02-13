@@ -8,11 +8,17 @@ class MainPage extends React.Component {
     return (
       <div>
         <SignUp />
-        <br />
-        <LogIn />
+
+        <button id="signupButton">Get Started</button>
       </div>
     );
   }
 }
 
 export default MainPage;
+//
+// <Switch>
+//   <Route exact path="/signup" component={SignUp} />
+//   <br />
+//   <Route path="/login" component={LogIn} />
+// </Switch>;
