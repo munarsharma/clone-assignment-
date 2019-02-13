@@ -23,6 +23,7 @@ class SignUp extends React.Component {
         email: this.state.userEmailInput
       })
       .then(res => {
+        console.log(res);
         this.setState({
           usernameInput: "",
           userEmailInput: ""

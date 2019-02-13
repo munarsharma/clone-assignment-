@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
 
-import { withRouter } from 'react-router';
-import MainPage from './components/homepage/MainPage';
-import SearchBar from './components/SearchBar';
-import SignUp from './components/homepage/SignUp';
-import LogIn from './components/homepage/LogIn';
-import NavBar from './components/homepage/navbar';
-import './App.css';
+import { withRouter } from "react-router";
+import MainPage from "./components/homepage/MainPage";
+import SearchBar from "./components/SearchBar";
+import SignUp from "./components/homepage/SignUp";
+import LogIn from "./components/homepage/LogIn";
+import NavBar from "./components/homepage/navbar";
+import "./App.css";
 
 class App extends Component {
   render() {
