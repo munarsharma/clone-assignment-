@@ -6,8 +6,38 @@ class LogIn extends React.Component {
     password: ""
   };
 
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
   render() {
-    return <>login</>;
+    const { email, password } = this.state;
+    return (
+      <div>
+        <br />
+        <form>
+          <input
+            type="text"
+            name="email"
+            placeholder="email"
+            value={email}
+            onChange={this.handleChange}
+          />
+          <br />
+          <input
+            type="text"
+            name="password"
+            placeholder="password"
+            value={password}
+            onChange={this.handleChange}
+          />
+          <br />
+          <input id="signupButton" type="submit" value="Signup" />
+        </form>
+      </div>
+    );
   }
 }
 

@@ -7,15 +7,25 @@ class MainPage extends React.Component {
   render() {
     return (
       <div>
-        <SignUp />
+        <h1 id="h1"> Nomblr</h1>
+        <div className="portal">
+          <Link to="/signup" id="signuplink">
+            Get Started
+          </Link>
+          <br />
+          <Link to="/login" id="login">
+            Log In
+          </Link>
 
-        <button id="signupButton">Get Started</button>
+          <br />
+        </div>
       </div>
     );
   }
 }
 
 export default MainPage;
+
 //
 // <Switch>
 //   <Route exact path="/signup" component={SignUp} />
