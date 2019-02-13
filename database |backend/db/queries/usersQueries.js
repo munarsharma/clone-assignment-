@@ -1,5 +1,7 @@
-const pgp = require('pg-promise')({});
-const db = pgp('postgres://localhost:5432/nomblr_db');
+// const pgp = require("pg-promise")({});
+// const db = pgp("postgres://localhost:5432/nomblr_db");
+
+const { db } = require('./connect');
 
 const getAllUsers = (req, res, next) => {
   db.any('SELECT * FROM users')
@@ -35,7 +37,7 @@ const getSingleUser = (req, res, next) => {
 
 const createNewUser = (req, res, next) => {
   db.none(
-    'INSERT INTO users( username, bio, img_url, email) VALUES( ${username}, ${bio}, ${img_url}, ${email})',
+    'INSERT INTO users( username, email) VALUES( ${username}, ${email})',
     req.body
   )
     .then(() => {
