@@ -3,6 +3,8 @@
 
 const { db } = require("./connect");
 
+const authHelpers = require("../auth/helpers");
+
 const getAllUsers = (req, res, next) => {
   db.any("SELECT * FROM users")
     .then(user => {
@@ -36,6 +38,8 @@ const getSingleUser = (req, res, next) => {
 };
 
 const createNewUser = (req, res, next) => {
+  const hash = authHelpers.createHash(req.body.password);
+
   db.none(
     "INSERT INTO users( username, email) VALUES( ${username}, ${email})",
     req.body
@@ -86,10 +90,30 @@ const deleteUser = (req, res, next) => {
     });
 };
 
+const logUserOut = (req, res) => {
+  req.logout();
+  res.status(200).send("log out success");
+};
+
+const logUserIn = (req, res) => {
+  res.json(req.user.username);
+};
+
+const isLoggedIn = (req, res) => {
+  if (req.user) {
+    res.json({ username: req.user.username });
+  } else {
+    res.json({ username: null });
+  }
+};
+
 module.exports = {
   getAllUsers,
   getSingleUser,
   createNewUser,
   editUser,
-  deleteUser
+  deleteUser,
+  logUserOut,
+  logUserIn,
+  isLoggedIn
 };

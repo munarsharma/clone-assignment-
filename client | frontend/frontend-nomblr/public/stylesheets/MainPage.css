@@ -1,4 +1,4 @@
-/* .mainContainer {
+ /* .mainContainer {
   text-align: center;
   display: grid;
   grid-template-columns: 8% 18% auto 18% 8% ;
@@ -10,9 +10,9 @@
     " .   searchbar portal .  . "
     " . footer footer footer . ";
   height: 100%;
-} */
+}
 
-/* .mainheader {
+ .mainheader {
   grid-area: header;
   display: flex;
   justify-content: flex-start;
@@ -20,7 +20,7 @@
   color: rgb(36%, 48%, 39%);
   font-size: 50px;
   margin: 1%;
-}
+} */
 
 .portal {
   grid-area: portal
@@ -28,6 +28,7 @@
   justify-content: center;
   flex-direction: column;
 }
+
 #signuplink {
   border: 1px solid #fac999;
   border-radius: 8px;
@@ -57,15 +58,15 @@
   margin-left: 310px;
   margin-right: 310px;
 }
-.mainfooter {
+/* .mainfooter {
   grid-area: footer
   margin: 10px;
   border: 1px solid black;
-}
+} */
 
 .searchbar {
   grid-area: searchbar;
   display: flex;
   justify-content: flex-start;
   margin: 13px;
-} */
+}

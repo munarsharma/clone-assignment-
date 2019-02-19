@@ -10,7 +10,7 @@ class AuthForm extends Component {
     password: ""
   };
 
-  registerUSer = e => {
+  registerUser = e => {
     e.preventDefault();
     const { username, password } = this.state;
 
@@ -19,7 +19,7 @@ class AuthForm extends Component {
       { username, password }
         .then(() => {
           Auth.authenticateUser(username);
-          axios.post("/users/new", { username, password });
+          axios.post("/users/login", { username, password });
         })
         .then(() => {
           this.props.checkAuthenticateStatus();
@@ -33,7 +33,7 @@ class AuthForm extends Component {
     );
   };
 
-  logoutUser = e => {
+  loginUser = e => {
     e.preventDefault();
     const { username, password } = this.state;
 
@@ -54,6 +54,14 @@ class AuthForm extends Component {
   };
 
   render() {
-    return <div>meow</div>;
+    const { username, password } = this.state;
+
+    const { isLoggedIn } = this.this.props;
+
+    return (
+      <>
+        <div> meow </div>
+      </>
+    );
   }
 }

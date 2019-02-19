@@ -14,6 +14,12 @@ class App extends Component {
       <div className="mainContainer">
         <Header />
 
+        <Switch>
+          <Route path="/signup" component={SignUp} />
+          <Route path="/login" component={LogIn} />
+          <Route exact path="/" component={MainPage} />
+        </Switch>
+
         <Footer />
       </div>
     );
@@ -21,11 +27,3 @@ class App extends Component {
 }
 
 export default withRouter(App);
-
-//
-// <Switch>
-//   <Route path="/signup" component={SignUp} />
-//   <Route path="/login" component={LogIn} />
-//   <Route exact path="/" component={MainPage} />
-// </Switch>
-//

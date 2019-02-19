@@ -13,10 +13,11 @@ class MainPage extends React.Component {
             Get Started
           </Link>
           <br />
+          <br />
+          <br />
           <Link to="/login" id="login">
             Log In
           </Link>
-
           <br />
         </div>
       </div>
