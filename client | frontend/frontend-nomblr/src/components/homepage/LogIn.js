@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
 class LogIn extends React.Component {
   state = {
-    email: "",
-    password: ""
+    email: '',
+    password: '',
   };
 
   handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -16,6 +16,7 @@ class LogIn extends React.Component {
     const { email, password } = this.state;
     return (
       <div>
+        <h1 id="h1"> Nomblr</h1>
         <br />
         <form>
           <input

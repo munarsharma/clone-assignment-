@@ -1,16 +1,16 @@
-import React from "react";
-import axios from "axios";
+import React from 'react';
+import axios from 'axios';
 
 class SignUp extends React.Component {
   state = {
-    usernameInput: "",
-    userEmailInput: ""
+    usernameInput: '',
+    userEmailInput: '',
     // userPassword: ""
   };
 
   handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -18,19 +18,19 @@ class SignUp extends React.Component {
     e.preventDefault();
 
     axios
-      .post("/users", {
+      .post('/users', {
         username: this.state.usernameInput,
-        email: this.state.userEmailInput
+        email: this.state.userEmailInput,
       })
       .then(res => {
         console.log(res);
         this.setState({
-          usernameInput: "",
-          userEmailInput: ""
+          usernameInput: '',
+          userEmailInput: '',
         });
       })
       .catch(err => {
-        console.log("error", err);
+        console.log('error', err);
       });
   };
 
@@ -38,7 +38,8 @@ class SignUp extends React.Component {
     const { usernameInput, userEmailInput } = this.state;
 
     return (
-      <>
+      <div className="signupContainer">
+        <h1 id="h1"> Nomblr</h1>
         <br />
         <form onSubmit={this.handleSubmit}>
           <input
@@ -61,7 +62,7 @@ class SignUp extends React.Component {
           <br />
           <input id="signupButton" type="submit" value="Signup" />
         </form>
-      </>
+      </div>
     );
   }
 }

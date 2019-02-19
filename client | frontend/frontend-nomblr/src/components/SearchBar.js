@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 class SearchBar extends React.Component {
   state = {
-    userSearch: ""
+    userSearch: '',
   };
 
   handleChange = e => {
     this.setState({
-      userSearch: e.target.value
+      userSearch: e.target.value,
     });
   };
 
