@@ -6,8 +6,13 @@ const {
   createNewUser,
   editUser,
   deleteUser,
+  logUserOut,
+  logUserIn,
+  isLoggedIn,
 } = require('../db/queries/usersQueries');
+
 const { loginRequired } = require('../auth/helpers');
+const passport = require('../auth/local');
 
 router.get('/', getAllUsers);
 router.get('/:id', getSingleUser);

@@ -13,9 +13,9 @@ function createHash(password) {
 function loginRequired(req, res, next) {
   if (!req.user) {
     res.status(401).json({ status: "Forbidden - please log in." });
-    return
+    return;
   }
   next();
 }
 
-module.exports = {comparePass, createHash. loginRequired};
+module.exports = { comparePass, createHash, loginRequired };

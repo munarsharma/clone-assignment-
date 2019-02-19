@@ -8,6 +8,7 @@ CREATE DATABASE nomblr_db;
 CREATE TABLE users (
 id SERIAL PRIMARY KEY,
 username VARCHAR UNIQUE NOT NULL,
+password_digest VARCHAR NOT NULL,
 bio TEXT,
 img_url VARCHAR,
 email VARCHAR UNIQUE NOT NULL,
@@ -50,5 +51,5 @@ post_id INT REFERENCES posts(id) ON DELETE CASCADE,
 tag_name VARCHAR NOT NULL
 );
 
-INSERT INTO users (username, bio, img_url, email)
-VALUES ('kitkats', 'fat cat probs', 'imgurl', 'fatkat@gmail.com' ), ('barns&yarns', 'i like apples', 'imgurl', 'barnsyarns@gmail.com' )
+INSERT INTO users (username, password_digest, bio, img_url, email)
+VALUES ('kitkats','tom&jerry','fat cat probs', 'imgurl', 'fatkat@gmail.com' ), ('barns&yarns','snacksonsnacks', 'i like apples', 'imgurl', 'barnsyarns@gmail.com' )

@@ -6,6 +6,7 @@ import Header from './components/header';
 import Footer from './components/footer';
 import SignUp from './components/homepage/SignUp';
 import LogIn from './components/homepage/LogIn';
+import UserAuth from './components/homepage/LogIn';
 // import "./App.css";
 
 class App extends Component {

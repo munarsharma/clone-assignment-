@@ -3,6 +3,8 @@ import axios from "axios";
 import { withRouter } from "react-router";
 import { Route, Switch } from "react-router-dom";
 import Auth from "../utils/Auth";
+import SignUp from "../../components/homepage/SignUp";
+import LogIn from "../../components/homepage/LogIn";
 
 class AuthForm extends Component {
   state = {
@@ -56,12 +58,44 @@ class AuthForm extends Component {
   render() {
     const { username, password } = this.state;
 
-    const { isLoggedIn } = this.this.props;
+    const { isLoggedIn } = this.props;
 
     return (
       <>
-        <div> meow </div>
+        <Switch>
+          <Route
+            path="/login"
+            render={() => {
+              return (
+                <LogIn
+                  username={username}
+                  password={password}
+                  isLoggedIn={isLoggedIn}
+                  loginUser={this.loginUser}
+                  registerUser={this.registerUser}
+                  handleChange={this.handleChange}
+                />
+              );
+            }}
+          />
+          <Route
+            path="/register"
+            render={() => {
+              return (
+                <SignUp
+                  username={username}
+                  password={password}
+                  isLoggedIn={isLoggedIn}
+                  loginUser={this.loginUser}
+                  registerUser={this.registerUser}
+                  handleChange={this.handleChange}
+                />
+              );
+            }}
+          />
+        </Switch>
       </>
     );
   }
 }
+export default withRouter(AuthForm);
