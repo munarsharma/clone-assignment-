@@ -1,6 +1,6 @@
 const Auth = {
   authenticateUser: token => {
-    localStorage.setItem("token");
+    localStorage.setItem("token", token);
   },
 
   isUserAuthenticated: () => {

@@ -1,45 +1,42 @@
-import React from 'react';
-
-class LogIn extends React.Component {
-  state = {
-    email: '',
-    password: '',
-  };
-
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  render() {
-    const { email, password } = this.state;
-    return (
-      <div>
-        <h1 id="h1"> Nomblr</h1>
+import React from "react";
+// import { withRouter } from "react-router";
+const LogIn = ({
+  match,
+  username,
+  password,
+  email,
+  isLoggedIn,
+  loginUser,
+  registerUser,
+  handleChange
+}) => {
+  return (
+    <div>
+      <h1 id="h1"> Nomblr</h1>
+      <form onSubmit={loginUser}>
+        <input
+          type="text"
+          name="username"
+          placeholder="username"
+          value={username}
+          onChange={handleChange}
+        />
         <br />
-        <form>
-          <input
-            type="text"
-            name="email"
-            placeholder="email"
-            value={email}
-            onChange={this.handleChange}
-          />
-          <br />
-          <input
-            type="text"
-            name="password"
-            placeholder="password"
-            value={password}
-            onChange={this.handleChange}
-          />
-          <br />
-          <input id="signupButton" type="submit" value="Signup" />
-        </form>
-      </div>
-    );
-  }
-}
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          value={password}
+          onChange={handleChange}
+        />
+        <br />
+
+        <input id="signupButton" type="submit" value="Signup" />
+      </form>
+
+      <p>{isLoggedIn ? "Logged In!" : ""}</p>
+    </div>
+  );
+};
 
 export default LogIn;

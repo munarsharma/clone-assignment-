@@ -1,7 +1,7 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const init = require("./passport");
-const helper = require("./helpers");
+const helpers = require("./helpers");
 
 const { db } = require("../db/queries/connect");
 
