@@ -41,8 +41,8 @@ const createNewUser = (req, res, next) => {
   const hash = authHelpers.createHash(req.body.password);
 
   db.none(
-    'INSERT INTO users( username, email) VALUES( ${username}, ${email})',
-    req.body
+    'INSERT INTO users( username, password_digest, email) VALUES( ${username}, ${password}, ${email})',
+    { username: req.body.username, password: hash, email: req.body.email }
   )
     .then(() => {
       res.status(200).json({
@@ -51,7 +51,7 @@ const createNewUser = (req, res, next) => {
     })
     .catch(err => {
       console.log('error', err);
-      next(err);
+      return next(err);
     });
 };
 

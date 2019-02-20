@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-// import SignUp from "./SignUp";
-// import LogIn from "./LogIn";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import SignUp from './SignUp';
+import LogIn from './LogIn';
 
 class MainPage extends React.Component {
   render() {
@@ -9,13 +9,13 @@ class MainPage extends React.Component {
       <div>
         <h1 id="h1"> Nomblr</h1>
         <div className="portal">
-          <Link to="/signup" id="signuplink">
+          <Link to="/auth/signup" id="signuplink">
             Get Started
           </Link>
           <br />
           <br />
           <br />
-          <Link to="/login" id="login">
+          <Link to="/auth/login" id="login">
             Log In
           </Link>
           <br />

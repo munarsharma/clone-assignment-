@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
-import Users from './users/Users';
 import AuthForm from './login/AuthForm';
 import Auth from './utils/Auth';
+import UserDash from '../components/Dashboard/UserDash';
 import PrivateRoute from './utils/AuthRouting';
 
 class UserAuth extends Component {
   state = {
     isLoggedIn: false,
-    user: '',
+    username: '',
   };
 
   componentDidMount() {
@@ -46,13 +46,13 @@ class UserAuth extends Component {
   };
 
   render() {
-    const { isLoggedIn, username } = this.state;
+    const { isLoggedIn } = this.state;
 
     return (
       <div>
         <Switch>
           <Route
-            path="/"
+            path="/auth"
             render={() => {
               return (
                 <AuthForm
@@ -63,11 +63,11 @@ class UserAuth extends Component {
             }}
 
           />
-          <PrivateRoute path="/users" component={Users} />
+          <PrivateRoute path="/dashboard" component={UserDash} />
         </Switch>
       </div>
     );
   }
 }
 
-export default App;
+export default UserAuth;
