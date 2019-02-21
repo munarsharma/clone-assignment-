@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { Route, Link } from "react-router-dom";
+import { Route, Link } from 'react-router-dom';
 
-import AuthForm from "../../userAuth/login/AuthForm";
+import Header from '../header';
+import AuthForm from '../../userAuth/login/AuthForm';
 // import Auth from "../../userAuth/utils/Auth";
 // import SignUp from "./SignUp";
 // import LogIn from "./LogIn";
@@ -11,6 +12,8 @@ const MainPage = props => {
   return (
     <div className="main-page">
       <div>
+        <div />
+
         <Route
           path="/auth"
           render={() => {
@@ -21,19 +24,26 @@ const MainPage = props => {
               />
             );
           }}
+
         />
       </div>
 
       <br />
       <div className="portal">
-        <button>
-          {" "}
-          <Link to="/auth/register"> get started </Link>{" "}
+        <button className="signup">
+          {' '}
+          <Link to="/auth/register" id="signuplink">
+            {' '}
+            get started{' '}
+          </Link>{' '}
         </button>
         <br />
-        <button>
-          {" "}
-          <Link to="/auth/login"> login </Link>{" "}
+        <button className="signup">
+          {' '}
+          <Link to="/auth/login" id="signuplink">
+            {' '}
+            login{' '}
+          </Link>{' '}
         </button>
       </div>
     </div>

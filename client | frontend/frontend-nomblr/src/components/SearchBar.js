@@ -1,35 +1,32 @@
-import React from 'react';
+import React from "react";
 
 class SearchBar extends React.Component {
   state = {
-    userSearch: '',
+    userSearch: ""
   };
 
   handleChange = e => {
     this.setState({
-      userSearch: e.target.value,
+      userSearch: e.target.value
     });
   };
 
   render() {
     const { userSearch } = this.state;
     return (
-      <div>
-        <div className="searchbar">
+      <div className="searchArea">
+        <form>
+          <label htmlFor="searchbar" />
           <br />
-          <form>
-            <label htmlFor="searchbar" />
-            <br />
-            <input
-              id="searchbar"
-              type="text"
-              name="userSearch"
-              value={userSearch}
-              placeholder="search nomblr.."
-              onChange={this.handleChange}
-            />
-          </form>
-        </div>
+          <input
+            className="searchbar"
+            type="text"
+            name="userSearch"
+            value={userSearch}
+            placeholder="search nomblr.."
+            onChange={this.handleChange}
+          />
+        </form>
       </div>
     );
   }
