@@ -1,13 +1,8 @@
-/* .mainContainer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  align-content: stretch;
+ .mainContainer {
+
   height: 100%;
   width: 100%;
-} */
+}
 
 .main-header {
   height: 10%;
@@ -20,19 +15,26 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 20%;
+  margin-top: 10%;
+}
+
+#h1 {
+  margin-left: auto;
+  margin-right:auto;
+  font-family: 'Indie Flower', cursive;
+  font-size: 63px;
 }
 .signup {
   margin-left: auto;
   margin-right:auto;
-  width: 163px;
+  width: 400px;
   hight: 10%:
   border: 1px solid #fac999;
   border-radius: 8px;
   padding: 13px;
   padding-left: 43px;
   padding-right: 43px;
-  background-color: #a54811 ;
+  background-color: #e7cdbe;
 
   font-family: "Josefin Sans", sans-serif;
 
@@ -40,7 +42,7 @@
 
 #signuplink {
   text-decoration: none;
-  color: #e5a043;
+  color:#a54811 ;
   font-size: 19px;
 }
 
@@ -67,9 +69,24 @@
   box-sizing: border-box;
   border: 1px solid transparent;
   border-radius: 3px;
+  background-color: rgb(231%,	205%, 190%);
+  opacity: 0.3;
 }
 
+.footerInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: inherit;
+  font-family: "Josefin Sans", sans-serif;
+}
 
+#footer {
+  margin: 5px;
+  padding: 10px;
+  font-size: 15px;
+}
 
 /*
 .mainheader,
