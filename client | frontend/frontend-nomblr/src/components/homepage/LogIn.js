@@ -33,8 +33,6 @@ const LogIn = ({
 
         <input id="signupButton" type="submit" value="Signup" />
       </form>
-
-      <p>{isLoggedIn ? "Logged In!" : ""}</p>
     </div>
   );
 };

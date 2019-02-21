@@ -9,7 +9,7 @@ import AuthForm from "../../userAuth/login/AuthForm";
 
 const MainPage = props => {
   return (
-    <div>
+    <div className="main-page">
       <div>
         <Route
           path="/auth"
@@ -23,16 +23,19 @@ const MainPage = props => {
           }}
         />
       </div>
+
       <br />
-      <button>
-        {" "}
-        <Link to="/auth/register"> get started </Link>{" "}
-      </button>
-      <br />
-      <button>
-        {" "}
-        <Link to="/auth/login"> login </Link>{" "}
-      </button>
+      <div className="portal">
+        <button>
+          {" "}
+          <Link to="/auth/register"> get started </Link>{" "}
+        </button>
+        <br />
+        <button>
+          {" "}
+          <Link to="/auth/login"> login </Link>{" "}
+        </button>
+      </div>
     </div>
   );
 };
