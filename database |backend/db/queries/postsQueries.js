@@ -72,20 +72,19 @@ const createNewPost = (req, res, next) => {
 const editPost = (req, res, next) => {
   // const userid = parseInt(req.params.id);
   db.none(
-    "UPDATE posts SET postType= ${postType}, post_body = ${post_body}, user_id = {user_id}, img_url= ${img_url}  WHERE id =${id}",
+    "UPDATE posts SET postType= ${postType}, post_body = ${post_body},  img_url= ${img_url}  WHERE id =${id}",
 
     {
       id: Number(req.params.id),
       postType: req.body.postType,
       post_body: req.body.post_body,
-      user_id: req.params.user_id,
       img_url: req.body.img_url
     }
   )
     .then(() => {
       res.status(200).json({
         status: "success",
-        message: "post has been updated"
+        mess3age: "post has been updated"
       });
     })
     .catch(err => {
