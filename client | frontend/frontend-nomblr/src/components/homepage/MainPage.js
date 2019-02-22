@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 
 import Header from '../header';
 import AuthForm from '../../userAuth/login/AuthForm';
@@ -13,19 +13,21 @@ const MainPage = props => {
     <div className="main-page">
       <div>
         <div />
+        <Switch>
+          <Route
+            path="/auth"
+            render={() => {
+              return (
+                <AuthForm
+                  checkAuthenticateStatus={props.checkAuthenticateStatus}
+                  isLoggedIn={props.isLoggedIn}
+                />
+              );
+            }}
 
-        <Route
-          path="/auth"
-          render={() => {
-            return (
-              <AuthForm
-                checkAuthenticateStatus={props.checkAuthenticateStatus}
-                isLoggedIn={props.isLoggedIn}
-              />
-            );
-          }}
-
-        />
+          />
+          <Route exact path="/" />
+        </Switch>
       </div>
 
       <br />
