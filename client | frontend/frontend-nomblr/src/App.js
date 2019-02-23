@@ -9,6 +9,7 @@ import UserDash from "./components/Dashboard/UserDash";
 import PrivateRoute from "./userAuth/utils/AuthRouting";
 import Header from "./components/header";
 // import "./App.css";
+import AuthForm from "./userAuth/login/AuthForm";
 
 class App extends Component {
   state = {
@@ -55,13 +56,14 @@ class App extends Component {
       <div>
         <Header />
         <Switch>
+          <Route exact path="/" component={MainPage} />
           <Route
-            path="/"
+            path="/auth"
             render={() => {
               return (
-                <MainPage
+                <AuthForm
                   checkAuthenticateStatus={this.checkAuthenticateStatus}
-                  isLoggedIn={isLoggedIn}
+                  isLoggedIn={this.isLoggedIn}
                 />
               );
             }}
@@ -76,7 +78,3 @@ class App extends Component {
 }
 
 export default withRouter(App);
-
-// <Route path="/auth" component={UserAuth} />
-// <Route path="/signup" component={SignUp} />
-// <Route path="/login" component={LogIn} />

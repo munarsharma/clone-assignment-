@@ -3,7 +3,7 @@ import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 
 import Header from '../header';
-import AuthForm from '../../userAuth/login/AuthForm';
+
 // import Auth from "../../userAuth/utils/Auth";
 // import SignUp from "./SignUp";
 // import LogIn from "./LogIn";
@@ -11,25 +11,6 @@ import AuthForm from '../../userAuth/login/AuthForm';
 const MainPage = props => {
   return (
     <div className="main-page">
-      <div>
-        <div />
-        <Switch>
-          <Route
-            path="/auth"
-            render={() => {
-              return (
-                <AuthForm
-                  checkAuthenticateStatus={props.checkAuthenticateStatus}
-                  isLoggedIn={props.isLoggedIn}
-                />
-              );
-            }}
-
-          />
-          <Route exact path="/" />
-        </Switch>
-      </div>
-
       <br />
       <div className="portal">
         <h1 id="h1"> Nomblr </h1>
