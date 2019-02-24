@@ -1,5 +1,4 @@
- .mainContainer {
-
+.mainContainer {
   height: 100%;
   width: 100%;
 }
@@ -10,7 +9,6 @@
   flex-direction: row;
 }
 
-
 .portal {
   display: flex;
   justify-content: center;
@@ -20,30 +18,29 @@
 
 #h1 {
   margin-left: auto;
-  margin-right:auto;
-  font-family: 'Indie Flower', cursive;
-  font-size: 63px;
+  margin-right: auto;
+  font-family: "Chonburi", cursive;
+  font-size: 56px;
 }
 .signup {
   margin-left: auto;
-  margin-right:auto;
-  width: 400px;
-  hight: 10%:
+  margin-right: auto;
+  width: 303px;
+  hight: 12%;
   border: 1px solid #fac999;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 13px;
   padding-left: 43px;
   padding-right: 43px;
   background-color: #e7cdbe;
 
-  font-family: "Josefin Sans", sans-serif;
-
+  font-family: "Itim", cursive;
 }
 
 #signuplink {
   text-decoration: none;
-  color:#a54811 ;
-  font-size: 19px;
+  color: #a54811;
+  font-size: 20px;
 }
 
 .footer {
@@ -64,13 +61,13 @@
 
 .searchbar {
   color: rgb(36%, 48%, 39%);
-  width: 430px;
-  height: 30px;
+  width: 460px;
+  height: 40px;
   box-sizing: border-box;
   border: 1px solid transparent;
   border-radius: 3px;
-  background-color: rgb(231%,	205%, 190%);
-  opacity: 0.3;
+  background-color: rgb(231%, 205%, 190%);
+  opacity: 0.4;
 }
 
 .footerInfo {
