@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     const { isLoggedIn } = this.state;
     return (
-      <div>
+      <div className="mainContainer">
         <Header />
         <Switch>
           <Route exact path="/" component={MainPage} />
