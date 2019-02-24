@@ -21,25 +21,25 @@
   margin-right: auto;
   font-family: "Chonburi", cursive;
   font-size: 56px;
+  font-weight: bolder;
 }
 .signup {
   margin-left: auto;
   margin-right: auto;
   width: 303px;
-  hight: 12%;
+  height: 12%;
   border: 1px solid #fac999;
   border-radius: 6px;
   padding: 13px;
   padding-left: 43px;
   padding-right: 43px;
-  background-color: #e7cdbe;
-
+  background-color: #d3b3b8;
   font-family: "Itim", cursive;
 }
 
 #signuplink {
   text-decoration: none;
-  color: #a54811;
+  color: #3b4834;
   font-size: 20px;
 }
 
