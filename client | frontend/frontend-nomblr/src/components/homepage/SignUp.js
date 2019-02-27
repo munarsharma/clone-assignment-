@@ -11,35 +11,39 @@ const SignUp = ({
 }) => {
   return (
     <div className="signupContainer">
-      <h1> Nomblr </h1>
+      <h1 id="h1"> Nomblr </h1>
+      <form className="signupForms" onSubmit={registerUser}>
+        <div id="btnContainer">
+          <input
+            id="signupBtn"
+            type="text"
+            name="username"
+            placeholder="username"
+            value={username}
+            onChange={handleChange}
+          />
+          <br />
 
-      <form onSubmit={registerUser}>
-        <input
-          type="text"
-          name="username"
-          placeholder="username"
-          value={username}
-          onChange={handleChange}
-        />
-        <br />
+          <input
+            id="signupBtn"
+            type="text"
+            name="email"
+            placeholder="email"
+            value={email}
+            onChange={handleChange}
+          />
+          <br />
+          <input
+            id="signupBtn"
+            type="password"
+            name="password"
+            placeholder="password"
+            value={password}
+            onChange={handleChange}
+          />
 
-        <input
-          type="text"
-          name="email"
-          placeholder="email"
-          value={email}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          value={password}
-          onChange={handleChange}
-        />
-
-        <br />
+          <br />
+        </div>
         <input id="signupButton" type="submit" value="Signup" />
       </form>
     </div>
