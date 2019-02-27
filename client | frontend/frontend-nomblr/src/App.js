@@ -7,7 +7,7 @@ import axios from "axios";
 import Auth from "./userAuth/utils/Auth";
 import UserDash from "./components/Dashboard/UserDash";
 import PrivateRoute from "./userAuth/utils/AuthRouting";
-import Header from "./components/header";
+import Header from "./components/homepage/header";
 // import "./App.css";
 import AuthForm from "./userAuth/login/AuthForm";
 

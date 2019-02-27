@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 // import { withRouter } from "react-router";
 const LogIn = ({
   match,
@@ -8,31 +8,35 @@ const LogIn = ({
   isLoggedIn,
   loginUser,
   registerUser,
-  handleChange
+  handleChange,
 }) => {
   return (
-    <div>
-      <h1 id="h1"> Nomblr</h1>
-      <form onSubmit={loginUser}>
-        <input
-          type="text"
-          name="username"
-          placeholder="username"
-          value={username}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          value={password}
-          onChange={handleChange}
-        />
-        <br />
+    <div className="signupContainer">
+      <h1 id="h1"> Nomblr </h1>
+      <div className="signupForms">
+        <form onSubmit={loginUser}>
+          <input
+            id="signupBtn"
+            type="text"
+            name="username"
+            placeholder="username"
+            value={username}
+            onChange={handleChange}
+          />
+          <br />
+          <input
+            id="signupBtn"
+            type="password"
+            name="password"
+            placeholder="password"
+            value={password}
+            onChange={handleChange}
+          />
+          <br />
 
-        <input id="signupButton" type="submit" value="Signup" />
-      </form>
+          <input id="submitBtn" type="submit" value="Signup" />
+        </form>
+      </div>
     </div>
   );
 };

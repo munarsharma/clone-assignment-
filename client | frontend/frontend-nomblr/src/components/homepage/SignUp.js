@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "./header";
 
 const SignUp = ({
   username,
@@ -12,8 +13,8 @@ const SignUp = ({
   return (
     <div className="signupContainer">
       <h1 id="h1"> Nomblr </h1>
-      <form className="signupForms" onSubmit={registerUser}>
-        <div id="btnContainer">
+      <div className="signupForms">
+        <form onSubmit={registerUser}>
           <input
             id="signupBtn"
             type="text"
@@ -43,9 +44,9 @@ const SignUp = ({
           />
 
           <br />
-        </div>
-        <input id="signupButton" type="submit" value="Signup" />
-      </form>
+          <input id="submitBtn" type="submit" value="signup" />
+        </form>
+      </div>
     </div>
   );
 };

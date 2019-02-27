@@ -20,11 +20,12 @@ class SearchBar extends React.Component {
           <br />
           <input
             className="searchbar"
-            type="text"
+            type="search"
             name="userSearch"
             value={userSearch}
             placeholder="search nomblr.."
             onChange={this.handleChange}
+            results="0"
           />
         </form>
       </div>
