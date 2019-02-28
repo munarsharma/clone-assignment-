@@ -11,8 +11,8 @@ import Header from "./header";
 const MainPage = props => {
   return (
     <>
-      <Header />
       <div className="main-page">
+        <Header />
         <br />
         <div className="portal">
           <h1 id="h1"> Nomblr </h1>

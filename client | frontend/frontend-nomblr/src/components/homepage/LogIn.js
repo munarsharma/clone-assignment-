@@ -11,7 +11,7 @@ const LogIn = ({
   handleChange
 }) => {
   return (
-    <>
+    <div className="loginPage">
       <Header />
       <div className="signupContainer">
         <h1 id="h1"> Nomblr </h1>
@@ -46,7 +46,7 @@ const LogIn = ({
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

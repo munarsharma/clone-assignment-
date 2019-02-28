@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const DashNavbar = () => {
   return (
@@ -10,13 +10,13 @@ const DashNavbar = () => {
         </Link>
       </div>
       <div>
-        <Link to="/userActivity">
-          <img className="userAct_nav" src="" alt="user activity" />
+        <Link to="/explore">
+          <img className="explore_nav" src="" alt="explore" />
         </Link>
       </div>
       <div>
-        <Link to="/explore">
-          <img className="explore_nav" src="" alt="explore" />
+        <Link to="/userActivity">
+          <img className="userAct_nav" src="" alt="user activity" />
         </Link>
       </div>
       <div>

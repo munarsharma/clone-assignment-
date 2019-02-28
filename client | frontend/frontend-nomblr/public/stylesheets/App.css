@@ -1,6 +1,6 @@
 .mainContainer {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100v;
 }
 
 .main-header {
@@ -12,12 +12,12 @@
 }
 
 .logo_pic {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
+  padding-top: 10px;
 }
 
 .searchArea {
-  margin-left: 6%;
 }
 
 .searchbar {

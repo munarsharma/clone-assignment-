@@ -1,9 +1,48 @@
+.main-page {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  /* bottom: 0; */
+  background: url("https://images.unsplash.com/photo-1517281536787-64da0f143962?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=682&q=80")
+    no-repeat center;
+  /* background-size: cover; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
 .portal {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-top: 10%;
 }
+
+.signupPage{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  /* bottom: 0; */
+  background: url("https://images.unsplash.com/photo-1508614926468-0edcb8dd60f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")
+    no-repeat center;
+  /* background-size: cover; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.loginPage {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  /* bottom: 0; */
+  background: url("https://images.unsplash.com/photo-1539795739976-849188c92145?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80")
+    no-repeat center;
+  /* background-size: cover; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
 
 #h1 {
   margin-left: auto;
