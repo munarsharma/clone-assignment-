@@ -96,12 +96,12 @@ const logUserOut = (req, res) => {
 };
 
 const logUserIn = (req, res) => {
-  res.json(req.user.username);
+  res.json(req.user);
 };
 
 const isLoggedIn = (req, res) => {
   if (req.user) {
-    res.json({ username: req.user.username });
+    res.json({ username: req.user });
   } else {
     res.json({ username: null });
   }

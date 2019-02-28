@@ -7,6 +7,8 @@
   height: 10%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1%;
 }
 
 .logo_pic {
@@ -15,8 +17,6 @@
 }
 
 .searchArea {
-  display: flex;
-  margin-top: 1p;
   margin-left: 6%;
 }
 
@@ -31,10 +31,32 @@
   opacity: 0.4;
 }
 
-.main-navbar {
-  border: 1px solid black;
+#logoSearch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 1%;
 }
 
+.main-navbar {
+  display: flex;
+  flex-flow: row;
+  margin-right: 10px;
+  margin-top: 2%;
+}
+
+#navLink {
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  color: #3b4834;
+  font-size: 18px;
+}
+
+.navBtn {
+  border: none;
+  background: transparent;
+  padding: 9px;
+}
 .footerInfo {
   display: flex;
   flex-direction: row;

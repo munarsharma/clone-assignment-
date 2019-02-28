@@ -10,28 +10,30 @@ import Header from "./header";
 
 const MainPage = props => {
   return (
-    <div className="main-page">
+    <>
       <Header />
-      <br />
-      <div className="portal">
-        <h1 id="h1"> Nomblr </h1>
-        <button className="signup">
-          {" "}
-          <Link to="/auth/register" id="signuplink">
-            {" "}
-            get started{" "}
-          </Link>{" "}
-        </button>
+      <div className="main-page">
         <br />
-        <button className="signup">
-          {" "}
-          <Link to="/auth/login" id="signuplink">
+        <div className="portal">
+          <h1 id="h1"> Nomblr </h1>
+          <button className="signup">
             {" "}
-            login{" "}
-          </Link>{" "}
-        </button>
+            <Link to="/auth/register" id="signuplink">
+              {" "}
+              get started{" "}
+            </Link>{" "}
+          </button>
+          <br />
+          <button className="signup">
+            {" "}
+            <Link to="/auth/login" id="signuplink">
+              {" "}
+              login{" "}
+            </Link>{" "}
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

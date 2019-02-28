@@ -11,43 +11,47 @@ const SignUp = ({
   handleChange
 }) => {
   return (
-    <div className="signupContainer">
-      <h1 id="h1"> Nomblr </h1>
-      <div className="signupForms">
-        <form onSubmit={registerUser}>
-          <input
-            id="signupBtn"
-            type="text"
-            name="username"
-            placeholder="username"
-            value={username}
-            onChange={handleChange}
-          />
-          <br />
+    <>
+      <Header />
+      <div className="signupContainer">
+        <h1 id="h1"> Nomblr </h1>
+        <div className="signupForms">
+          <form onSubmit={registerUser}>
+            <input
+              id="signupBtn"
+              type="text"
+              name="username"
+              placeholder="username"
+              value={username}
+              onChange={handleChange}
+            />
+            <br />
 
-          <input
-            id="signupBtn"
-            type="text"
-            name="email"
-            placeholder="email"
-            value={email}
-            onChange={handleChange}
-          />
-          <br />
-          <input
-            id="signupBtn"
-            type="password"
-            name="password"
-            placeholder="password"
-            value={password}
-            onChange={handleChange}
-          />
+            <input
+              id="signupBtn"
+              type="text"
+              name="email"
+              placeholder="email"
+              value={email}
+              onChange={handleChange}
+            />
+            <br />
 
-          <br />
-          <input id="submitBtn" type="submit" value="signup" />
-        </form>
+            <input
+              id="signupBtn"
+              type="password"
+              name="password"
+              placeholder="password"
+              value={password}
+              onChange={handleChange}
+            />
+
+            <br />
+            <input id="submitBtn" type="submit" value="signup" />
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

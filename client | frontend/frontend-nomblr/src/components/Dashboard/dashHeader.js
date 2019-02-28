@@ -1,25 +1,25 @@
 import React from "react";
 import SearchBar from "../SearchBar";
 import { Link } from "react-router-dom";
-import MainNavBar from "./mainNavbar";
+import DashNavbar from "./dashNavbar";
 
 //add conditional rendering for nav button
 //figure out how to use local logo file.
 
-const Header = () => {
+const DashHeader = () => {
   return (
     <>
-      <header className="main-header">
+      <header className="dash-header">
         <div id="logoSearch">
           <Link to="/">
             <img className="logo_pic" src="" alt="img" />
           </Link>
           <SearchBar />
         </div>
-        <MainNavBar />
+        <DashNavbar />
       </header>
     </>
   );
 };
 
-export default Header;
+export default DashHeader;

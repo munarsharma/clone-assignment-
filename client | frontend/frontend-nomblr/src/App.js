@@ -1,20 +1,20 @@
-import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
-import { withRouter } from "react-router";
-import MainPage from "./components/homepage/MainPage";
-import Footer from "./components/footer";
-import axios from "axios";
-import Auth from "./userAuth/utils/Auth";
-import UserDash from "./components/Dashboard/UserDash";
-import PrivateRoute from "./userAuth/utils/AuthRouting";
-import Header from "./components/homepage/header";
+import React, { Component } from 'react';
+import { Route, Redirect, Switch } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import MainPage from './components/homepage/MainPage';
+import Footer from './components/footer';
+import axios from 'axios';
+import Auth from './userAuth/utils/Auth';
+import UserDash from './components/Dashboard/UserDash';
+import PrivateRoute from './userAuth/utils/AuthRouting';
+import Header from './components/homepage/header';
 // import "./App.css";
-import AuthForm from "./userAuth/login/AuthForm";
+import AuthForm from './userAuth/login/AuthForm';
 
 class App extends Component {
   state = {
     isLoggedIn: false,
-    username: ""
+    username: '',
   };
 
   componentDidMount() {
@@ -23,11 +23,11 @@ class App extends Component {
   }
 
   checkAuthenticateStatus = () => {
-    axios.get("/users/isLoggedIn").then(user => {
+    axios.post('/users/isLoggedIn').then(user => {
       if (user.data.username === Auth.getToken()) {
         this.setState({
           isLoggedIn: Auth.isUserAuthenticated(),
-          username: Auth.getToken()
+          username: Auth.getToken(),
         });
       } else {
         if (user.data.username) {
@@ -41,7 +41,7 @@ class App extends Component {
 
   logoutUser = () => {
     axios
-      .post("/users/logout")
+      .post('/users/logout')
       .then(() => {
         Auth.deauthenticateUser();
       })
@@ -54,12 +54,16 @@ class App extends Component {
     const { isLoggedIn } = this.state;
     return (
       <div className="mainContainer">
-        <Header />
         <Switch>
           <Route exact path="/" component={MainPage} />
+
           <Route
             path="/auth"
             render={() => {
+              if (isLoggedIn) {
+                return <Redirect to="/dashboard" />;
+              }
+
               return (
                 <AuthForm
                   checkAuthenticateStatus={this.checkAuthenticateStatus}
@@ -67,8 +71,9 @@ class App extends Component {
                 />
               );
             }}
+
           />
-          <PrivateRoute path="/dashboard" component={UserDash} />
+          <Route path="/dashboard" component={UserDash} />
         </Switch>
 
         <Footer />
@@ -78,3 +83,5 @@ class App extends Component {
 }
 
 export default withRouter(App);
+
+//          <PrivateRoute path="/dashboard" component={UserDash} />

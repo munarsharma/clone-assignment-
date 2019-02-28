@@ -8,8 +8,8 @@ import LogIn from "../../components/homepage/LogIn";
 class AuthForm extends Component {
   state = {
     username: "",
-    email: "",
-    password: ""
+    password: "",
+    email: ""
   };
 
   handleChange = e => {
@@ -21,9 +21,9 @@ class AuthForm extends Component {
   registerUser = async e => {
     console.log("heyyyyy");
     e.preventDefault();
-    const { username, email, password } = this.state;
+    const { username, password, email } = this.state;
 
-    await axios.post("/users/new", { username, email, password });
+    await axios.post("/users/new", { username, password, email });
 
     Auth.authenticateUser(username);
 
@@ -33,8 +33,8 @@ class AuthForm extends Component {
 
     this.setState({
       username: "",
-      email: "",
-      password: ""
+      password: "",
+      email: ""
     });
     console.log("registered");
   };
@@ -43,16 +43,20 @@ class AuthForm extends Component {
     e.preventDefault();
     const { username, password } = this.state;
 
-    await axios.post("/users/login", { username, password });
-
-    await Auth.authenticateUser(username);
-
-    await this.props.checkAuthenticateStatus();
-
-    this.setState({
-      username: "",
-      password: ""
-    });
+    axios
+      .post("/users/login", { username, password })
+      .then(() => {
+        Auth.authenticateUser(username);
+      })
+      .then(() => {
+        this.props.checkAuthenticateStatus();
+      })
+      .then(() => {
+        this.setState({
+          username: "",
+          password: ""
+        });
+      });
   };
 
   render() {
@@ -70,7 +74,6 @@ class AuthForm extends Component {
                 <LogIn
                   username={username}
                   password={password}
-                  email={email}
                   isLoggedIn={isLoggedIn}
                   loginUser={this.loginUser}
                   registerUser={this.registerUser}

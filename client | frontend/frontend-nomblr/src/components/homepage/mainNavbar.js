@@ -1,21 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const mainNavBar = () => {
+const MainNavBar = () => {
   return (
-    <>
-      <div className="main-navbar">
+    <nav className="main-navbar">
+      <div>
         <button className="navBtn">
-          {" "}
-          <Link to="/auth/login">Log In</Link>
-        </button>
-
-        <button className="navBtn">
-          <Link to="/auth/register">Sign up</Link>
+          {' '}
+          <Link to="/auth/login" id="navLink">
+            Log in
+          </Link>
         </button>
       </div>
-    </>
+      <div>
+        <button className="navBtn">
+          <Link to="/auth/register" id="navLink">
+            Sign up
+          </Link>
+        </button>
+      </div>
+    </nav>
   );
 };
 
-export default mainNavBar;
+export default MainNavBar;
