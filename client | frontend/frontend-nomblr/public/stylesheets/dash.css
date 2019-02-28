@@ -3,6 +3,7 @@
   width: 100vw;
   position: absolute;
   background: #c7ccd3;
+  font-family: "Itim", cursive;
 }
 
 .dash-header {
@@ -36,6 +37,11 @@
   margin-right: 3px;
 }
 
+#h2 {
+  font-family: "Itim", cursive;
+  color: #a54811;
+}
+
 .explore_nav {
   width: 60px;
   background: transparent;
@@ -46,4 +52,35 @@
   width: 60px;
   background: transparent;
   margin-right: 6px;
+}
+
+.mainDash {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.radarArea {
+  width: 20%;
+  height: 500px;
+  display: flex;
+  flex-flow: column;
+  align-content: space-between;
+  border: 1px solid #a54811;
+  margin: 1%;
+}
+
+.followButton {
+  width: 20px;
+  height: 24px;
+  font-size: 15px;
+  padding-bottom: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+#radarImg {
+  margin: 2%;
+  width: 83%;
+  height: 80%;
 }

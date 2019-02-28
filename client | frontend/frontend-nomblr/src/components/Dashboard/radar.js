@@ -4,8 +4,8 @@ import FollowButton from "./followButton";
 
 const Radar = () => {
   return (
-    <div>
-      <h1> radar</h1>
+    <div className="radarArea">
+      <h2 id="h2"> radar</h2>
       <FollowButton />
       <div>
         <img
