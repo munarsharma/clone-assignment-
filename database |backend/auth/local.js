@@ -1,14 +1,14 @@
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const init = require('./passport');
-const helpers = require('./helpers');
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+const init = require("./passport");
+const helpers = require("./helpers");
 
-const { db } = require('../db/queries/connect');
+const { db } = require("../db/queries/connect");
 
 passport.use(
   new LocalStrategy((username, password, done) => {
-    db.one('SELECT * FROM users WHERE username = ${username}', {
-      username: username,
+    db.one("SELECT * FROM users WHERE username = ${username}", {
+      username: username
     })
       .then(user => {
         if (!helpers.comparePass(password, user.password_digest)) {
@@ -17,7 +17,7 @@ passport.use(
           return done(null, {
             username: user.username,
             id: user.id,
-            img_url: user.img_url,
+            img_url: user.img_url
           });
         }
       })

@@ -10,7 +10,7 @@ const Radar = () => {
       <div>
         <img
           id="radarImg"
-          src="https://images.unsplash.com/photo-1514163061636-02db31852e84?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+          // src="https://images.unsplash.com/photo-1514163061636-02db31852e84?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
           alt=""
         />
       </div>
