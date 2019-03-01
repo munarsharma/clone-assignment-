@@ -75,9 +75,20 @@
   flex-direction: column;
   justify-content: center;
 }
+
 #postImg {
   width: 500px;
   height: 500px;
+}
+
+#logoutBtn {
+  width: 103px;
+  height: 12%;
+  border: 1px solid #fac999;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: #d3b3b8;
+  font-family: "Itim", cursive;
 }
 
 .followButton {

@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { goFetchPosts } from "../actions/postActions";
+import { goFetchUserPosts } from "../actions/postActions";
+import UserPosts from "../components/posts/userPosts";
 
 const mapStateToProps = state => {
   return {
@@ -13,21 +14,24 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   console.log("meow fetch is a go");
   return {
-    fetchPosts: posts => {
-      dispatch(goFetchPosts(posts));
+    fetchUserPosts: posts => {
+      dispatch(goFetchUserPosts(posts));
     }
   };
 };
 
-class PostsContainer extends React.Component {
+class UserPostsContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchPosts();
+    this.props.fetchUserPosts();
   }
 
   render() {
     return (
       <>
-        <h1> nahnu huna </h1>
+        <ul>
+          {" "}
+          <UserPosts posts={this.props.posts} />{" "}
+        </ul>
       </>
     );
   }
@@ -36,4 +40,4 @@ class PostsContainer extends React.Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PostsContainer);
+)(UserPostsContainer);

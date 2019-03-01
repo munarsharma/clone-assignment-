@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { goFetchPosts } from "../actions/postActions";
+import AllPosts from "../components/posts/allPosts";
 
 const mapStateToProps = state => {
   return {
@@ -19,7 +20,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-class PostsContainer extends React.Component {
+class ExploreContainer extends React.Component {
   componentDidMount() {
     this.props.fetchPosts();
   }
@@ -28,6 +29,7 @@ class PostsContainer extends React.Component {
     return (
       <>
         <h1> nahnu huna </h1>
+        <AllPosts posts={this.props.posts} />
       </>
     );
   }
@@ -36,4 +38,4 @@ class PostsContainer extends React.Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PostsContainer);
+)(ExploreContainer);

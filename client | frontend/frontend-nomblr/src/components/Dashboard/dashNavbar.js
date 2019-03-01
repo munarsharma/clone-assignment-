@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const DashNavbar = () => {
+const DashNavbar = ({ logoutUser }) => {
   return (
     <nav className="dash-navbar">
       <div>
@@ -10,7 +10,7 @@ const DashNavbar = () => {
         </Link>
       </div>
       <div>
-        <Link to="/explore">
+        <Link to="/dashboard/explore">
           <img className="explore_nav" src="" alt="explore" />
         </Link>
       </div>
@@ -23,6 +23,10 @@ const DashNavbar = () => {
         <Link to="/account">
           <img className="account_nav" src="" alt="account" />
         </Link>
+
+        <button id="logoutBtn" onClick={logoutUser} type="submit">
+          Logout
+        </button>
       </div>
     </nav>
   );
