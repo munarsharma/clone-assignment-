@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { goFetchPosts } from "../actions/postActions";
+import { goFetchPosts, goFetchUserPosts } from "../actions/postActions";
+import UserPosts from "../components/posts/userPosts";
 
 const mapStateToProps = state => {
   return {
@@ -15,6 +16,9 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchPosts: posts => {
       dispatch(goFetchPosts(posts));
+    },
+    fetchUserPosts: posts => {
+      dispatch(goFetchUserPosts(posts));
     }
   };
 };
@@ -22,12 +26,14 @@ const mapDispatchToProps = dispatch => {
 class PostsContainer extends React.Component {
   componentDidMount() {
     this.props.fetchPosts();
+    this.props.fetchUserPosts();
   }
 
   render() {
     return (
       <>
         <h1> nahnu huna </h1>
+        <UserPosts posts={this.props.posts} />
       </>
     );
   }

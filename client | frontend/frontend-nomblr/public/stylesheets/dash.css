@@ -16,6 +16,10 @@
   border-bottom: 1px solid #eeecf3;
 }
 
+.dashFeed {
+  margin-left: 3%;
+}
+
 .dash-navbar {
   width: 200px;
   height: auto;
@@ -23,6 +27,15 @@
   flex-flow: row;
   flex: auto;
   justify-content: flex-end;
+}
+
+.posting-navbar {
+  width: 200px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 3%;
 }
 
 .home_nav {

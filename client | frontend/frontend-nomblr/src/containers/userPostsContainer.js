@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { goFetchUserPosts } from "../actions/postActions";
-import UserPosts from "../components/posts/userPosts";
 
 const mapStateToProps = state => {
   return {

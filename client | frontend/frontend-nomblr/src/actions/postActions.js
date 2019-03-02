@@ -21,6 +21,7 @@ export const fetchAllPosts = () => {
   return { type: "FETCH_ALL_POSTS" };
 };
 
+// you dont need this but it is good to have. mateo uses it to change fetching in state from false to true and has something attached to the boolen.
 export const fetchUserPosts = () => {
   return { type: " FETCH_USER_POSTS" };
 };
@@ -40,6 +41,7 @@ export const goFetchPosts = () => dispatch => {
 
 export const goFetchUserPosts = () => dispatch => {
   // dispatch(fetchUsers());
+
   axios
     .get("/posts/users/:id")
     .then(res => {

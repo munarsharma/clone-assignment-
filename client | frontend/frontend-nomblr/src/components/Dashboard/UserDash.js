@@ -3,7 +3,7 @@ import DashHeader from "./dashHeader";
 import Radar from "./radar";
 import PostsContainer from "../../containers/postsContainer";
 import { Route, Switch } from "react-router-dom";
-import UserPostsContainer from "../../containers/userPostsContainer";
+import DashFeed from "./dashFeed";
 
 class UserDash extends React.Component {
   render() {
@@ -14,7 +14,11 @@ class UserDash extends React.Component {
           <div className="mainDash">
             <h1> User Dash </h1>
             <p> something goes here </p>
-            <UserPostsContainer />
+            <br />
+            <div className="dashFeed">
+              <DashFeed />
+            </div>
+
             <div className="rightSidebar" />
           </div>
         </div>
