@@ -52,10 +52,20 @@ const getUserPosts = (req, res, next) => {
     });
 };
 
-const createNewPost = (req, res, next) => {
-  db.none(
-    'INSERT INTO posts( posttype, post_body, user_id, img_url) VALUES( ${posttype}, ${post_body}, ${user_id}, ${img_url})',
+// for text & link posts have: posttype, user_id, and post_body
+// for photo post: posttype, user_id, postbody and img_url
 
+const createNewPost = (req, res, next) => {
+  let statement = 'INSERT INTO posts ';
+
+  if (req.body.posttype === 'text') {
+    statement = statement.concat('(posttype, post_body,  user_id)');
+  } else if (req.body.posttype === 'img') {
+    statement = statement.concat('(posttype, post_body,  user_id, img_url)');
+  }
+
+  db.none(
+    'statement + ' VALUES( ${posttype}, ${post_body}, ${user_id}, ${img_url})'',
     req.body
   )
     .then(() => {
@@ -72,7 +82,7 @@ const createNewPost = (req, res, next) => {
 const editPost = (req, res, next) => {
   // const userid = parseInt(req.params.id);
   db.none(
-    'UPDATE posts SET postType= ${postType}, post_body = ${post_body},  img_url= ${img_url}  WHERE id =${id}',
+    'UPDATE posts SET postType= ${postType}, post_body = ${post_body}, img_url= ${img_url}  WHERE id =${id}',
 
     {
       id: Number(req.params.id),

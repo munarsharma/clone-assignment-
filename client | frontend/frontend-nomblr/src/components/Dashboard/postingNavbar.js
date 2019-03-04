@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+//get all photos and sort them based on type.
+//posting a post: should i have dif queries for each type or all the same one?
 
 const PostNavbar = () => {
   return (
