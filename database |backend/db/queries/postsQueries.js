@@ -56,18 +56,19 @@ const getUserPosts = (req, res, next) => {
 // for photo post: posttype, user_id, postbody and img_url
 
 const createNewPost = (req, res, next) => {
-  let statement = 'INSERT INTO posts ';
+  let statement = 'INSERT INTO posts';
 
-  if (req.body.posttype === 'text') {
-    statement = statement.concat('(posttype, post_body,  user_id)');
-  } else if (req.body.posttype === 'img') {
-    statement = statement.concat('(posttype, post_body,  user_id, img_url)');
+  if (req.body.postType === 'text') {
+    statement = statement.concat(
+      '(postType, post_body,  user_id) VALUES( ${postType}, ${post_body}, ${user_id})'
+    );
+  } else if (req.body.postType === 'img') {
+    statement = statement.concat(
+      '(postType, post_body,  user_id, img_url) VALUES( ${postType}, ${post_body}, ${user_id}, ${img_url})'
+    );
   }
 
-  db.none(
-    'statement + ' VALUES( ${posttype}, ${post_body}, ${user_id}, ${img_url})'',
-    req.body
-  )
+  db.none(`${statement}`, req.body)
     .then(() => {
       res.status(200).json({
         message: 'success',
