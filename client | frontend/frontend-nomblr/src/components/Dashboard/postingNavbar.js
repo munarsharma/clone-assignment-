@@ -9,7 +9,7 @@ const PostNavbar = () => {
       <h3 className="h3"> posting navbar </h3>
       <nav className="posting-navbar">
         <div>
-          <Link to="/dashboard/new/text">
+          <Link to="/new/text">
             <button id="textPost">
               <img src="" alt="textPost" />
             </button>
@@ -17,23 +17,23 @@ const PostNavbar = () => {
         </div>
 
         <div>
-          <Link to="/dashboard/new/photo">
+          <Link to="/new/photo">
             <button id="photoPost">
               <img src="" alt="photoPost" />
             </button>
           </Link>
         </div>
         <div>
-          <Link to="/dashboard/new/link">
+          <Link to="/new/link">
             <button id="linkPost">
               <img src="" alt="linkPost" />
             </button>
           </Link>
         </div>
         <div>
-          <Link to="/dashboard/new/comment">
-            <button id="commentPost">
-              <img src="" alt="commentPost" />
+          <Link to="/new/video">
+            <button id="videoPost">
+              <img src="" alt="videoPost" />
             </button>
           </Link>
         </div>

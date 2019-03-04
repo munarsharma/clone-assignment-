@@ -7,7 +7,8 @@ import {
 
 const initialState = {
   posts: [],
-  fetching: false
+  fetching: false,
+  postType: ""
 };
 
 const postsReducers = (state = initialState, action) => {

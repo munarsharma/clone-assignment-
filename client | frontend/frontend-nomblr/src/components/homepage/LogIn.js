@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 // import { withRouter } from "react-router";
-import Header from "./header";
+import Header from './header';
 
 const LogIn = ({
   username,
@@ -8,7 +8,7 @@ const LogIn = ({
   isLoggedIn,
   loginUser,
   registerUser,
-  handleChange
+  handleChange,
 }) => {
   return (
     <div className="loginPage">

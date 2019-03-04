@@ -6,6 +6,7 @@ import Footer from './components/footer';
 import axios from 'axios';
 import Auth from './userAuth/utils/Auth';
 import UserDash from './components/Dashboard/UserDash';
+import AddNewPost from './components/Dashboard/newPost';
 import PrivateRoute from './userAuth/utils/AuthRouting';
 //import Header from "./components/homepage/header";
 // import "./App.css";
@@ -57,6 +58,8 @@ class App extends Component {
       <div className="mainContainer">
         <Switch>
           <Route exact path="/" component={MainPage} />
+
+          <Route path="/new" component={AddNewPost} />
 
           <Route
             path="/auth"
