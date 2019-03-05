@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
-import { withRouter } from 'react-router';
-import MainPage from './components/homepage/MainPage';
-import Footer from './components/footer';
-import axios from 'axios';
-import Auth from './userAuth/utils/Auth';
-import UserDash from './components/Dashboard/UserDash';
-import AddNewPost from './components/Dashboard/newPost';
-import PrivateRoute from './userAuth/utils/AuthRouting';
+import React, { Component } from "react";
+import { Route, Redirect, Switch } from "react-router-dom";
+import { withRouter } from "react-router";
+import MainPage from "./components/homepage/MainPage";
+import Footer from "./components/footer";
+import axios from "axios";
+import Auth from "./userAuth/utils/Auth";
+import UserDash from "./components/Dashboard/UserDash";
+import AddNewPost from "./components/Dashboard/newPost";
+import PrivateRoute from "./userAuth/utils/AuthRouting";
 //import Header from "./components/homepage/header";
 // import "./App.css";
-import AuthForm from './userAuth/login/AuthForm';
+import AuthForm from "./userAuth/login/AuthForm";
+import UserProfile from "./components/user/UserProfile";
 // import ExploreContainer from "./containers/exploreContainer";
 
 class App extends Component {
   state = {
     isLoggedIn: false,
-    username: '',
+    username: ""
   };
 
   componentDidMount() {
@@ -25,11 +26,11 @@ class App extends Component {
   }
 
   checkAuthenticateStatus = () => {
-    axios.post('/users/isLoggedIn').then(user => {
+    axios.post("/users/isLoggedIn").then(user => {
       if (user.data.username === Auth.getToken()) {
         this.setState({
           isLoggedIn: Auth.isUserAuthenticated(),
-          username: Auth.getToken(),
+          username: Auth.getToken()
         });
       } else {
         if (user.data.username) {
@@ -43,7 +44,7 @@ class App extends Component {
 
   logoutUser = () => {
     axios
-      .post('/users/logout')
+      .post("/users/logout")
       .then(() => {
         Auth.deauthenticateUser();
       })
@@ -59,8 +60,6 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={MainPage} />
 
-          <Route path="/new" component={AddNewPost} />
-
           <Route
             path="/auth"
             render={() => {
@@ -75,14 +74,16 @@ class App extends Component {
                 />
               );
             }}
-
           />
 
           <PrivateRoute
+            exact
             path="/dashboard"
             component={UserDash}
             logoutUser={this.logoutUser}
           />
+          <PrivateRoute path="/dashboard/new" component={AddNewPost} />
+          <PrivateRoute path="/dashboard/user" component={UserProfile} />
         </Switch>
 
         <Footer />
