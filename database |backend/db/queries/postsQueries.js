@@ -33,7 +33,7 @@ const getSinglePost = (req, res, next) => {
 };
 
 const getUserPosts = (req, res, next) => {
-  const user_id = parseInt(req.params.id);
+  req.body.user_id = parseInt(req.params.id);
 
   db.any(
     'SELECT * FROM posts JOIN users on(users.id = posts.user_id) WHERE users.id=$1',

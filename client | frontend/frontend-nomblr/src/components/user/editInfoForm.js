@@ -8,6 +8,10 @@ class EditInfoForm extends React.Component {
     user_bio: ""
   };
 
+  componentDidMount() {
+    // MAKE BACKEND REQUEST FOR LOGGED IN USER
+  }
+
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -16,6 +20,7 @@ class EditInfoForm extends React.Component {
 
   handleSubmit = e => {
     //use redux here
+    e.preventDefault();
   };
 
   render() {
