@@ -78,7 +78,7 @@ class AddNewPost extends React.Component {
     if (this.state.submited) {
       return <Redirect to="/dashboard" component={UserDash} />;
     }
-
+    console.log("meow");
     return (
       <>
         <PostNavbar

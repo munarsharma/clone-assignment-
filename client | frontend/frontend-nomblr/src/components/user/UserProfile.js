@@ -1,7 +1,6 @@
 import React from "react";
 import ProfileNav from "./profileNav";
-import EditInfoForm from "./editInfoForm";
-import { Route, Switch, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class UserProfile extends React.Component {
   render() {
@@ -11,13 +10,10 @@ class UserProfile extends React.Component {
         <ProfileNav />
         <br />
         <div>
-          <Link to="user/edit">
+          <Link to="/user/edit">
             <button> edit profile </button>
           </Link>
         </div>
-        <Switch>
-          <Route to="/edit" component={EditInfoForm} />
-        </Switch>
       </>
     );
   }

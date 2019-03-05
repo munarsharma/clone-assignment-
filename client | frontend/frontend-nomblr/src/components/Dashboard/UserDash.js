@@ -4,7 +4,8 @@ import Radar from "./radar";
 // import PostsContainer from "../../containers/postsContainer";
 import { Route, Switch } from "react-router-dom";
 import DashFeed from "./dashFeed";
-import NewPost from "./dashFeed";
+import AddNewPost from "./newPost";
+import UserProfile from "../user/UserProfile";
 
 class UserDash extends React.Component {
   render() {

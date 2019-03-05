@@ -11,7 +11,7 @@ import PrivateRoute from "./userAuth/utils/AuthRouting";
 //import Header from "./components/homepage/header";
 // import "./App.css";
 import AuthForm from "./userAuth/login/AuthForm";
-import UserProfile from "./components/user/UserProfile";
+import UserProfileRoutes from "./components/user/UserProfileRoutes";
 // import ExploreContainer from "./containers/exploreContainer";
 
 class App extends Component {
@@ -77,13 +77,12 @@ class App extends Component {
           />
 
           <PrivateRoute
-            exact
             path="/dashboard"
             component={UserDash}
             logoutUser={this.logoutUser}
           />
-          <PrivateRoute path="/dashboard/new" component={AddNewPost} />
-          <PrivateRoute path="/dashboard/user" component={UserProfile} />
+
+          <PrivateRoute path="/user" component={UserProfileRoutes} />
         </Switch>
 
         <Footer />
@@ -93,5 +92,3 @@ class App extends Component {
 }
 
 export default withRouter(App);
-
-//<Route path="/dashboard" component={UserDash} />
