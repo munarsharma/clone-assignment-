@@ -13,7 +13,7 @@ const ImgPostForm = ({
         <input
           name="newImgPost"
           id="newImgBtn"
-          type="file"
+          type="text"
           placeholder="meow"
           value={newImgPost}
           onChange={handleChange}

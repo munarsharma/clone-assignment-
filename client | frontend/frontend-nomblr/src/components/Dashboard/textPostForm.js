@@ -1,12 +1,6 @@
 import React from "react";
 
 class TextPostForm extends React.Component {
-  state = {
-    newTextPost: "",
-    postType: "",
-    submited: false
-  };
-
   render() {
     return (
       <>

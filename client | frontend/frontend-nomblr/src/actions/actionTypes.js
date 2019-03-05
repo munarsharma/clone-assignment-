@@ -11,3 +11,6 @@ export const FETCHED_USER_POSTS = "FETCHED_USER_POSTS";
 export const ADD_TEXT_POST = "ADD_TEXT_POST";
 export const ADD_IMG_POST = "ADD_IMG_POST";
 export const EDIT_POST = "EDIT_POST";
+
+export const SET_POST_TYPE_TEXT = "SET_POST_TYPE_TEXT";
+export const SET_POST_TYPE_IMG = "SET_POST_TYPE_IMG";
