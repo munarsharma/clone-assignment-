@@ -2,9 +2,7 @@ import {
   FETCH_ALL_POSTS,
   FETCHED_ALL_POSTS,
   FETCH_USER_POSTS,
-  FETCHED_USER_POSTS,
-  SET_POST_TYPE_TEXT,
-  SET_POST_TYPE_IMG
+  FETCHED_USER_POSTS
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -34,14 +32,6 @@ const postsReducers = (state = initialState, action) => {
 
     case "FETCHED_USER_POSTS": {
       return { ...state, fetching: false, userPosts: action.payload };
-    }
-
-    case "SET_POST_TYPE_TEXT": {
-      return { ...state, postType: "text" };
-    }
-
-    case "SET_POST_TYPE_IMG": {
-      return { ...state, postType: "img" };
     }
   }
   return state;

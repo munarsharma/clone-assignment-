@@ -54,16 +54,16 @@ export const goFetchUserPosts = id => dispatch => {
     });
 };
 
-export const editPosts = () => dispatch => {
-  // dispatch(fetchUsers());
-
-  axios
-    .patch('/posts/users/:id')
-    .then(res => {
-      console.log(res);
-      dispatch({ type: 'FETCHED_USER_POSTS', payload: res.data.posts });
-    })
-    .catch(err => {
-      dispatch(gotError(err));
-    });
-};
+// export const editPosts = () => dispatch => {
+//   // dispatch(fetchUsers());
+//
+//   axios
+//     .patch('/posts/users/:id')
+//     .then(res => {
+//       console.log(res);
+//       dispatch({ type: , payload:  });
+//     })
+//     .catch(err => {
+//       dispatch(gotError(err));
+//     });
+// };

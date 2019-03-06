@@ -60,11 +60,11 @@ const createNewPost = (req, res, next) => {
 
   if (req.body.postType === "text") {
     statement = statement.concat(
-      "(postType, post_body,  user_id) VALUES( ${postType}, ${post_body}, ${user_id})"
+      "(postType, post_body, user_id) VALUES( ${postType}, ${post_body}, ${user_id})"
     );
   } else if (req.body.postType === "img") {
     statement = statement.concat(
-      "(postType, post_body,  user_id, img_url) VALUES( ${postType}, ${post_body}, ${user_id}, ${img_url})"
+      "(postType, post_body, user_id, img_url) VALUES( ${postType}, ${post_body}, ${user_id}, ${img_url})"
     );
   }
 

@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 //use this for explore page: create a thum-temp like tumblrs
 
 const UserPosts = ({ posts }) => {
   // console.log("meow", posts);
-  console.log("POST PROPS??", posts);
+  console.log('POST PROPS??', posts);
   return (
     <div>
       <h1>Hey Posts</h1>

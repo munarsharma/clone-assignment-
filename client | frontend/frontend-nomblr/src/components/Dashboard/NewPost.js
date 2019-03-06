@@ -33,18 +33,6 @@ class AddNewPost extends React.Component {
     });
   };
 
-  // handleTextClick = e => {
-  //   this.setState({
-  //     postType: "text"
-  //   });
-  // };
-  //
-  // handleImgClick = e => {
-  //   this.setState({
-  //     postType: "img"
-  //   });
-  // };
-
   handleSubmit = e => {
     e.preventDefault();
 

@@ -1,13 +1,15 @@
 import React from "react";
 import DashHeader from "./dashHeader";
 // import Radar from "./radar";
-// import PostsContainer from "../../containers/postsContainer";
+import PostsContainer from "../../containers/postsContainer";
 import DashFeed from "./dashFeed";
-// import AddNewPost from "./newPost";
+import PostNavbar from "./postingNavbar";
+
 // import UserProfile from "../user/UserProfile";
 
 class UserDash extends React.Component {
   render() {
+    console.log("POST", this.props.posts);
     return (
       <>
         <div className="dashContainer">
@@ -16,9 +18,9 @@ class UserDash extends React.Component {
             <h1> User Dash </h1>
             <p> something goes here </p>
             <br />
-
+            <PostNavbar />
             <div className="dashFeed">
-              <DashFeed />
+              <PostsContainer />
             </div>
 
             <div className="rightSidebar" />

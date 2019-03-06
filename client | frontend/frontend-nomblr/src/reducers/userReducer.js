@@ -5,16 +5,16 @@ import {
   SET_BLOG_NAME,
   SET_USER_IMG,
   SET_USER_BIO
-} from "../actions/actionTypes";
+} from '../actions/actionTypes';
 
 const initialState = {
   currentUser: null,
-  loggedIn: false
+  loggedIn: false,
 };
 
 const userReducers = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_LOGGEDIN_USER": {
+    case 'SET_LOGGEDIN_USER': {
       return { ...state, currentUser: action.payload, loggedIn: true };
     }
   }
