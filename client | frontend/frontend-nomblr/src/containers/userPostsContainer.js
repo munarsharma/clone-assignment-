@@ -21,12 +21,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 class UserPostsContainer extends React.Component {
-  componentDidMount() {
-    // if (this.props.currentUser) {
-    //   this.props.fetchUserPosts(this.props.currentUser.id);
-    // }
-  }
-
   componentDidUpdate(prevProps) {
     if (prevProps.currentUser !== this.props.currentUser) {
       this.props.fetchUserPosts(this.props.currentUser.id);
@@ -34,7 +28,6 @@ class UserPostsContainer extends React.Component {
   }
 
   render() {
-    console.log("USER POST DID MOUNT", this.props.currentUser);
     return (
       <>
         <ul>

@@ -11,7 +11,7 @@ const initialState = {
   posts: [],
   fetching: false,
   postType: "",
-  userPost: []
+  userPosts: []
 };
 
 const postsReducers = (state = initialState, action) => {
