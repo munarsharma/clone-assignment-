@@ -4,20 +4,23 @@ import React from "react";
 
 const UserPosts = ({ posts }) => {
   // console.log("meow", posts);
+  console.log("POST PROPS??", posts);
   return (
-    <>
-      {posts.map((post, id) => {
-        return (
-          <div className="postCont" key={post.id}>
-            <li>
-              <h3> caption: {post.post_body}</h3>
-              <img id="postImg" src={post.img_url} alt="postimg" />
-            </li>
-          </div>
-        );
-      })}
-    </>
+    <div>
+      <h1>Hey Posts</h1>
+    </div>
   );
 };
 
 export default UserPosts;
+
+// {posts.map((post, id) => {
+//   return (
+//     <div className="postCont" key={post.id}>
+//       <li>
+//         <h3> caption: {post.post_body}</h3>
+//         <img id="postImg" src={post.img_url} alt="postimg" />
+//       </li>
+//     </div>
+//   );
+// })}

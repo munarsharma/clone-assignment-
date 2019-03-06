@@ -2,34 +2,44 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { goFetchUserPosts } from "../actions/postActions";
+import UserPosts from "../components/posts/userPosts";
 
 const mapStateToProps = state => {
   return {
     fetching: state.postsReducers.fetching,
-    posts: state.postsReducers.posts
+    userPosts: state.postsReducers.userPosts,
+    currentUser: state.userReducers.currentUser
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  console.log("meow fetch is a go");
   return {
-    fetchUserPosts: posts => {
-      dispatch(goFetchUserPosts(posts));
+    fetchUserPosts: id => {
+      dispatch(goFetchUserPosts(id));
     }
   };
 };
 
 class UserPostsContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchUserPosts();
+    // if (this.props.currentUser) {
+    //   this.props.fetchUserPosts(this.props.currentUser.id);
+    // }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.currentUser !== this.props.currentUser) {
+      this.props.fetchUserPosts(this.props.currentUser.id);
+    }
   }
 
   render() {
+    console.log("USER POST DID MOUNT", this.props.currentUser);
     return (
       <>
         <ul>
           {" "}
-          <UserPosts posts={this.props.posts} />{" "}
+          <UserPosts posts={this.props.userPosts} />{" "}
         </ul>
       </>
     );

@@ -70,6 +70,7 @@ class AuthForm extends Component {
           <Route
             path="/auth/login"
             render={() => {
+              console.log("Login Route");
               return (
                 <LogIn
                   username={username}

@@ -6,7 +6,7 @@ import Footer from './components/footer';
 import axios from 'axios';
 import Auth from './userAuth/utils/Auth';
 import UserDash from './components/Dashboard/UserDash';
-import AddNewPost from './components/Dashboard/newPost';
+// import AddNewPost from "./components/Dashboard/newPost";
 import PrivateRoute from './userAuth/utils/AuthRouting';
 //import Header from "./components/homepage/header";
 // import "./App.css";
@@ -24,7 +24,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  console.log('meow fetch is a go');
   return {
     setCurrentUser: userInfo => {
       dispatch(setLoggedInUser(userInfo));
@@ -45,12 +44,8 @@ class App extends Component {
 
   checkAuthenticateStatus = props => {
     axios.post('/users/isLoggedIn').then(user => {
-      console.log(user);
       if (user.data.username === Auth.getToken()) {
-        // setLoggedInUser(user.data)
-        // UPDATE YOUR STORE WITH LOGGED IN USER
-        //
-        this.props.setCurrentUser(user);
+        this.props.setCurrentUser(user.data);
         this.setState({
           isLoggedIn: Auth.isUserAuthenticated(),
           username: Auth.getToken(),
@@ -93,7 +88,7 @@ class App extends Component {
               return (
                 <AuthForm
                   checkAuthenticateStatus={this.checkAuthenticateStatus}
-                  isLoggedIn={this.isLoggedIn}
+                  isLoggedIn={isLoggedIn}
                 />
               );
             }}
@@ -115,7 +110,9 @@ class App extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(App));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+);

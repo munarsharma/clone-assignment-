@@ -1,5 +1,6 @@
 import React from "react";
 import PostNavbar from "./postingNavbar";
+import UserPostsContainer from "../../containers/userPostsContainer";
 
 class DashFeed extends React.Component {
   render() {
@@ -7,6 +8,8 @@ class DashFeed extends React.Component {
       <>
         <h1>Dash Feed</h1>
         <PostNavbar />
+        <UserPostsContainer />
+        <br />
       </>
     );
   }

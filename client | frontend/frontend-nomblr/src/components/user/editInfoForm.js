@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileNav from "./profileNav";
+// import ProfileNav from "./profileNav";
 
 class EditInfoForm extends React.Component {
   state = {

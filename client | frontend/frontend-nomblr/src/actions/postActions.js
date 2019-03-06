@@ -40,13 +40,13 @@ export const goFetchPosts = () => dispatch => {
     });
 };
 
-export const goFetchUserPosts = () => dispatch => {
+export const goFetchUserPosts = id => dispatch => {
   // dispatch(fetchUsers());
 
   axios
-    .get("/posts/users/:id")
+    .get(`/posts/users/${id}`)
     .then(res => {
-      console.log(res);
+      console.log("GO FETCH POSTS", res);
       dispatch({ type: "FETCHED_USER_POSTS", payload: res.data.posts });
     })
     .catch(err => {
