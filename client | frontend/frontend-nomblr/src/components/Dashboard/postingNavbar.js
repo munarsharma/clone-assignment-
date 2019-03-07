@@ -36,10 +36,7 @@ class PostNavbar extends React.Component {
 
           <div>
             <Link to="/dashboard/new/photo">
-              <button
-                id="photo"
-                onClick={() => this.props.setPostType("photo")}
-              >
+              <button id="photo" onClick={() => this.props.setPostType("img")}>
                 <img src="" alt="photoPost" />
               </button>
             </Link>

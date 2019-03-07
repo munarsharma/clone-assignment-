@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import TextPostForm from "./textPostForm";
 import ImgPostForm from "./imgPostForm";
 import axios from "axios";
-import UserDash from "./UserDash";
+import UserDashRoutes from "./UserDashRoutes";
 import PostNavbar from "./postingNavbar";
 import { connect } from "react-redux";
 
@@ -17,7 +17,7 @@ class AddNewPost extends React.Component {
   state = {
     newTextPost: "",
     newImgPost: "",
-    postType: " ",
+    posttype: " ",
     imgCaption: "",
     submited: false
   };
@@ -31,18 +31,18 @@ class AddNewPost extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    const { newImgPost, newTextPost, postType, imgCaption } = this.state;
+    const { newImgPost, newTextPost, posttype, imgCaption } = this.state;
 
-    if (this.props.postType === "text") {
+    if (posttype === "text") {
       axios
-        .post("/posts/new", { postType: postType, post_body: newTextPost })
+        .post("/posts/new", { postType: posttype, post_body: newTextPost })
         .catch(err => {
           console.log("error:", err);
         });
-    } else if (this.props.postType === "img") {
+    } else if (posttype === "img") {
       axios
         .post("/posts/new", {
-          postType: postType,
+          postType: posttype,
           post_body: imgCaption,
           img_url: newImgPost
         })
@@ -56,46 +56,38 @@ class AddNewPost extends React.Component {
   };
 
   render() {
-    const { newImgPost, newTextPost, postType, imgCaption } = this.state;
+    const { newImgPost, newTextPost, posttype, imgCaption } = this.state;
 
     if (this.state.submited) {
-      return <Redirect to="/dashboard" component={UserDash} />;
+      return <Redirect to="/dashboard" component={UserDashRoutes} />;
     }
 
-    return (
-      <>
-        <h1>meow</h1>
-        <Switch>
-          <Route
-            path="/text"
-            render={props => (
-              <TextPostForm
-                {...props}
-                newTextPost={newTextPost}
-                postType={postType}
-                handleChange={this.handleChange}
-                handleSubmit={this.handleSubmit}
-              />
-            )}
-          />
+    if (this.props.postType === "text") {
+      return (
+        <>
+          <h1>meow</h1>
 
-          <Route
-            path="/photo"
-            render={props => (
-              <ImgPostForm
-                newImgPost={newImgPost}
-                imgCaption={imgCaption}
-                postType={postType}
-                handleChange={this.handleChange}
-                handleSubmit={this.handleSubmit}
-              />
-            )}
+          <TextPostForm
+            newTextPost={newTextPost}
+            posttype={posttype}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
           />
-        </Switch>
-
-        <br />
-      </>
-    );
+        </>
+      );
+    } else if (this.props.postType === "img") {
+      return (
+        <>
+          <ImgPostForm
+            newImgPost={newImgPost}
+            imgCaption={imgCaption}
+            posttype={posttype}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
+        </>
+      );
+    }
   }
 }
 
