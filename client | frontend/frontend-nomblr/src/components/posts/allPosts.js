@@ -12,10 +12,10 @@ class AllPosts extends React.Component {
       if (post.posttype === "text") {
         return (
           <div className="postCont" key={post.id}>
-            <div clasName="userName">
+            <div className="userName">
               <h3> {post.username} </h3>
             </div>
-            <div clasName="postContent">
+            <div className="postContent">
               <p> {post.post_body} </p>
             </div>
           </div>

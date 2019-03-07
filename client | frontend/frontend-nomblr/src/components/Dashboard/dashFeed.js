@@ -1,5 +1,5 @@
 import React from "react";
-import PostNavbar from "./postingNavbar";
+//import PostNavbar from "./postingNavbar";
 //import UserPostsContainer from "../../containers/userPostsContainer";
 import AllPosts from "../posts/allPosts";
 

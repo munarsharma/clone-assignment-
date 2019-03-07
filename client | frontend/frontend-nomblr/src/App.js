@@ -102,8 +102,6 @@ class App extends Component {
 
           <PrivateRoute path="/user" component={UserProfileRoutes} />
         </Switch>
-
-        <Footer />
       </div>
     );
   }

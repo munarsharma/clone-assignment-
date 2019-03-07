@@ -2,6 +2,7 @@ import React from "react";
 import ProfileNav from "./profileNav";
 import { Link } from "react-router-dom";
 import UserPostsContainer from "../../containers/userPostsContainer";
+
 class UserProfile extends React.Component {
   render() {
     return (

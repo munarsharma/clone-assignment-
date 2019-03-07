@@ -1,5 +1,4 @@
 import React from "react";
-import EditInfoForm from "./editInfoForm";
 import UserProfile from "./UserProfile";
 import { Route, Switch } from "react-router-dom";
 import UserContainer from "../../containers/UserContainer";

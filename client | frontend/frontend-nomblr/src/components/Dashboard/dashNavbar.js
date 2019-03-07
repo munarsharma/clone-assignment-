@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DashNavbar = ({ logoutUser }) => {
   return (
@@ -20,10 +20,11 @@ const DashNavbar = ({ logoutUser }) => {
         </Link>
       </div>
       <div>
-        <Link to="/account">
-          <img className="account_nav" src="" alt="account" />
+        <Link to="/user">
+          <img className="profile_nav" src="" alt="userpage" />
         </Link>
-
+      </div>
+      <div>
         <button id="logoutBtn" onClick={logoutUser} type="submit">
           Logout
         </button>

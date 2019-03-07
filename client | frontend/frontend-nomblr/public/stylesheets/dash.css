@@ -2,7 +2,8 @@
   height: 100vh;
   width: 100vw;
   /* position: absolute; */
-  background-color: #c7ccd3;
+  background: #c7ccd3;
+  background-size: cover;
   font-family: "Itim", cursive;
 }
 
@@ -91,6 +92,9 @@
 
 #postImg {
   justify-content: center;
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
 }
 
 #logoutBtn {
@@ -117,6 +121,7 @@
   width: 83%;
   height: 80%;
 }
+
 .postCont {
   display: grid;
   grid-template-columns: 10% 50% 10%;
@@ -130,11 +135,13 @@
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
+
 .postContent {
   grid-column: 2;
   grid-row: 2/3;
   padding-bottom: 10px;
 }
+
 .imgPost {
   grid-column: 2;
   grid-row: 3/3;
@@ -145,5 +152,6 @@
 
 .renderedPosts {
   display: grid;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 9%;
 }

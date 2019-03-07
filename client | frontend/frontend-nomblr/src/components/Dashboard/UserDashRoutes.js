@@ -9,7 +9,11 @@ class UserDashRoutes extends React.Component {
     return (
       <>
         <Switch>
-          <Route exact path="/dashboard" component={UserDash} />
+          <Route
+            exact
+            path="/dashboard"
+            render={() => <UserDash logoutUser={this.props.logoutUser} />}
+          />
           <Route path="/dashboard/new" component={AddNewPost} />
         </Switch>
       </>

@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Header from "./header";
+import Footer from "../footer";
 
 // import Auth from "../../userAuth/utils/Auth";
 // import SignUp from "./SignUp";
@@ -32,6 +33,7 @@ const MainPage = props => {
             </Link>{" "}
           </button>
         </div>
+        <Footer />
       </div>
     </>
   );
