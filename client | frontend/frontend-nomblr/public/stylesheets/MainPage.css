@@ -1,7 +1,7 @@
 .main-page {
   height: 100vh;
   width: 100vw;
-  /* position: absolute; */
+  position: absolute;
   /* bottom: 0; */
   background: url("https://images.unsplash.com/photo-1517281536787-64da0f143962?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=682&q=80")
     no-repeat center;
@@ -10,6 +10,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
 }
+
 .portal {
   display: flex;
   justify-content: center;

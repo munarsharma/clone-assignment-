@@ -1,7 +1,7 @@
 .dashContainer {
   height: 100vh;
   width: 100vw;
-  /* position: absolute; */
+  position: absolute;
   background: #c7ccd3;
   background-size: cover;
   font-family: "Itim", cursive;
@@ -68,11 +68,12 @@
   margin-right: 6px;
 }
 
-.mainDash {
+/* whole dashboard minus header  */
+/* .mainDash {
   display: flex;
   flex-direction: column;
   align-content: space-between;
-}
+} */
 
 .radarArea {
   width: 20%;
@@ -82,19 +83,6 @@
   align-content: space-between;
   border: 1px solid #a54811;
   margin: 1%;
-}
-
-.postCont {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#postImg {
-  justify-content: center;
-  height: 400px;
-  width: 400px;
-  object-fit: cover;
 }
 
 #logoutBtn {
@@ -124,17 +112,27 @@
 
 .postCont {
   display: grid;
-  grid-template-columns: 10% 50% 10%;
-  grid-template-rows: 15% 10% 80%;
-  height: 400px;
+  /* grid-template-columns: 10% 50% 10%;
+  grid-template-rows: 15% 10% 80%; */
+  height: 500px;
   width: 600px;
-  justify-content: center;
-  justify-items: center;
+  /* justify-content: center;
+  justify-items: center; */
   border: 1px solid black;
   background-color: white;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  /* margin-bottom: 20px;
+  padding-bottom: 20px; */
 }
+/* post container  */
+
+/* .postCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1%;
+} */
+
+/* post text  */
 
 .postContent {
   grid-column: 2;
@@ -142,12 +140,23 @@
   padding-bottom: 10px;
 }
 
+/* actual image */
+#postImg {
+  justify-content: center;
+  height: 420px;
+  width: 420px;
+  object-fit: cover;
+}
+
+/* img div */
 .imgPost {
   grid-column: 2;
   grid-row: 3/3;
   align-items: center;
   width: auto;
   height: auto;
+  object-fit: cover;
+  padding-bottom: 10px;
 }
 
 .renderedPosts {
