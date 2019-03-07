@@ -109,12 +109,12 @@
   height: 80%;
 }
 
-.imgPostCont {
+.userImgPostCont {
   display: grid;
   grid-template-columns: 10% 60% 10%;
   grid-template-rows: 10% 75% 15%;
-  height: 550px;
-  width: 600px;
+  height: 375px;
+  width: 400px;
   justify-content: center;
   justify-items: center;
   border: 1px solid #ececec;
@@ -124,18 +124,18 @@
   padding-bottom: 10px;
 
   grid-template-areas:
-    " . . .  "
+    " username . .  "
     " . image . "
     " text text . ";
 }
 /* post container  */
 
-.postCont {
+.userPostCont {
   display: grid;
   grid-template-columns: 10% 60% 10%;
   grid-template-rows: 10% 75% 15%;
   height: 200px;
-  width: 600px;
+  width: 400px;
   justify-content: center;
   justify-items: center;
 
@@ -160,23 +160,24 @@
 
 /* post text  */
 
-.postContent {
+.userPostContent {
   grid-area: text;
   padding: 10px;
   margin-top: 6%;
 }
-.postUserName {
+.userName {
+  grid-area: username;
 }
 /* actual image */
-#postImg {
+#userPostImg {
   justify-content: center;
-  height: 450px;
-  width: 450px;
+  height: 325px;
+  width: 350px;
   object-fit: cover;
 }
 
 /* img div */
-.imgPost {
+.userImgPost {
   grid-area: image;
   align-items: center;
   width: auto;
@@ -186,9 +187,13 @@
   margin: 2%;
 }
 
-.renderedPosts {
-  display: grid;
-  justify-content: flex-start;
-  width: 33%;
+.userRenderedPosts {
+  display: flex;
+
+  flex-direction: row-reverse;
+  flex-flow: row-reverse;
+  flex-wrap: wrap;
+
+  width: 70%;
   margin-left: 9%;
 }
