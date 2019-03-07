@@ -2,7 +2,7 @@
   height: 100vh;
   width: 100vw;
   /* position: absolute; */
-  background: #c7ccd3;
+  background-color: #c7ccd3;
   font-family: "Itim", cursive;
 }
 
@@ -90,8 +90,7 @@
 }
 
 #postImg {
-  width: 500px;
-  height: 500px;
+  justify-content: center;
 }
 
 #logoutBtn {
@@ -117,4 +116,34 @@
   margin: 2%;
   width: 83%;
   height: 80%;
+}
+.postCont {
+  display: grid;
+  grid-template-columns: 10% 50% 10%;
+  grid-template-rows: 15% 10% 80%;
+  height: 400px;
+  width: 600px;
+  justify-content: center;
+  justify-items: center;
+  border: 1px solid black;
+  background-color: white;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.postContent {
+  grid-column: 2;
+  grid-row: 2/3;
+  padding-bottom: 10px;
+}
+.imgPost {
+  grid-column: 2;
+  grid-row: 3/3;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
+.renderedPosts {
+  display: grid;
+  justify-content: center;
 }

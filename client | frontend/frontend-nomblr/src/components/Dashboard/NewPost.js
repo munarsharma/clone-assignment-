@@ -66,21 +66,30 @@ class AddNewPost extends React.Component {
     if (this.state.submited) {
       return <Redirect to="/dashboard" component={UserDash} />;
     }
-    console.log("meow");
+
     return (
       <>
-        <PostNavbar
-          handleImgClick={this.handleImgClick}
-          handleTextClick={this.handleTextClick}
-        />
         <h1>meow</h1>
+        <Switch>
+          <Route
+            component={PostNavbar}
+            handleImgClick={this.handleImgClick}
+            handleTextClick={this.handleTextClick}
+          />
+          <Route
+            path="/text"
+            render={props => (
+              <TextPostForm
+                {...props}
+                newTextPost={newTextPost}
+                postType={postType}
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+              />
+            )}
+          />
+        </Switch>
 
-        <TextPostForm
-          newTextPost={newTextPost}
-          postType={postType}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
         <br />
         <ImgPostForm
           newImgPost={newImgPost}

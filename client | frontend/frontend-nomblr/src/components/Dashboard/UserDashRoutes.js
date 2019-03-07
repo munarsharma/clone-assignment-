@@ -10,7 +10,7 @@ class UserDashRoutes extends React.Component {
       <>
         <Switch>
           <Route exact path="/dashboard" component={UserDash} />
-          <Route exact path="/dashboardr/new" component={AddNewPost} />
+          <Route path="/dashboard/new" component={AddNewPost} />
         </Switch>
       </>
     );

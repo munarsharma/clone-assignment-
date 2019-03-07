@@ -2,6 +2,7 @@ import React from "react";
 
 class TextPostForm extends React.Component {
   render() {
+    console.log("textPost");
     return (
       <>
         <form onSubmit={this.props.handleSubmit}>
