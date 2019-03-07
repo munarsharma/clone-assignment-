@@ -6,7 +6,8 @@ import {
   GOT_ERROR,
   ADD_POST,
   EDIT_POST,
-  DELETE_POST
+  DELETE_POST,
+  SET_POST_TYPE
 } from './actionTypes';
 import axios from 'axios';
 
@@ -17,6 +18,12 @@ export const gotError = err => {
   };
 };
 
+export const setPostType = id => {
+  console.log('set posttype');
+  // debugger;
+  return { type: 'SET_POST_TYPE', payload: id };
+};
+
 export const fetchAllPosts = () => {
   console.log('fetch called');
   return { type: 'FETCH_ALL_POSTS' };
@@ -24,7 +31,7 @@ export const fetchAllPosts = () => {
 
 // you dont need this but it is good to have. mateo uses it to change fetching in state from false to true and has something attached to the boolen.
 export const fetchUserPosts = () => {
-  return { type: ' FETCH_USER_POSTS' };
+  return { type: 'FETCH_USER_POSTS' };
 };
 
 export const goFetchPosts = () => dispatch => {

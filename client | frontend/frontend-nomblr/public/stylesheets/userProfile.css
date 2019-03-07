@@ -1,12 +1,4 @@
-.dashContainer {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  background-size: cover;
-  font-family: "Itim", cursive;
-}
-
-.dash-header {
+.userHeader {
   height: 10%;
   display: flex;
   flex-direction: row;
@@ -15,11 +7,7 @@
   padding-bottom: 10px;
   border-bottom: 1px solid #eeecf3;
 }
-
-.dashFeed {
-  margin-left: 3%;
-}
-
+/*
 .dash-navbar {
   width: 200px;
   height: auto;
@@ -42,19 +30,19 @@
   width: 60px;
   background: transparent;
   margin-right: 3px;
-}
+} */
 
-.userAct_nav {
+/* .userAct_nav {
   width: 60px;
   background: transparent;
   margin-right: 3px;
-}
+} */
 
 #h2 {
   font-family: "Itim", cursive;
   color: #a54811;
 }
-
+/*
 .explore_nav {
   width: 60px;
   background: transparent;
@@ -65,7 +53,7 @@
   width: 60px;
   background: transparent;
   margin-right: 6px;
-}
+} */
 
 /* whole dashboard minus header  */
 /* .mainDash {
@@ -189,11 +177,10 @@
 
 .userRenderedPosts {
   display: flex;
-
   flex-direction: row-reverse;
   flex-flow: row-reverse;
+  align-items: baseline;
   flex-wrap: wrap;
-
   width: 70%;
   margin-left: 9%;
 }

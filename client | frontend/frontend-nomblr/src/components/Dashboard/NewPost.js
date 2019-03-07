@@ -5,6 +5,13 @@ import ImgPostForm from "./imgPostForm";
 import axios from "axios";
 import UserDash from "./UserDash";
 import PostNavbar from "./postingNavbar";
+import { connect } from "react-redux";
+
+const mapStateToProps = state => {
+  return {
+    postType: state.postsReducers.postType
+  };
+};
 
 class AddNewPost extends React.Component {
   state = {
@@ -21,30 +28,18 @@ class AddNewPost extends React.Component {
     });
   };
 
-  handleTextClick = e => {
-    this.setState({
-      postType: "text"
-    });
-  };
-
-  handleImgClick = e => {
-    this.setState({
-      postType: "img"
-    });
-  };
-
   handleSubmit = e => {
     e.preventDefault();
 
     const { newImgPost, newTextPost, postType, imgCaption } = this.state;
 
-    if (postType === "text") {
+    if (this.props.postType === "text") {
       axios
         .post("/posts/new", { postType: postType, post_body: newTextPost })
         .catch(err => {
           console.log("error:", err);
         });
-    } else if (postType === "img") {
+    } else if (this.props.postType === "img") {
       axios
         .post("/posts/new", {
           postType: postType,
@@ -72,11 +67,6 @@ class AddNewPost extends React.Component {
         <h1>meow</h1>
         <Switch>
           <Route
-            component={PostNavbar}
-            handleImgClick={this.handleImgClick}
-            handleTextClick={this.handleTextClick}
-          />
-          <Route
             path="/text"
             render={props => (
               <TextPostForm
@@ -88,19 +78,28 @@ class AddNewPost extends React.Component {
               />
             )}
           />
+
+          <Route
+            path="/photo"
+            render={props => (
+              <ImgPostForm
+                newImgPost={newImgPost}
+                imgCaption={imgCaption}
+                postType={postType}
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+              />
+            )}
+          />
         </Switch>
 
         <br />
-        <ImgPostForm
-          newImgPost={newImgPost}
-          imgCaption={imgCaption}
-          postType={postType}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
       </>
     );
   }
 }
 
-export default AddNewPost;
+export default connect(
+  mapStateToProps,
+  null
+)(AddNewPost);

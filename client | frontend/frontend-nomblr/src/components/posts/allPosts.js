@@ -23,7 +23,7 @@ class AllPosts extends React.Component {
       } else if (post.posttype === 'img') {
         return (
           <div className="imgPostCont" key={post.id}>
-            <div clasName="userName">
+            <div className="userName">
               <h3> {post.username} </h3>
             </div>
             <div className="imgPost">
