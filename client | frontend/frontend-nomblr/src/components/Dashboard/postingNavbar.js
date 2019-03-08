@@ -28,7 +28,7 @@ class PostNavbar extends React.Component {
           <div>
             <Link to="/dashboard/new/text">
               <button id="text" onClick={() => this.props.setPostType("text")}>
-                <img src="" alt="textPost" />
+                <i className="material-icons">text_format</i>
               </button>
             </Link>
           </div>
@@ -36,21 +36,21 @@ class PostNavbar extends React.Component {
           <div>
             <Link to="/dashboard/new/photo">
               <button id="photo" onClick={() => this.props.setPostType("img")}>
-                <img src="" alt="photoPost" />
+                <i className="material-icons">add_a_photo</i>
               </button>
             </Link>
           </div>
           <div>
             <Link to="/dashboard/new/link">
               <button id="link">
-                <img src="" alt="linkPost" />
+                <i className="material-icons">format_quote</i>
               </button>
             </Link>
           </div>
           <div>
             <Link to="/new/video">
               <button id="video">
-                <img src="" alt="videoPost" />
+                <i className="material-icons">movie</i>
               </button>
             </Link>
           </div>

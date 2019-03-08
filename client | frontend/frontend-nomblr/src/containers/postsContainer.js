@@ -27,8 +27,6 @@ class PostsContainer extends React.Component {
   render() {
     return (
       <>
-        <h1> nahnu huna </h1>
-
         <DashFeed posts={this.props.posts} />
       </>
     );

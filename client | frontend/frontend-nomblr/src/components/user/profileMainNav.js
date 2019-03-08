@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const DashNavbar = ({ logoutUser }) => {
+const ProfileMainNav = ({ logoutUser }) => {
   return (
     <nav className="dash-navbar">
       <div>
@@ -9,18 +9,9 @@ const DashNavbar = ({ logoutUser }) => {
           <i className="material-icons">bookmark_border</i>
         </Link>
       </div>
+
       <div>
-        <Link to="/dashboard/explore" className="backBtn">
-          <i className="material-icons">explore</i>
-        </Link>
-      </div>
-      <div>
-        <Link to="/userActivity" className="backBtn">
-          <i className="material-icons">inbox</i>
-        </Link>
-      </div>
-      <div>
-        <Link to="/user" className="backBtn">
+        <Link to="/new/photo" className="backBtn">
           <i className="material-icons">account_circle</i>
         </Link>
       </div>
@@ -33,4 +24,4 @@ const DashNavbar = ({ logoutUser }) => {
   );
 };
 
-export default DashNavbar;
+export default ProfileMainNav;

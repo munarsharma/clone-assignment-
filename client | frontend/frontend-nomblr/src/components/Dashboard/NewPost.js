@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import TextPostForm from "./textPostForm";
 import ImgPostForm from "./imgPostForm";
 import axios from "axios";
@@ -67,6 +67,10 @@ class AddNewPost extends React.Component {
     if (this.props.postType === "text") {
       return (
         <>
+          <Link to="/dashboard" className="backBtn">
+            {" "}
+            Back{" "}
+          </Link>
           <TextPostForm
             newTextPost={newTextPost}
             posttype={this.props.postType}
@@ -78,6 +82,10 @@ class AddNewPost extends React.Component {
     } else if (this.props.postType === "img") {
       return (
         <>
+          <Link to="/dashboard" className="backBtn">
+            {" "}
+            Back{" "}
+          </Link>
           <ImgPostForm
             newImgPost={newImgPost}
             imgCaption={imgCaption}

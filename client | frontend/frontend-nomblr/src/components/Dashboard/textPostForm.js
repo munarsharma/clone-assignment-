@@ -5,7 +5,7 @@ class TextPostForm extends React.Component {
     console.log("textPost");
     return (
       <>
-        <div className="imgForm Page">
+        <div className="imgFormPage">
           <form onSubmit={this.props.handleSubmit} className="newTextForm">
             <h1 className="h1">Add New Post </h1>
             <label htmlFor="newtextBtn" />
@@ -19,7 +19,7 @@ class TextPostForm extends React.Component {
             />
             <label htmlFor="submit" />
             <input
-              className="newtPostBtn"
+              className="newPostBtn"
               id="submit"
               type="submit"
               value="Post"

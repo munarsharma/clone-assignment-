@@ -19,6 +19,13 @@
 .dashFeed {
   margin-left: 3%;
 }
+.backBtn {
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  color: #3b4834;
+  font-size: 18px;
+  width: 20px;
+}
 
 .dash-navbar {
   width: 200px;
@@ -45,6 +52,7 @@
   display: flex;
   justify-content: center;
   margin-top: 10%;
+  background: transparent;
 }
 
 #newImgBtn {
@@ -219,11 +227,17 @@
 .postUserName {
 }
 /* actual image */
+
 #postImg {
   justify-content: center;
   height: 450px;
   width: 450px;
   object-fit: cover;
+}
+
+.h3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 17px;
 }
 
 /* img div */

@@ -16,7 +16,7 @@ const MainPage = props => {
         <Header />
         <br />
         <div className="portal">
-          <h1 id="h1"> Nomblr </h1>
+          <h1 className="h1"> Nomblr </h1>
           <button className="signup">
             {" "}
             <Link to="/auth/register" id="signuplink">

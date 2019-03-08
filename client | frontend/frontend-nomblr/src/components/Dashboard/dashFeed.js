@@ -7,7 +7,7 @@ class DashFeed extends React.Component {
   render() {
     return (
       <>
-        <h1>Dash Feed</h1>
+        <br />
         <AllPosts posts={this.props.posts} />
         <br />
       </>
