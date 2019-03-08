@@ -127,7 +127,7 @@
 
 .userImgPostCont {
   display: grid;
-  grid-template-columns: 15% 70% 15%;
+  grid-template-columns: 10% 60% 10%;
   grid-template-rows: 10% 75% 15%;
   height: 375px;
   width: 400px;
@@ -138,7 +138,7 @@
   border-radius: 2px;
   margin-bottom: 17px;
   padding-bottom: 10px;
-
+  margin: 2%;
   grid-template-areas:
     " username . .  "
     " . image . "
@@ -160,7 +160,7 @@
   background-color: white;
   margin-bottom: 17px;
   padding-bottom: 10px;
-
+  margin: 2%;
   grid-template-areas:
     " username .  .  "
     " . text . "
