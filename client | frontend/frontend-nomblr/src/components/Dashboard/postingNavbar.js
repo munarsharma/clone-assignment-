@@ -13,7 +13,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  console.log("meow fetch is a go");
   return {
     setPostType: id => {
       dispatch(setPostType(id));

@@ -8,39 +8,35 @@ import {
   EDIT_POST,
   DELETE_POST,
   SET_POST_TYPE
-} from './actionTypes';
-import axios from 'axios';
+} from "./actionTypes";
+import axios from "axios";
 
 export const gotError = err => {
   return {
-    type: 'GOT_ERROR',
-    payload: err,
+    type: "GOT_ERROR",
+    payload: err
   };
 };
 
 export const setPostType = id => {
-  console.log('set posttype');
-  // debugger;
-  return { type: 'SET_POST_TYPE', payload: id };
+  return { type: "SET_POST_TYPE", payload: id };
 };
 
 export const fetchAllPosts = () => {
-  console.log('fetch called');
-  return { type: 'FETCH_ALL_POSTS' };
+  return { type: "FETCH_ALL_POSTS" };
 };
 
 // you dont need this but it is good to have. mateo uses it to change fetching in state from false to true and has something attached to the boolen.
 export const fetchUserPosts = () => {
-  return { type: 'FETCH_USER_POSTS' };
+  return { type: "FETCH_USER_POSTS" };
 };
 
 export const goFetchPosts = () => dispatch => {
-  // dispatch(fetchUsers());
   axios
-    .get('/posts')
+    .get("/posts")
     .then(res => {
       console.log(res);
-      dispatch({ type: 'FETCHED_ALL_POSTS', payload: res.data.posts });
+      dispatch({ type: "FETCHED_ALL_POSTS", payload: res.data.posts });
     })
     .catch(err => {
       dispatch(gotError(err));
@@ -53,8 +49,8 @@ export const goFetchUserPosts = id => dispatch => {
   axios
     .get(`/posts/users/${id}`)
     .then(res => {
-      console.log('GO FETCH POSTS', res);
-      dispatch({ type: 'FETCHED_USER_POSTS', payload: res.data.posts });
+      console.log("GO FETCH POSTS", res);
+      dispatch({ type: "FETCHED_USER_POSTS", payload: res.data.posts });
     })
     .catch(err => {
       dispatch(gotError(err));

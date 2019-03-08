@@ -12,7 +12,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  console.log("meow fetch is a go");
   return {
     fetchPosts: () => {
       dispatch(goFetchPosts());

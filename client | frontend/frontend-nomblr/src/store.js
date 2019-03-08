@@ -1,9 +1,9 @@
-import rootReducer from './reducers/index';
+import rootReducer from "./reducers/index";
 
-import { applyMiddleware, createStore, compose } from 'redux';
+import { applyMiddleware, createStore, compose } from "redux";
 
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
+import logger from "redux-logger";
+import thunk from "redux-thunk";
 
 // import promise from "redux-promise-middleware";
 
@@ -16,4 +16,5 @@ const store = createStore(
   )
 );
 
+window.store = store;
 export default store;

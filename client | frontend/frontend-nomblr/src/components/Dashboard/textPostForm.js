@@ -5,24 +5,27 @@ class TextPostForm extends React.Component {
     console.log("textPost");
     return (
       <>
-        <form onSubmit={this.props.handleSubmit}>
-          <label htmlFor="newtextBtn" />
-          <input
-            name="newTextPost"
-            id="newtextBtn"
-            type="text"
-            placeholder="textposthere"
-            value={this.props.newTextPost}
-            onChange={this.props.handleChange}
-          />
-          <label htmlFor="submit" />
-          <input
-            className="newtPostBtn"
-            id="submit"
-            type="submit"
-            value="Post"
-          />
-        </form>
+        <div className="imgForm Page">
+          <form onSubmit={this.props.handleSubmit} className="newTextForm">
+            <h1 className="h1">Add New Post </h1>
+            <label htmlFor="newtextBtn" />
+            <input
+              name="newTextPost"
+              id="newtextBtn"
+              type="text"
+              placeholder="textposthere"
+              value={this.props.newTextPost}
+              onChange={this.props.handleChange}
+            />
+            <label htmlFor="submit" />
+            <input
+              className="newtPostBtn"
+              id="submit"
+              type="submit"
+              value="Post"
+            />
+          </form>
+        </div>
       </>
     );
   }

@@ -38,6 +38,57 @@
   margin-left: 3%;
 }
 
+.imgFormPage {
+  min-width: 70%;
+  min-height: 100%;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+#newImgBtn {
+  width: 500px;
+  height: 80px;
+  box-sizing: content-box;
+}
+
+#imgCaption {
+  width: 500px;
+  height: 180px;
+  box-sizing: content-box;
+}
+
+.newPostBtn {
+  width: 100px;
+  height: 30px;
+  box-sizing: content-box;
+  margin: 5px;
+}
+
+.newImgForm {
+  width: 600px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+}
+
+.newTextForm {
+  width: 600px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+}
+
+#newtextBtn {
+  width: 500px;
+  height: 80px;
+  box-sizing: content-box;
+}
 .home_nav {
   width: 60px;
   background: transparent;

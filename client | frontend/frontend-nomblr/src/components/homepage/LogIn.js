@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 // import { withRouter } from "react-router";
-import Header from './header';
+import Header from "./header";
 
 const LogIn = ({
   username,
@@ -8,13 +8,13 @@ const LogIn = ({
   isLoggedIn,
   loginUser,
   registerUser,
-  handleChange,
+  handleChange
 }) => {
   return (
     <div className="loginPage">
       <Header />
       <div className="signupContainer">
-        <h1 id="h1"> Nomblr </h1>
+        <h1 className="h1"> Nomblr </h1>
 
         <div className="signupForms">
           <form onSubmit={loginUser}>

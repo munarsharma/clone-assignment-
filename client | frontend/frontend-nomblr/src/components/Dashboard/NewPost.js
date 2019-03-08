@@ -1,10 +1,10 @@
 import React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import TextPostForm from "./textPostForm";
 import ImgPostForm from "./imgPostForm";
 import axios from "axios";
 import UserDashRoutes from "./UserDashRoutes";
-import PostNavbar from "./postingNavbar";
+//import PostNavbar from "./postingNavbar";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
@@ -17,7 +17,6 @@ class AddNewPost extends React.Component {
   state = {
     newTextPost: "",
     newImgPost: "",
-    posttype: " ",
     imgCaption: "",
     submited: false
   };
@@ -31,18 +30,21 @@ class AddNewPost extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    const { newImgPost, newTextPost, posttype, imgCaption } = this.state;
-
-    if (posttype === "text") {
+    const { newImgPost, newTextPost, imgCaption } = this.state;
+    debugger;
+    if (this.props.postType === "text") {
       axios
-        .post("/posts/new", { postType: posttype, post_body: newTextPost })
+        .post("/posts/new", {
+          postType: this.props.postType,
+          post_body: newTextPost
+        })
         .catch(err => {
           console.log("error:", err);
         });
-    } else if (posttype === "img") {
+    } else if (this.props.postType === "img") {
       axios
         .post("/posts/new", {
-          postType: posttype,
+          postType: this.props.postType,
           post_body: imgCaption,
           img_url: newImgPost
         })
@@ -56,7 +58,7 @@ class AddNewPost extends React.Component {
   };
 
   render() {
-    const { newImgPost, newTextPost, posttype, imgCaption } = this.state;
+    const { newImgPost, newTextPost, imgCaption } = this.state;
 
     if (this.state.submited) {
       return <Redirect to="/dashboard" component={UserDashRoutes} />;
@@ -65,11 +67,9 @@ class AddNewPost extends React.Component {
     if (this.props.postType === "text") {
       return (
         <>
-          <h1>meow</h1>
-
           <TextPostForm
             newTextPost={newTextPost}
-            posttype={posttype}
+            posttype={this.props.postType}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />
@@ -81,7 +81,7 @@ class AddNewPost extends React.Component {
           <ImgPostForm
             newImgPost={newImgPost}
             imgCaption={imgCaption}
-            posttype={posttype}
+            posttype={this.props.postType}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />

@@ -8,33 +8,37 @@ const ImgPostForm = ({
 }) => {
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="newImgBtn" />
-        <input
-          name="newImgPost"
-          id="newImgBtn"
-          type="text"
-          placeholder="meow"
-          value={newImgPost}
-          onChange={handleChange}
-        />
-        <label htmlFor="imgCaption" />
-        <input
-          name="imgCaption"
-          id="imgCaption"
-          type="text"
-          placeholder="caption..."
-          value={imgCaption}
-          onChange={handleChange}
-        />
-        <label htmlFor="submit" />
-        <input
-          className="newPostBtn"
-          type="submit"
-          value="submitPost"
-          placeholder="Post!"
-        />
-      </form>
+      <div className="imgFormPage">
+        <form onSubmit={handleSubmit} className="newImgForm">
+          <h1 className="h1">Add New Post </h1>
+          <label htmlFor="newImgBtn" />
+          <input
+            name="newImgPost"
+            id="newImgBtn"
+            type="text"
+            placeholder="Paste a URL"
+            value={newImgPost}
+            onChange={handleChange}
+          />
+          <br />
+          <label htmlFor="imgCaption" />
+          <input
+            name="imgCaption"
+            id="imgCaption"
+            type="text"
+            placeholder="caption..."
+            value={imgCaption}
+            onChange={handleChange}
+          />
+          <label htmlFor="submit" />
+          <input
+            className="newPostBtn"
+            type="submit"
+            value="submitPost"
+            placeholder="Post!"
+          />
+        </form>
+      </div>
     </>
   );
 };

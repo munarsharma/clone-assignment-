@@ -14,7 +14,7 @@ const SignUp = ({
     <div className="signupPage">
       <Header />
       <div className="signupContainer">
-        <h1 id="h1"> Nomblr </h1>
+        <h1 className="h1"> Nomblr </h1>
         <div className="signupForms">
           <form onSubmit={registerUser}>
             <input

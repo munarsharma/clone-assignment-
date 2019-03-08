@@ -9,15 +9,12 @@ import PostNavbar from "./postingNavbar";
 
 class UserDash extends React.Component {
   render() {
-    console.log("USERDASH", this.props);
     return (
       <>
         <div className="dashContainer">
           <DashHeader logoutUser={this.props.logoutUser} />
           <div className="mainDash">
             <h1> User Dash </h1>
-            <p> something goes here </p>
-            <br />
             <PostNavbar />
             <div className="dashFeed">
               <PostsContainer />

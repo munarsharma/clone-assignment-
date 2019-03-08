@@ -9,6 +9,7 @@ class AllPosts extends React.Component {
     }
 
     const displayFeedPosts = this.props.posts.map((post, id) => {
+      console.log('display post username', post.username);
       if (post.posttype === 'text') {
         return (
           <div className="postCont" key={post.id}>
@@ -23,7 +24,7 @@ class AllPosts extends React.Component {
       } else if (post.posttype === 'img') {
         return (
           <div className="imgPostCont" key={post.id}>
-            <div className="userName">
+            <div className="postUserName">
               <h3> {post.username} </h3>
             </div>
             <div className="imgPost">
