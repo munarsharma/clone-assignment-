@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import EditInfoForm from "../components/user/editInfoForm";
+import UserProfile from "../components/user/UserProfile";
 
 const mapStateToProps = state => {
   return {
@@ -21,6 +22,7 @@ class UserContainer extends React.Component {
           currentUser={this.props.currentUser}
           loggedIn={this.props.loggedIn}
         />
+        <UserProfile currentUser={this.props.currentUser} />
       </>
     );
   }

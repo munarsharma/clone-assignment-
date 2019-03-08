@@ -8,7 +8,7 @@ class UserPosts extends React.Component {
       return null;
     }
 
-    const displayUserPosts = this.props.posts.map((post, id) => {
+    const displayUserPosts = this.props.posts.reverse().map((post, id) => {
       if (post.posttype === 'text') {
         return (
           <div className="userPostCont" key={post.id}>
@@ -16,7 +16,7 @@ class UserPosts extends React.Component {
               <h3> {post.username} </h3>
             </div>
             <div clasName="userPostContent">
-              <p id="text"> {post.post_body} </p>
+              <p className="text"> {post.post_body} </p>
             </div>
           </div>
         );
@@ -30,7 +30,7 @@ class UserPosts extends React.Component {
               <img id="userPostImg" src={post.img_url} alt="postimg" />
             </div>
             <div clasName="userPostContent">
-              <p id="postText"> {post.post_body} </p>
+              <p className="postText"> {post.post_body} </p>
             </div>
           </div>
         );

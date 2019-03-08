@@ -31,7 +31,7 @@ class AddNewPost extends React.Component {
     e.preventDefault();
 
     const { newImgPost, newTextPost, imgCaption } = this.state;
-    debugger;
+
     if (this.props.postType === "text") {
       axios
         .post("/posts/new", {

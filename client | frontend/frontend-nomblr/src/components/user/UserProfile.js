@@ -11,15 +11,16 @@ class UserProfile extends React.Component {
         <header className="profileHeader">
           <ProfileHeader />
         </header>
-        <h1> user profile </h1>
-        <ProfileNav />
-        <br />
-        <div>
-          <Link to="/user/edit">
-            <button> edit profile </button>
+        <div className="userProfilePage">
+          <Link to="/user/edit" id="blogname">
+            <h1 className="h1"> JamJam </h1>
           </Link>
+          <ProfileNav />
           <br />
-          <UserPostsContainer />
+          <div className="userPostsDisplay">
+            <br />
+            <UserPostsContainer />
+          </div>
         </div>
       </>
     );

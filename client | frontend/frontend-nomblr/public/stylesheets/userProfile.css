@@ -89,7 +89,18 @@
   border: 1px solid #a54811;
   margin: 1%;
 }
+#blogname {
+  text-decoration: none;
+  color: #8a3f1f;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.userProfilePage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 #logoutBtn {
   border: 1px solid #fac999;
   border-radius: 3px;
@@ -116,7 +127,7 @@
 
 .userImgPostCont {
   display: grid;
-  grid-template-columns: 10% 60% 10%;
+  grid-template-columns: 15% 70% 15%;
   grid-template-rows: 10% 75% 15%;
   height: 375px;
   width: 400px;
@@ -131,7 +142,7 @@
   grid-template-areas:
     " username . .  "
     " . image . "
-    " text text . ";
+    " text . . ";
 }
 /* post container  */
 
@@ -139,9 +150,9 @@
   display: grid;
   grid-template-columns: 10% 60% 10%;
   grid-template-rows: 10% 75% 15%;
-  height: 200px;
+  height: 150px;
   width: 400px;
-  justify-content: center;
+  justify-content: flex-start;
   justify-items: center;
 
   border: 1px solid #ececec;
@@ -151,7 +162,7 @@
   padding-bottom: 10px;
 
   grid-template-areas:
-    " . . .  "
+    " username .  .  "
     " . text . "
     " . . . ";
 }
@@ -169,10 +180,21 @@
   grid-area: text;
   padding: 10px;
   margin-top: 6%;
+  align-items: center;
+  color: #8a3f1f;
+  margin: 3%;
 }
-.userName {
+.userPostsDisplay {
+  display: grid;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.postUserName {
   grid-area: username;
+  display: flex;
+  justify-content: flex-start;
 }
+
 /* actual image */
 #userPostImg {
   justify-content: center;
