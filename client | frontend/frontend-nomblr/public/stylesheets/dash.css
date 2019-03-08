@@ -19,6 +19,7 @@
 .dashFeed {
   margin-left: 3%;
 }
+
 .backBtn {
   text-decoration: none;
   font-family: "Josefin Sans", sans-serif;
@@ -143,16 +144,6 @@
   margin: 1%;
 }
 
-#logoutBtn {
-  width: 103px;
-  height: 12%;
-  border: 1px solid #fac999;
-  border-radius: 3px;
-  padding: 10px;
-  background-color: #d3b3b8;
-  font-family: "Itim", cursive;
-}
-
 .followButton {
   width: 20px;
   height: 24px;
@@ -170,7 +161,7 @@
 
 .imgPostCont {
   display: grid;
-  grid-template-columns: 10% 60% 10%;
+  grid-template-columns: 15% 60% 10%;
   grid-template-rows: 10% 75% 15%;
   height: 550px;
   width: 600px;
@@ -183,9 +174,9 @@
   padding-bottom: 10px;
 
   grid-template-areas:
-    " . . .  "
+    " username . .  "
     " . image . "
-    " text text . ";
+    " text .  . ";
 }
 /* post container  */
 
@@ -195,7 +186,7 @@
   grid-template-rows: 10% 75% 15%;
   height: 200px;
   width: 600px;
-  justify-content: center;
+  justify-content: flex-start;
   justify-items: center;
 
   border: 1px solid #ececec;
@@ -205,7 +196,7 @@
   padding-bottom: 10px;
 
   grid-template-areas:
-    " . . .  "
+    " . username .  "
     " . text . "
     " . . . ";
 }
@@ -223,8 +214,21 @@
   grid-area: text;
   padding: 10px;
   margin-top: 6%;
+  align-items: center;
+  color: #8a3f1f;
+  margin: 3%;
+}
+#postText {
+  width: 150px;
+  display: flex;
+  padding-top: 30px;
+  padding-left: 90px;
+  justify-content: flex-start;
 }
 .postUserName {
+  grid-area: username;
+  display: flex;
+  justify-content: flex-start;
 }
 /* actual image */
 

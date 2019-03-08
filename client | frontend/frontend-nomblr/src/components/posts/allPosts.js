@@ -8,7 +8,7 @@ class AllPosts extends React.Component {
       return null;
     }
 
-    const displayFeedPosts = this.props.posts.map((post, id) => {
+    const displayFeedPosts = this.props.posts.reverse().map((post, id) => {
       console.log("display post username", post.username);
       if (post.posttype === "text") {
         return (
@@ -17,7 +17,7 @@ class AllPosts extends React.Component {
               <h3 className="h3"> {post.username} </h3>
             </div>
             <div className="postContent">
-              <p> {post.post_body} </p>
+              <p id="postText"> {post.post_body} </p>
             </div>
           </div>
         );
@@ -31,7 +31,7 @@ class AllPosts extends React.Component {
               <img id="postImg" src={post.img_url} alt="postimg" />
             </div>
             <div className="postContent">
-              <p> {post.post_body} </p>
+              <p id="postText"> {post.post_body} </p>
             </div>
           </div>
         );

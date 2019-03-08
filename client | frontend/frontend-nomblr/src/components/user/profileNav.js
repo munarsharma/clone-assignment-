@@ -4,23 +4,23 @@ import { Link } from 'react-router-dom';
 const ProfileNav = () => {
   return (
     <nav className="profile-navbar">
-      <div>
-        <Link to="/user/posts" id="profileNavLink">
+      <div className="navLinks">
+        <Link to="/user/posts" className="profileNavLink">
           Posts
         </Link>
       </div>
-      <div>
-        <Link to="/user/likes" id="profileNavLink">
+      <div className="navLinks">
+        <Link to="/user/likes" className="profileNavLink">
           Likes
         </Link>
       </div>
-      <div>
-        <Link to="/user/followers" id="profileNavLink">
+      <div className="navLinks">
+        <Link to="/user/followers" className="profileNavLink">
           Likes
         </Link>
       </div>
-      <div>
-        <Link to="/user/archive" id="profileNavLink">
+      <div className="navLinks">
+        <Link to="/user/archive" className="profileNavLink">
           Archive
         </Link>
       </div>

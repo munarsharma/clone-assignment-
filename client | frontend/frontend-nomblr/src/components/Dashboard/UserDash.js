@@ -14,7 +14,7 @@ class UserDash extends React.Component {
         <div className="dashContainer">
           <DashHeader logoutUser={this.props.logoutUser} />
           <div className="mainDash">
-            <h1> User Dash </h1>
+            <br />
             <PostNavbar />
             <div className="dashFeed">
               <PostsContainer />

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 //use this for explore page: create a thum-temp like tumblrs
 
@@ -9,18 +9,18 @@ class UserPosts extends React.Component {
     }
 
     const displayUserPosts = this.props.posts.map((post, id) => {
-      if (post.posttype === "text") {
+      if (post.posttype === 'text') {
         return (
           <div className="userPostCont" key={post.id}>
             <div clasName="userName">
               <h3> {post.username} </h3>
             </div>
             <div clasName="userPostContent">
-              <p> {post.post_body} </p>
+              <p id="text"> {post.post_body} </p>
             </div>
           </div>
         );
-      } else if (post.posttype === "img") {
+      } else if (post.posttype === 'img') {
         return (
           <div className="userImgPostCont" key={post.id}>
             <div clasName="userName">
@@ -30,7 +30,7 @@ class UserPosts extends React.Component {
               <img id="userPostImg" src={post.img_url} alt="postimg" />
             </div>
             <div clasName="userPostContent">
-              <p> {post.post_body} </p>
+              <p id="postText"> {post.post_body} </p>
             </div>
           </div>
         );
