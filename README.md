@@ -6,13 +6,13 @@ Nomblr is a Tumblr clone application that allows users to express their love for
 
 ## Landing Page
 
-![](./phase1|planning/landingpage.png)
+![](/phase1/landingpage.png)
 
 ## Dashboard Page
 
 ## User Profile Page
 
-![](./phase1|planning/userpage.png)
+![](/phase1/userpage.png)
 
 # Design Docs
 
