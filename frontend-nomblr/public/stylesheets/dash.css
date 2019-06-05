@@ -1,0 +1,290 @@
+.main-cont {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 100%;
+  height: 600px;
+  max-width: 650px;
+  border-radius: 2px;
+  margin-bottom: 17px;
+  padding-bottom: 10px;
+  grid-template-areas: " img post ";
+}
+
+#user_img {
+  grid-area: img;
+  object-fit: contain;
+  width: 150px;
+  height: 150px;
+  margin: 3%;
+}
+.dashContainer {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-size: cover;
+  font-family: "Itim", cursive;
+}
+
+.dash-header {
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eeecf3;
+}
+
+.dashFeed {
+  margin-left: 3%;
+}
+
+.backBtn {
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  color: #3b4834;
+  font-size: 18px;
+  width: 20px;
+}
+
+.dash-navbar {
+  width: 200px;
+  height: auto;
+  display: flex;
+  flex-flow: row;
+  flex: auto;
+  justify-content: flex-end;
+}
+
+.posting-navbar {
+  width: 200px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 3%;
+}
+
+.imgFormPage {
+  min-width: 70%;
+  min-height: 100%;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  background: transparent;
+}
+
+#newImgBtn {
+  width: 500px;
+  height: 80px;
+  box-sizing: content-box;
+}
+
+#imgCaption {
+  width: 500px;
+  height: 180px;
+  box-sizing: content-box;
+}
+
+.newPostBtn {
+  width: 100px;
+  height: 30px;
+  box-sizing: content-box;
+  margin: 5px;
+}
+
+.newImgForm {
+  width: 600px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+}
+
+.newTextForm {
+  width: 600px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+}
+
+#newtextBtn {
+  width: 500px;
+  height: 80px;
+  box-sizing: content-box;
+}
+.home_nav {
+  width: 60px;
+  background: transparent;
+  margin-right: 3px;
+}
+
+.userAct_nav {
+  width: 60px;
+  background: transparent;
+  margin-right: 3px;
+}
+
+#h2 {
+  font-family: "Itim", cursive;
+  color: #a54811;
+}
+
+.explore_nav {
+  width: 60px;
+  background: transparent;
+  margin-right: 3px;
+}
+
+.account_nav {
+  width: 60px;
+  background: transparent;
+  margin-right: 6px;
+}
+
+/* whole dashboard minus header  */
+/* .mainDash {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+} */
+
+.radarArea {
+  width: 20%;
+  height: 500px;
+  display: flex;
+  flex-flow: column;
+  align-content: space-between;
+  border: 1px solid #a54811;
+  margin: 1%;
+}
+
+.followButton {
+  width: 20px;
+  height: 24px;
+  font-size: 15px;
+  padding-bottom: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+#radarImg {
+  margin: 2%;
+  width: 83%;
+  height: 80%;
+}
+
+.imgPostCont {
+  display: grid;
+  grid-template-columns: 13% 72% 15%;
+  grid-template-rows: 9% 70% 15%;
+  height: auto;
+  max-width: 100%;
+  width: 650px;
+  justify-content: center;
+  background: white;
+  align-content: center;
+  border: 1px solid #ececec;
+  border-radius: 2px;
+  margin-bottom: 17px;
+  padding-bottom: 10px;
+  margin: 3%;
+  object-fit: contain;
+  grid-template-areas:
+    " username username username "
+    " . image image "
+    " . text text ";
+}
+
+/* post container  */
+
+.postCont {
+  grid-area: post;
+  display: grid;
+  grid-template-columns: 13% 62% 10%;
+  grid-template-rows: 13% 72% 15%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  justify-items: center;
+  object-fit: contain;
+  border: 1px solid #ececec;
+  border-radius: 2px;
+  margin-bottom: 17px;
+  margin: 3%;
+  padding-bottom: 10px;
+
+  grid-template-areas:
+    " username username username "
+    " . text text "
+    " . . . ";
+}
+
+/* .postCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1%;
+} */
+
+/* post text  */
+
+.postContent {
+  grid-area: text;
+  padding: 10px;
+  margin-top: 6%;
+  align-items: center;
+  color: #8a3f1f;
+  margin: 3%;
+}
+
+.postText {
+  width: 150px;
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+  margin-bottom: 2%;
+}
+
+.postUserName {
+  grid-area: username;
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px;
+}
+/* actual image */
+
+#postImg {
+  align-self: center;
+  height: 420px;
+  width: 420px;
+  object-fit: cover;
+  margin-left: 50px;
+}
+
+.h3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
+}
+
+/* img div */
+.imgPost {
+  grid-area: image;
+  align-self: center;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  padding-bottom: 5px;
+  margin: 1%;
+}
+
+.renderedPosts {
+  display: grid;
+  justify-content: flex-start;
+  width: 33%;
+  margin-left: 9%;
+}
