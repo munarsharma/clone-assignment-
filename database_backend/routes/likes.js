@@ -1,18 +1,19 @@
 var express = require("express");
 
 var router = express.Router();
-const {
-  getAlllikes,
-  addNewlike,
-  getAlllikesByUser,
-  getAlllikesByPost,
-  deletelike
-} = require("../db/queries/favoritesQueries.js");
 
-router.get("/", getAlllikes);
-router.post("/new", addNewlike);
-router.get("/users/:id", getAlllikesByUser);
-router.get("/post/:id", getAlllikesByPost);
-router.delete("/:id", deletelike);
+const {
+  getAllLikes,
+  addNewLike,
+  getAllLikesByUser,
+  getAllLikesByPost,
+  deleteLike
+} = require("../db/queries/likesQueries.js");
+
+router.get("/", getAllLikes);
+router.post("/new", addNewLike);
+router.get("/users/:id", getAllLikesByUser);
+router.get("/post/:id", getAllLikesByPost);
+router.delete("/:id", deleteLike);
 
 module.exports = router;

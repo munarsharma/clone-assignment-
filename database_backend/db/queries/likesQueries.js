@@ -19,7 +19,7 @@ const getAllLikesByUser = (req, res, next) => {
   const userId = req.params.id;
 
   db.any(
-    'SELECT likes.id AS likes_id, posts.id AS liker_id, post_body, img_url, username, users.id AS users_id , COUNT(DISTINCT likes.id ) AS all_likes FROM likes JOIN users ON users.id = likes.liker_id JOIN posts ON posts.id = likes.post_id WHERE likes.post_id =$1 GROUP BY likes_id, posts.id, users.id, username ORDER BY likes.id DESC',
+    'SELECT likes.id AS likes_id, posts.id AS liker_id, post_body, users.img_url, username, users.id AS users_id , COUNT(DISTINCT likes.id ) AS all_likes FROM likes JOIN users ON users.id = likes.liker_id JOIN posts ON posts.id = likes.post_id WHERE likes.liker_id =$1 GROUP BY likes_id, posts.id, users.id, username ORDER BY likes.id DESC',
     [userId]
   )
     .then(likes => {
@@ -35,11 +35,11 @@ const getAllLikesByUser = (req, res, next) => {
     });
 };
 
-const getAllLikesBySong = (req, res, next) => {
+const getAllLikesByPost = (req, res, next) => {
   const postId = Number(req.params.id);
 
   db.any(
-    'SELECT likes.id AS likes_id, posts.id AS post_id, post_body, img_url, username, users.id AS users_id FROM likes JOIN users ON users.id = likes.liker_id JOIN posts ON posts.id = likes.post_id WHERE likes.post_id =$1 GROUP BY likes_id, posts.id, users.id, username ORDER BY likes.id DESC',
+    'SELECT likes.id AS likes_id, posts.id AS post_id, post_body, users.img_url, username, users.id AS users_id FROM likes JOIN users ON users.id = likes.liker_id JOIN posts ON posts.id = likes.post_id WHERE likes.post_id =$1 GROUP BY likes_id, posts.id, users.id, username ORDER BY likes.id DESC',
     [postId]
   )
     .then(likes => {
@@ -57,7 +57,7 @@ const getAllLikesBySong = (req, res, next) => {
 
 const addNewLike = (req, res, next) => {
   db.none(
-    'INSERT INTO likes(liker_id post_id) VALUES(${post_id}, ${post_id})',
+    'INSERT INTO likes(liker_id, post_id) VALUES(${user_id}, ${post_id})',
     req.body
   )
     .then(() => {
@@ -87,7 +87,7 @@ const deleteLike = (req, res, next) => {
 module.exports = {
   getAllLikes,
   getAllLikesByUser,
-  getAllLikesBySong,
+  getAllLikesByPost,
   addNewLike,
   deleteLike,
 };
