@@ -4,8 +4,19 @@ import { Link, withRouter } from "react-router-dom";
 //use this for explore page: create a thum-temp like tumblrs
 
 class AllPosts extends React.Component {
+  state = {
+    liked: false
+  };
+
   handleClick = id => {
     this.props.history.push(`/users/${id}`);
+  };
+
+  handleLike = e => {
+    e.preventDefault();
+    this.setState({
+      liked: !this.state.liked
+    });
   };
 
   render() {
@@ -55,6 +66,15 @@ class AllPosts extends React.Component {
 
                 <div className="postContent">
                   <p className="postText"> {post.post_body} </p>
+                  <p> {post.all_likes} </p>
+
+                  <div>
+                    {this.state.liked ? (
+                      <img src="../images/liked.png" alt="meow" />
+                    ) : (
+                      <img src="../images/unliked.png" alt="" />
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
