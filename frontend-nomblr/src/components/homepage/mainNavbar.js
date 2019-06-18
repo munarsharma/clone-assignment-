@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const MainNavBar = () => {
   return (
     <nav className="main-navbar">
       <div>
         <button className="navBtn">
-          {' '}
+          {" "}
           <Link to="/auth/login" id="navLink">
             Log in
           </Link>

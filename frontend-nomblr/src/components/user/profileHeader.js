@@ -2,7 +2,7 @@ import React from "react";
 import SearchBar from "../SearchBar";
 import { Link } from "react-router-dom";
 
-import img from "../../images/logo1.png";
+import img from "../../images/Logo.png";
 import ProfileMainNav from "./profileMainNav";
 
 //add conditional rendering for nav button

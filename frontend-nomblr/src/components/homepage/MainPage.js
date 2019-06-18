@@ -21,7 +21,7 @@ const MainPage = props => {
             {" "}
             <Link to="/auth/register" id="signuplink">
               {" "}
-              get started{" "}
+              Get started{" "}
             </Link>{" "}
           </button>
           <br />
@@ -29,7 +29,7 @@ const MainPage = props => {
             {" "}
             <Link to="/auth/login" id="signuplink">
               {" "}
-              login{" "}
+              Login{" "}
             </Link>{" "}
           </button>
         </div>

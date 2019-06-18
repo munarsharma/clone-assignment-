@@ -33,6 +33,7 @@
   margin-top: 1%;
   padding-bottom: 10px;
   border-bottom: 1px solid #eeecf3;
+  object-fit: contain;
 }
 
 .dashFeed {

@@ -2,7 +2,7 @@ import React from "react";
 import SearchBar from "../SearchBar";
 import { Link } from "react-router-dom";
 import DashNavbar from "./dashNavbar";
-import img from "../../images/logo1.png";
+import img from "../../images/Logo.png";
 
 //add conditional rendering for nav button
 //figure out how to use local logo file.

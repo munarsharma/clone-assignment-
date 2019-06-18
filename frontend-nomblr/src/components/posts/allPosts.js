@@ -65,16 +65,13 @@ class AllPosts extends React.Component {
                 </div>
 
                 <div className="postContent">
+                  <div>
+                    <button onClick={this.handleLike}>
+                      <i className="material-icons">thumb_up</i>
+                    </button>
+                  </div>
                   <p className="postText"> {post.post_body} </p>
                   <p> {post.all_likes} </p>
-
-                  <div>
-                    {this.state.liked ? (
-                      <img src="../images/liked.png" alt="meow" />
-                    ) : (
-                      <img src="../images/unliked.png" alt="" />
-                    )}
-                  </div>
                 </div>
               </div>
             </div>
