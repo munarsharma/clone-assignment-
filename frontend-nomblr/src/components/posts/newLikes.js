@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { withRouter } from "react-router";
 
 class NewLikes extends React.Component {
   state = {
@@ -25,13 +26,18 @@ class NewLikes extends React.Component {
 
     if (!this.state.liked === true) {
       let user_id = this.props.currentUser.id;
+
       axios
         .post("/likes/new", {
           user_id: user_id,
           post_id: this.props.post_id
         })
         .then(() => {
-          this.props.goFetchPosts();
+          {
+            this.props.match.path === "/dashboard"
+              ? this.props.goFetchPosts()
+              : this.props.fetchUserPosts(this.props.profile_id);
+          }
         })
         .catch(err => {
           console.log("posting new like", err);
@@ -40,7 +46,11 @@ class NewLikes extends React.Component {
       axios
         .delete(`/likes/${like_id}`)
         .then(() => {
-          this.props.goFetchPosts();
+          {
+            this.props.match.path === "/dashboard"
+              ? this.props.goFetchPosts()
+              : this.props.fetchUserPosts(this.props.profile_id);
+          }
         })
         .catch(err => {
           console.log("posting new fave", err);
@@ -62,4 +72,4 @@ class NewLikes extends React.Component {
   }
 }
 
-export default NewLikes;
+export default withRouter(NewLikes);

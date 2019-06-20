@@ -16,6 +16,8 @@
   width: 150px;
   height: 150px;
   margin: 3%;
+  border: 1px solid transparent;
+  border-radius: 73px;
 }
 .dashContainer {
   height: 100vh;

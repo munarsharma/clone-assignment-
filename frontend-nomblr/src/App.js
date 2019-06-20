@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
-import { withRouter } from 'react-router';
-import MainPage from './components/homepage/MainPage';
+import React, { Component } from "react";
+import { Route, Redirect, Switch } from "react-router-dom";
+import { withRouter } from "react-router";
+import MainPage from "./components/homepage/MainPage";
 //import Footer from "./components/footer";
-import axios from 'axios';
-import Auth from './userAuth/utils/Auth';
+import axios from "axios";
+import Auth from "./userAuth/utils/Auth";
 
-import DashContainer from './containers/dashContainer';
+import DashContainer from "./containers/dashContainer";
 // import AddNewPost from "./components/Dashboard/newPost";
-import PrivateRoute from './userAuth/utils/AuthRouting';
+import PrivateRoute from "./userAuth/utils/AuthRouting";
 
-import AuthForm from './userAuth/login/AuthForm';
-import UserProfileRoutes from './components/user/UserProfileRoutes';
-import { connect } from 'react-redux';
+import AuthForm from "./userAuth/login/AuthForm";
+import UserPageContainer from "./containers/UserPageContainer";
+import { connect } from "react-redux";
 // import ExploreContainer from "./containers/exploreContainer";
-import { setLoggedInUser } from './actions/userActions';
+import { setLoggedInUser } from "./actions/userActions";
 
 const mapStateToProps = state => {
   return {
     currentUser: state.userReducers.currentUser,
-    loggedIn: state.userReducers.loggedIn,
+    loggedIn: state.userReducers.loggedIn
   };
 };
 
@@ -27,14 +27,14 @@ const mapDispatchToProps = dispatch => {
   return {
     setCurrentUser: userInfo => {
       dispatch(setLoggedInUser(userInfo));
-    },
+    }
   };
 };
 
 class App extends Component {
   state = {
     isLoggedIn: false,
-    username: '',
+    username: ""
   };
 
   componentDidMount() {
@@ -43,12 +43,12 @@ class App extends Component {
   }
 
   checkAuthenticateStatus = props => {
-    axios.post('/users/isLoggedIn').then(user => {
+    axios.post("/users/isLoggedIn").then(user => {
       if (user.data.username === Auth.getToken()) {
         this.props.setCurrentUser(user.data);
         this.setState({
           isLoggedIn: Auth.isUserAuthenticated(),
-          username: Auth.getToken(),
+          username: Auth.getToken()
         });
       } else {
         if (user.data.username) {
@@ -62,7 +62,7 @@ class App extends Component {
 
   logoutUser = () => {
     axios
-      .post('/users/logout')
+      .post("/users/logout")
       .then(() => {
         Auth.deauthenticateUser();
       })
@@ -92,7 +92,6 @@ class App extends Component {
                 />
               );
             }}
-
           />
 
           <PrivateRoute
@@ -101,7 +100,7 @@ class App extends Component {
             logoutUser={this.logoutUser}
           />
 
-          <PrivateRoute path="/users/:id" component={UserProfileRoutes} />
+          <PrivateRoute path={"/users/:id"} component={UserPageContainer} />
         </Switch>
       </div>
     );

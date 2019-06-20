@@ -28,6 +28,15 @@ class AllPosts extends React.Component {
 
               <div className="postContent">
                 <p className="postText"> {post.post_body} </p>
+                <div className="post_likes">
+                  <p> {post.all_likes} </p>
+                  <NewLikes
+                    goFetchPosts={this.props.goFetchPosts}
+                    currentUser={this.props.currentUser}
+                    post_id={post.id}
+                    like_id={post.like_id}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -70,6 +79,7 @@ class AllPosts extends React.Component {
         );
       }
     });
+
     return <div className="renderedPosts">{displayFeedPosts}</div>;
   }
 }

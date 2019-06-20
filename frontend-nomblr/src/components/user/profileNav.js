@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ProfileNav = () => {
   return (
@@ -9,16 +9,13 @@ const ProfileNav = () => {
           Posts
         </Link>
       </div>
+
       <div className="navLinks">
         <Link to="/user/likes" className="profileNavLink">
           Likes
         </Link>
       </div>
-      <div className="navLinks">
-        <Link to="/user/followers" className="profileNavLink">
-          Likes
-        </Link>
-      </div>
+
       <div className="navLinks">
         <Link to="/user/archive" className="profileNavLink">
           Archive
