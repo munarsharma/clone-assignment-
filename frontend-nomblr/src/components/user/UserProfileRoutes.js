@@ -1,6 +1,8 @@
 import React from "react";
 import UserProfile from "./UserProfile";
 import { Route, Switch } from "react-router-dom";
+import EditInfoForm from "./editInfoForm";
+import LikedPostsDisplay from "./likedPostsDisplay";
 
 class UserProfileRoutes extends React.Component {
   componentDidMount() {
@@ -13,7 +15,20 @@ class UserProfileRoutes extends React.Component {
       <>
         <Switch>
           <Route
+            exact
             path={"/users/:id"}
+            render={props => (
+              <UserProfile
+                {...props}
+                currentUser={this.props.currentUser}
+                fetchUserPosts={this.props.fetchUserPosts}
+                userPosts={this.props.userPosts}
+                id={parseInt(this.props.match.params.id)}
+              />
+            )}
+          />
+          <Route
+            path="/user/:id/likes"
             render={props => (
               <UserProfile
                 {...props}

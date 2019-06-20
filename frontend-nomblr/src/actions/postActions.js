@@ -46,8 +46,18 @@ export const goFetchUserPosts = id => dispatch => {
   axios
     .get(`/posts/users/${id}`)
     .then(res => {
-      console.log("GO FETCH POSTS", res);
       dispatch({ type: "FETCHED_USER_POSTS", payload: res.data.posts });
+    })
+    .catch(err => {
+      dispatch(gotError(err));
+    });
+};
+
+export const goFetchLikedPosts = id => dispatch => {
+  axios
+    .get(`/likes/users/${id}`)
+    .then(res => {
+      dispatch({ type: "FETCH_LIKED_POSTS", payload: res.data.likes });
     })
     .catch(err => {
       dispatch(gotError(err));

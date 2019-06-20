@@ -3,14 +3,16 @@ import {
   FETCHED_ALL_POSTS,
   FETCH_USER_POSTS,
   FETCHED_USER_POSTS,
-  SET_POST_TYPE
+  SET_POST_TYPE,
+  FETCH_LIKED_POSTS
 } from "../actions/actionTypes";
 
 const initialState = {
   posts: [],
   fetching: false,
   postType: "",
-  userPosts: []
+  userPosts: [],
+  likedPosts: []
 };
 
 const postsReducers = (state = initialState, action) => {
@@ -29,6 +31,10 @@ const postsReducers = (state = initialState, action) => {
 
     case "FETCHED_USER_POSTS": {
       return { ...state, fetching: false, userPosts: action.payload };
+    }
+
+    case "FETCH_LIKED_POSTS": {
+      return { ...state, fetching: false, likedPosts: action.payload };
     }
 
     case "SET_POST_TYPE": {
