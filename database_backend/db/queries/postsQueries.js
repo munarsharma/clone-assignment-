@@ -4,7 +4,7 @@ const getAllPosts = (req, res, next) => {
   // req.body.user_id = parseInt(req.params.id);
 
   db.any(
-    "SELECT DISTINCT users.id AS user_id, users.img_url AS user_img, posts.id AS id, username, posttype, post_body, posts.img_url AS img_url, COUNT(DISTINCT likes.id ) AS all_likes FROM posts RIGHT JOIN users ON posts.user_id = users.id LEFT JOIN likes ON likes.post_id = posts.id GROUP BY users.id, posts.id ORDER BY posts.id DESC "
+    "SELECT DISTINCT users.id AS user_id, users.img_url AS user_img, posts.id AS id, username, posttype, post_body, posts.img_url AS img_url, COUNT(DISTINCT likes.id ) AS all_likes, array_agg(likes.id) AS like_id FROM posts RIGHT JOIN users ON posts.user_id = users.id LEFT JOIN likes ON likes.post_id = posts.id GROUP BY users.id, posts.id, likes.id ORDER BY posts.id DESC "
   )
     .then(posts => {
       res.status(200).json({

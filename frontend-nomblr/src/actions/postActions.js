@@ -4,9 +4,6 @@ import {
   FETCH_USER_POSTS,
   FETCHED_USER_POSTS,
   GOT_ERROR,
-  ADD_POST,
-  EDIT_POST,
-  DELETE_POST,
   SET_POST_TYPE
 } from "./actionTypes";
 import axios from "axios";

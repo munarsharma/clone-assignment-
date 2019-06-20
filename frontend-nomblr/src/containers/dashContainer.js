@@ -1,24 +1,25 @@
 import { connect } from "react-redux";
 
-//import { getGrandmasDishes, deleteDish } from '../actions/dishActions';
-
-import UserDash from "../components/Dashboard/UserDash";
+import { goFetchPosts } from "../actions/postActions";
+import UserDashRoutes from "../components/Dashboard/UserDashRoutes";
 
 const mapStateToProps = state => {
   return {
-    dishes: state.dishes.dishes,
-    userId: state.userAuth.userId
+    fetching: state.postsReducers.fetching,
+    posts: state.postsReducers.posts,
+    currentUser: state.userReducers.currentUser
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    getGrandmasDishes: id => dispatch(getGrandmasDishes(id)),
-    deleteDish: (dish_id, grannyId) => dispatch(deleteDish(dish_id, grannyId))
+    goFetchPosts: () => {
+      dispatch(goFetchPosts());
+    }
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserDash);
+)(UserDashRoutes);
