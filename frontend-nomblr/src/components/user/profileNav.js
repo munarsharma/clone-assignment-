@@ -1,23 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProfileNav = () => {
+const ProfileNav = props => {
+  console.log(props);
   return (
     <nav className="profile-navbar">
       <div className="navLinks">
-        <Link to="/user/posts" className="profileNavLink">
+        <Link to={`/users/${props.id}`} className="profileNavLink">
           Posts
         </Link>
       </div>
 
       <div className="navLinks">
-        <Link to="/user/likes" className="profileNavLink">
+        <Link to={`/users/${props.id}/likes`} className="profileNavLink">
           Likes
         </Link>
       </div>
 
       <div className="navLinks">
-        <Link to="/user/archive" className="profileNavLink">
+        <Link to={`/users/${props.id}/archive`} className="profileNavLink">
           Archive
         </Link>
       </div>

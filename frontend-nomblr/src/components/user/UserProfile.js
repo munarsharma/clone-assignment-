@@ -9,21 +9,7 @@ class UserProfile extends React.Component {
   render() {
     return (
       <>
-        <header className="profileHeader">
-          <ProfileHeader />
-        </header>
-
-        <div className="userProfilePage">
-          <Link to="/user/edit" id="blogname">
-            <h1 className="h1"> JamJam </h1>
-          </Link>
-
-          <ProfileNav />
-
-          <br />
-
-          <div className="userPostsDisplay" />
-
+        <div className="userPostsDisplay">
           <UserPosts
             posts={this.props.userPosts}
             fetchUserPosts={this.props.fetchUserPosts}

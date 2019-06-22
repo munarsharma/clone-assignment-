@@ -28,6 +28,11 @@
   opacity: 0.4;
 }
 
+.searchArea {
+  display: flex;
+  align-self: center;
+}
+
 #logoSearch {
   display: flex;
   flex-direction: row;

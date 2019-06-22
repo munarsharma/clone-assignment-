@@ -1,13 +1,14 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import { goFetchUserPosts } from '../actions/postActions';
+import { goFetchUserPosts, goFetchLikedPosts } from "../actions/postActions";
 
-import UserProfileRoutes from '../components/user/UserProfileRoutes';
+import UserProfileRoutes from "../components/user/UserProfileRoutes";
 
 const mapStateToProps = state => {
   return {
     userPosts: state.postsReducers.userPosts,
     currentUser: state.userReducers.currentUser,
+    likedPosts: state.postsReducers.likedPosts
   };
 };
 
@@ -16,6 +17,10 @@ const mapDispatchToProps = dispatch => {
     fetchUserPosts: id => {
       dispatch(goFetchUserPosts(id));
     },
+
+    goFetchLikedPosts: id => {
+      dispatch(goFetchLikedPosts(id));
+    }
   };
 };
 
