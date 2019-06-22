@@ -4,6 +4,7 @@ import {
   FETCH_USER_POSTS,
   FETCHED_USER_POSTS,
   GOT_ERROR,
+  FETCH_POSTS_BY_POPULARITY,
   SET_POST_TYPE
 } from "./actionTypes";
 import axios from "axios";
@@ -34,6 +35,18 @@ export const goFetchPosts = () => dispatch => {
     .then(res => {
       console.log(res);
       dispatch({ type: "FETCHED_ALL_POSTS", payload: res.data.posts });
+    })
+    .catch(err => {
+      dispatch(gotError(err));
+    });
+};
+
+export const fetchPostsByPopularity = () => dispatch => {
+  axios
+    .get("/posts/radar")
+    .then(res => {
+      console.log(res);
+      dispatch({ type: "FETCH_POSTS_BY_POPULARITY", payload: res.data.posts });
     })
     .catch(err => {
       dispatch(gotError(err));

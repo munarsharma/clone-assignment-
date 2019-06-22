@@ -18,6 +18,8 @@ class UserDashRoutes extends React.Component {
                 posts={this.props.posts}
                 logoutUser={this.props.logoutUser}
                 currentUser={this.props.currentUser}
+                fetchPostsByPopularity={this.props.fetchPostsByPopularity}
+                byPopularity={this.props.byPopularity}
               />
             )}
           />

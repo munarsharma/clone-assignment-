@@ -3,7 +3,7 @@
   grid-template-columns: 20% 80%;
   grid-template-rows: 100%;
   height: 600px;
-  max-width: 650px;
+  max-width: 750px;
   border-radius: 2px;
   margin-bottom: 17px;
   padding-bottom: 10px;
@@ -187,7 +187,7 @@
   grid-template-rows: 9% 70% 15%;
   height: auto;
   max-width: 100%;
-  width: 650px;
+  width: 750px;
   justify-content: center;
   background: white;
   align-content: center;
@@ -281,7 +281,7 @@
 #postImg {
   align-self: center;
   height: 420px;
-  width: 420px;
+  width: 520px;
   object-fit: cover;
   margin-left: 50px;
 }

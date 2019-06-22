@@ -1,6 +1,6 @@
 import React from "react";
 import DashHeader from "./dashHeader";
-// import Radar from "./radar";
+import Radar from "./radar";
 import AllPosts from "../posts/allPosts";
 //import DashFeed from "./dashFeed";
 import PostNavbar from "./postingNavbar";
@@ -10,6 +10,7 @@ import PostNavbar from "./postingNavbar";
 class UserDash extends React.Component {
   componentDidMount() {
     this.props.goFetchPosts();
+    this.props.fetchPostsByPopularity();
   }
 
   render() {
@@ -27,7 +28,9 @@ class UserDash extends React.Component {
                 goFetchPosts={this.props.goFetchPosts}
               />
             </div>
-            <div className="rightSidebar" />
+            <div className="rightSidebar">
+              <Radar byPopularity={this.props.byPopularity} />
+            </div>
           </div>
         </div>
       </>
