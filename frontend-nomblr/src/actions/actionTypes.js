@@ -17,3 +17,6 @@ export const EDIT_POST = 'EDIT_POST';
 export const DELETE_POST = 'DELETE_POST';
 
 export const SET_POST_TYPE = 'SET_POST_TYPE';
+export const FETCH_LIKED_POSTS = 'FETCH_LIKED_POSTS';
+
+export const FETCH_POSTS_BY_POPULARITY = 'FETCH_POSTS_BY_POPULARITY';

@@ -3,7 +3,7 @@
   grid-template-columns: 20% 80%;
   grid-template-rows: 100%;
   height: 600px;
-  max-width: 650px;
+  max-width: 750px;
   border-radius: 2px;
   margin-bottom: 17px;
   padding-bottom: 10px;
@@ -16,6 +16,8 @@
   width: 150px;
   height: 150px;
   margin: 3%;
+  border: 1px solid transparent;
+  border-radius: 73px;
 }
 .dashContainer {
   height: 100vh;
@@ -33,6 +35,7 @@
   margin-top: 1%;
   padding-bottom: 10px;
   border-bottom: 1px solid #eeecf3;
+  object-fit: contain;
 }
 
 .dashFeed {
@@ -184,7 +187,7 @@
   grid-template-rows: 9% 70% 15%;
   height: auto;
   max-width: 100%;
-  width: 650px;
+  width: 750px;
   justify-content: center;
   background: white;
   align-content: center;
@@ -237,9 +240,16 @@
   grid-area: text;
   padding: 10px;
   margin-top: 6%;
-  align-items: center;
   color: #8a3f1f;
   margin: 3%;
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.postContent i {
+  margin-left: 10px;
+  padding-left: 10px;
 }
 
 .postText {
@@ -256,12 +266,22 @@
   justify-content: flex-start;
   margin: 10px;
 }
+
+.post_likes {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin-left: 10px;
+}
+.post_likes p {
+  padding-right: 10px;
+}
 /* actual image */
 
 #postImg {
   align-self: center;
   height: 420px;
-  width: 420px;
+  width: 520px;
   object-fit: cover;
   margin-left: 50px;
 }

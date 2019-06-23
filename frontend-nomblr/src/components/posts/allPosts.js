@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-
+import NewLikes from "./newLikes";
 //use this for explore page: create a thum-temp like tumblrs
 
 class AllPosts extends React.Component {
@@ -14,11 +14,9 @@ class AllPosts extends React.Component {
     }
 
     const displayFeedPosts = this.props.posts.map((post, id) => {
-      // console.log('display post username', post.username);
-
       if (post.posttype === "text") {
         return (
-          <div className="main-cont">
+          <div className="main-cont" key={post.id}>
             <img src={post.user_img} alt="" id="user_img" />
             <div className="postCont" key={post.id}>
               <div
@@ -30,13 +28,22 @@ class AllPosts extends React.Component {
 
               <div className="postContent">
                 <p className="postText"> {post.post_body} </p>
+                <div className="post_likes">
+                  <p> {post.all_likes} </p>
+                  <NewLikes
+                    goFetchPosts={this.props.goFetchPosts}
+                    currentUser={this.props.currentUser}
+                    post_id={post.id}
+                    like_id={post.like_id}
+                  />
+                </div>
               </div>
             </div>
           </div>
         );
       } else if (post.posttype === "img") {
         return (
-          <div className="main-cont">
+          <div className="main-cont" key={post.id}>
             <div onClick={() => this.handleClick(post.user_id)}>
               <img src={post.user_img} alt="" id="user_img" />
             </div>
@@ -55,15 +62,24 @@ class AllPosts extends React.Component {
 
                 <div className="postContent">
                   <p className="postText"> {post.post_body} </p>
+
+                  <div className="post_likes">
+                    <p> {post.all_likes} </p>
+                    <NewLikes
+                      goFetchPosts={this.props.goFetchPosts}
+                      currentUser={this.props.currentUser}
+                      post_id={post.id}
+                      like_id={post.like_id}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         );
       }
-
-      return <div>{displayFeedPosts}</div>;
     });
+
     return <div className="renderedPosts">{displayFeedPosts}</div>;
   }
 }

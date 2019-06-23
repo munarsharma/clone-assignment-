@@ -9,15 +9,12 @@
   flex-direction: row;
   justify-content: space-between;
   margin-top: 1%;
+  object-fit: contain;
 }
 
 .logo_pic {
-  width: 60px;
-  height: 60px;
-  padding-top: 10px;
-}
-
-.searchArea {
+  width: 160px;
+  height: 160px;
 }
 
 .searchbar {
@@ -31,11 +28,17 @@
   opacity: 0.4;
 }
 
+.searchArea {
+  display: flex;
+  align-self: center;
+}
+
 #logoSearch {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-left: 1%;
+  align-content: flex-start;
 }
 
 .main-navbar {

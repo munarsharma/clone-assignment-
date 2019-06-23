@@ -4,13 +4,32 @@ const getAllPosts = (req, res, next) => {
   // req.body.user_id = parseInt(req.params.id);
 
   db.any(
-    "SELECT DISTINCT users.id AS user_id, users.img_url AS user_img, bio, posts.id AS id,username, posttype, post_body, posts.img_url AS img_url  FROM users JOIN posts ON posts.user_id = users.id ORDER BY posts.id DESC "
+    "SELECT DISTINCT users.id AS user_id, users.img_url AS user_img, posts.id AS id, username, posttype, post_body, posts.img_url AS img_url, COUNT(DISTINCT likes.id ) AS all_likes, array_agg(likes.id) AS like_id FROM posts RIGHT JOIN users ON posts.user_id = users.id LEFT JOIN likes ON likes.post_id = posts.id GROUP BY users.id, posts.id ORDER BY posts.id DESC "
   )
     .then(posts => {
       res.status(200).json({
         status: "success",
         posts: posts,
         message: "Got All posts"
+      });
+    })
+    .catch(err => {
+      console.log("error", err);
+      next(err);
+    });
+};
+
+const getAllPostsByLikes = (req, res, next) => {
+  // req.body.user_id = parseInt(req.params.id);
+
+  db.any(
+    "SELECT DISTINCT users.id AS user_id, users.img_url AS user_img, posts.id AS id, username, posttype, post_body, posts.img_url AS img_url, COUNT(DISTINCT likes.id ) AS all_likes, array_agg(likes.id) AS like_id FROM posts RIGHT JOIN users ON posts.user_id = users.id LEFT JOIN likes ON likes.post_id = posts.id GROUP BY users.id, posts.id ORDER BY all_likes DESC"
+  )
+    .then(posts => {
+      res.status(200).json({
+        status: "success",
+        posts: posts,
+        message: "Got all posts by popularity"
       });
     })
     .catch(err => {
@@ -37,11 +56,11 @@ const getSinglePost = (req, res, next) => {
 };
 
 const getUserPosts = (req, res, next) => {
-  req.body.user_id = parseInt(req.params.id);
+  let user_id = parseInt(req.params.id);
 
   db.any(
-    "SELECT posts.id AS postID, posts.post_body, users.id AS userID, username, posttype, posts.img_url FROM posts JOIN users on(users.id = posts.user_id) WHERE posts.user_id=$1",
-    [req.body.user_id]
+    "SELECT users.id AS user_id, users.img_url AS user_img, posts.id AS id, username, posttype, post_body, posts.img_url AS img_url, COUNT(DISTINCT likes.id) AS all_likes,  array_agg(likes.id) AS like_id FROM posts RIGHT JOIN users ON posts.user_id = users.id LEFT JOIN likes ON posts.id = likes.post_id WHERE posts.user_id=$1 GROUP BY users.id, posts.id ORDER BY posts.id DESC",
+    [user_id]
   )
     .then(posts => {
       res.status(200).json({
@@ -120,6 +139,7 @@ const deletePost = (req, res, next) => {
 
 module.exports = {
   getAllPosts,
+  getAllPostsByLikes,
   getSinglePost,
   getUserPosts,
   createNewPost,

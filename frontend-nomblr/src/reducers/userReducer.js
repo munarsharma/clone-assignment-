@@ -1,12 +1,4 @@
-import {
-  SET_LOGGEDIN_USER,
-  GOT_ERROR,
-  USER_INFO_UPDATED,
-  SET_BLOG_NAME,
-  SET_USER_IMG,
-  SET_USER_BIO,
-  SET_POST_TYPE
-} from "../actions/actionTypes";
+import { SET_LOGGEDIN_USER } from "../actions/actionTypes";
 
 const initialState = {
   currentUser: null,

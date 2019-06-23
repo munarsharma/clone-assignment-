@@ -8,10 +8,6 @@ class EditInfoForm extends React.Component {
     user_bio: ""
   };
 
-  componentDidMount() {
-    // MAKE BACKEND REQUEST FOR LOGGED IN USER
-  }
-
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -25,6 +21,7 @@ class EditInfoForm extends React.Component {
 
   render() {
     const { blogName, user_img, user_bio } = this.state;
+    console.log("we are here");
     return (
       <>
         <h1> Edit info: </h1>

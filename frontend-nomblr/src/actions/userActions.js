@@ -1,10 +1,4 @@
-import {
-  SET_LOGGEDIN_USER,
-  GOT_ERROR,
-  USER_INFO_UPDATED,
-  SET_BLOG_NAME,
-  SET_USER_INFO
-} from "./actionTypes";
+import { SET_LOGGEDIN_USER, GOT_ERROR } from "./actionTypes";
 
 import axios from "axios";
 

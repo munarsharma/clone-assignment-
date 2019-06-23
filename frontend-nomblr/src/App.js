@@ -5,13 +5,13 @@ import MainPage from "./components/homepage/MainPage";
 //import Footer from "./components/footer";
 import axios from "axios";
 import Auth from "./userAuth/utils/Auth";
-import UserDashRoutes from "./components/Dashboard/UserDashRoutes";
+
+import DashContainer from "./containers/dashContainer";
 // import AddNewPost from "./components/Dashboard/newPost";
 import PrivateRoute from "./userAuth/utils/AuthRouting";
-//import Header from "./components/homepage/header";
-// import "./App.css";
+
 import AuthForm from "./userAuth/login/AuthForm";
-import UserProfileRoutes from "./components/user/UserProfileRoutes";
+import UserPageContainer from "./containers/UserPageContainer";
 import { connect } from "react-redux";
 // import ExploreContainer from "./containers/exploreContainer";
 import { setLoggedInUser } from "./actions/userActions";
@@ -96,11 +96,11 @@ class App extends Component {
 
           <PrivateRoute
             path="/dashboard"
-            component={UserDashRoutes}
+            component={DashContainer}
             logoutUser={this.logoutUser}
           />
 
-          <PrivateRoute path="/users/:id" component={UserProfileRoutes} />
+          <PrivateRoute path={"/users/:id"} component={UserPageContainer} />
         </Switch>
       </div>
     );

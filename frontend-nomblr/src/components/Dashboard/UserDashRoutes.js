@@ -12,7 +12,16 @@ class UserDashRoutes extends React.Component {
           <Route
             exact
             path="/dashboard"
-            render={() => <UserDash logoutUser={this.props.logoutUser} />}
+            render={() => (
+              <UserDash
+                goFetchPosts={this.props.goFetchPosts}
+                posts={this.props.posts}
+                logoutUser={this.props.logoutUser}
+                currentUser={this.props.currentUser}
+                fetchPostsByPopularity={this.props.fetchPostsByPopularity}
+                byPopularity={this.props.byPopularity}
+              />
+            )}
           />
           <Route path="/dashboard/new" component={AddNewPost} />
         </Switch>

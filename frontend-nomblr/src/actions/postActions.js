@@ -4,9 +4,7 @@ import {
   FETCH_USER_POSTS,
   FETCHED_USER_POSTS,
   GOT_ERROR,
-  ADD_POST,
-  EDIT_POST,
-  DELETE_POST,
+  FETCH_POSTS_BY_POPULARITY,
   SET_POST_TYPE
 } from "./actionTypes";
 import axios from "axios";
@@ -43,14 +41,36 @@ export const goFetchPosts = () => dispatch => {
     });
 };
 
+export const fetchPostsByPopularity = () => dispatch => {
+  axios
+    .get("/posts/radar")
+    .then(res => {
+      console.log(res);
+      dispatch({ type: "FETCH_POSTS_BY_POPULARITY", payload: res.data.posts });
+    })
+    .catch(err => {
+      dispatch(gotError(err));
+    });
+};
+
 export const goFetchUserPosts = id => dispatch => {
   // dispatch(fetchUsers());
 
   axios
     .get(`/posts/users/${id}`)
     .then(res => {
-      console.log("GO FETCH POSTS", res);
       dispatch({ type: "FETCHED_USER_POSTS", payload: res.data.posts });
+    })
+    .catch(err => {
+      dispatch(gotError(err));
+    });
+};
+
+export const goFetchLikedPosts = id => dispatch => {
+  axios
+    .get(`/likes/users/${id}`)
+    .then(res => {
+      dispatch({ type: "FETCH_LIKED_POSTS", payload: res.data.likes });
     })
     .catch(err => {
       dispatch(gotError(err));

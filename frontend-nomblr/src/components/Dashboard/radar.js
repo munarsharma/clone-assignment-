@@ -1,21 +1,42 @@
-import React from 'react';
-import FollowButton from './followButton';
-//have an a tag that links to a random user that our user does not follow
+import React from "react";
 
-const Radar = ({ posts }) => {
-  return (
-    <div className="radarArea">
-      <h2 id="h2"> radar</h2>
-      <FollowButton />
-      <div>
-        <img
-          id="radarImg"
-          src="https://images.unsplash.com/photo-1514163061636-02db31852e84?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-          alt=""
-        />
+import { Link, withRouter } from "react-router-dom";
+
+// import FollowButton from "./followButton";
+
+//fix issue with user id being passed down to userprofile/likes
+class Radar extends React.Component {
+  handleClick = id => {
+    this.props.history.push(`/users/${id}`);
+  };
+  render() {
+    let raderPost = this.props.byPopularity[0];
+
+    return (
+      <div className="radarArea">
+        {raderPost ? (
+          <>
+            <h2 id="h2"> radar</h2>
+            <button
+              className="followButton"
+              onClick={() => this.handleClick(raderPost.user_id)}
+            >
+              {" "}
+              +{" "}
+            </button>
+            <h3>{raderPost.username}</h3>
+            <img id="radarImg" src={raderPost.img_url} alt="" />
+            <div className="post_likes">
+              <p>{raderPost.post_body}</p>
+              <p> {raderPost.all_likes} </p>
+            </div>
+          </>
+        ) : (
+          "something"
+        )}
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
-export default Radar;
+export default withRouter(Radar);
