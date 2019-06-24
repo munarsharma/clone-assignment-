@@ -1,6 +1,7 @@
 .dash-header {
-  height: 20%;
+  height: 15%;
   display: grid;
+  align-items: center;
   grid-template-columns: 35% 25% 40%;
   grid-template-rows: 5% 90% 5%;
   grid-template-areas:
@@ -43,6 +44,7 @@
   flex-flow: row;
   flex: auto;
   justify-content: flex-end;
+  align-items: baseline;
 }
 
 .newPostBtn {
@@ -80,7 +82,16 @@
   background: transparent;
   margin-right: 6px;
 }
-
+.dash-nav-icon {
+  width: 50px;
+  height: 50px;
+  margin: 3%;
+  object-fit: contain;
+  border: none;
+  border-color: transparent;
+  text-decoration: none;
+  font-size: 1rem;
+}
 .nav-icon-img {
   width: 60px;
   height: 60px;
@@ -94,8 +105,8 @@
 
 .logo_pic {
   grid-area: logo;
-  width: 160px;
-  height: 160px;
+  width: 90px;
+  height: 90px;
 }
 
 .searchbar {

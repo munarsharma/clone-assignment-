@@ -74,7 +74,7 @@ class AllPosts extends React.Component {
 
                 <div className="postContent">
                   <div id="postText">
-                    <p> ⚈ {post.post_body} </p>
+                    {post.post_body ? <p> ⚈ {post.post_body} </p> : " "}
                   </div>
                   <div className="post_likes">
                     <NewLikes

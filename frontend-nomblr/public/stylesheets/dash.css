@@ -17,18 +17,20 @@
 } */
 
 .posting-navbar {
-  width: 35%;
+  width: 30%;
   padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border: 1px solid #b05728;
-  margin-left: 3%;
+  border: 1px solid grey;
+  margin-right: 10%;
+  background: white;
 }
 
 .dash_feed {
   grid-area: dashfeed;
   max-width: 100%;
+  margin-top: 2%;
   display: grid;
   align-items: baseline;
   grid-template-columns: 60% 5% 35%;
@@ -36,6 +38,13 @@
   grid-template-areas:
     "dashside . radarside "
     "dashside . radarside ";
+}
+
+#newpost {
+  width: 70px;
+  height: 70px;
+  padding-right: 10px;
+  border-right: 1px solid black;
 }
 
 .renderedPosts {
@@ -144,7 +153,6 @@
   align-content: space-between;
   border: 1px solid #a54811;
   margin: 1%;
-  background-color: #a54811;
 }
 
 #rader-top {
@@ -184,9 +192,6 @@
   flex-direction: row;
   justify-content: space-around;
   margin: 1%;
-}
-
-.post_likes {
 }
 
 .imgPostCont {
@@ -268,6 +273,7 @@
   align-self: center;
   margin: 10px;
   padding-bottom: 10px;
+  color: #a64005;
 }
 
 .post_likes {

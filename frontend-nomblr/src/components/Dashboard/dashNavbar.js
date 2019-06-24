@@ -15,23 +15,23 @@ const DashNavbar = ({ logoutUser, currentUser }) => {
     <nav className="dash-navbar">
       <div>
         <Link to="/dashboard" className="backBtn">
-          <img className="nav-icon-img" src={dash} alt="Aa" />
+          <img className="dash-nav-icon" src={dash} alt="Aa" />
         </Link>
       </div>
       <div>
         <Link to={`/users/${currentUserId}`} className="backBtn">
-          <img className="nav-icon-img" src={profile} alt="Aa" />
+          <img className="dash-nav-icon" src={profile} alt="Aa" />
         </Link>
       </div>
       <div>
         <Link to="/users/edit" className="backBtn">
-          <img className="nav-icon-img" src={edit} alt="Aa" />
+          <img className="dash-nav-icon" src={edit} alt="Aa" />
         </Link>
       </div>
 
       <div>
         <img
-          className="nav-icon-img"
+          className="dash-nav-icon"
           src={logout}
           alt="Aa"
           onClick={logoutUser}

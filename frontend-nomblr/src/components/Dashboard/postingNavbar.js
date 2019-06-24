@@ -5,6 +5,7 @@ import text from "../../images/text.png";
 import link from "../../images/link.png";
 import video from "../../images/video.png";
 import photo from "../../images/img.png";
+import newpost from "../../images/newpost.png";
 
 import { setPostType } from "../../actions/postActions";
 //get all photos and sort them based on type.
@@ -29,6 +30,7 @@ class PostNavbar extends React.Component {
     return (
       <>
         <nav className="posting-navbar">
+          <img id="newpost" src={newpost} alt="Aa" />
           <Link to="/dashboard/new/text">
             <img
               className="nav-icon-img"
