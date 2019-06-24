@@ -1,4 +1,5 @@
 import React from "react";
+import NewLikes from "../posts/newLikes";
 
 import { Link, withRouter } from "react-router-dom";
 
@@ -18,7 +19,7 @@ class Radar extends React.Component {
           <>
             <h2> radar</h2>
 
-            <div className="rader-top">
+            <div id="rader-top">
               <h3>{raderPost.username}</h3>
               <button
                 className="followButton"
@@ -32,9 +33,18 @@ class Radar extends React.Component {
               <img id="radarImg" src={raderPost.img_url} alt="" />
             </div>
 
-            <div className="post_likes">
-              <p>{raderPost.post_body}</p>
-              <p> {raderPost.all_likes} </p>
+            <div id="radar-bottom">
+              <p>⚈ {raderPost.post_body}</p>
+
+              <div id="radar-likes">
+                <NewLikes
+                  goFetchPosts={this.props.goFetchPosts}
+                  currentUser={this.props.currentUser}
+                  post_id={raderPost.id}
+                  like_id={raderPost.like_id}
+                />
+                <p> {raderPost.all_likes} </p>
+              </div>
             </div>
           </>
         ) : (

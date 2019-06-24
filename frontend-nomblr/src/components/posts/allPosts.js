@@ -17,7 +17,12 @@ class AllPosts extends React.Component {
       if (post.posttype === "text") {
         return (
           <div className="main-cont" key={post.id}>
-            <img src={post.user_img} alt="" id="user_img" />
+            <img
+              src={post.user_img}
+              alt=""
+              id="user_img"
+              onClick={() => this.handleClick(post.user_id)}
+            />
             <div className="postCont" key={post.id}>
               <div
                 className="postUserName"
@@ -47,7 +52,11 @@ class AllPosts extends React.Component {
             <div onClick={() => this.handleClick(post.user_id)}>
               <img src={post.user_img} alt="" id="user_img" />
             </div>
-            <div className="imgPostCont" key={post.id}>
+            <div
+              className="imgPostCont"
+              key={post.id}
+              onClick={() => this.handleClick(post.user_id)}
+            >
               <div
                 className="postUserName"
                 onClick={() => this.handleClick(post.user_id)}
@@ -61,16 +70,18 @@ class AllPosts extends React.Component {
                 </div>
 
                 <div className="postContent">
-                  <p className="postText"> {post.post_body} </p>
-
+                  <div id="postText">
+                    <p> ⚈ {post.post_body} </p>
+                  </div>
                   <div className="post_likes">
-                    <p> {post.all_likes} </p>
                     <NewLikes
                       goFetchPosts={this.props.goFetchPosts}
                       currentUser={this.props.currentUser}
                       post_id={post.id}
                       like_id={post.like_id}
                     />
+                    <br />
+                    <p> {post.all_likes} </p>
                   </div>
                 </div>
               </div>

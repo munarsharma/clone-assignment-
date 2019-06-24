@@ -36,7 +36,11 @@ class UserDash extends React.Component {
               </div>
 
               <div className="rightSidebar">
-                <Radar byPopularity={this.props.byPopularity} />
+                <Radar
+                  byPopularity={this.props.byPopularity}
+                  posts={this.props.posts}
+                  goFetchPosts={this.props.goFetchPosts}
+                />
               </div>
             </div>
           </div>
