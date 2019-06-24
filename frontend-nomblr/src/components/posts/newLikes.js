@@ -1,19 +1,19 @@
 import React from "react";
 import axios from "axios";
 import { withRouter } from "react-router";
+import like from "../../images/liked.png";
+import unlike from "../../images/unliked.png";
 
 class NewLikes extends React.Component {
   state = {
-    liked: false,
-    unliked: true
+    liked: false
   };
 
   handleClick = e => {
     e.preventDefault();
 
     this.setState({
-      liked: !this.state.liked,
-      unliked: !this.state.unliked
+      liked: !this.state.liked
     });
 
     this.likedReq();
@@ -32,6 +32,7 @@ class NewLikes extends React.Component {
           user_id: user_id,
           post_id: this.props.post_id
         })
+
         .then(() => {
           {
             this.props.match.path === "/dashboard"
@@ -63,10 +64,22 @@ class NewLikes extends React.Component {
     // console.log(liked, unliked);
     return (
       <>
-        <button onClick={this.handleClick}>
-          <i className="material-icons">thumb_up</i>
-          {!liked ? "like!" : "unliked"}{" "}
-        </button>
+        {!liked ? (
+          <>
+            {" "}
+            <img
+              id="liked"
+              src={unlike}
+              alt="unliked"
+              onClick={this.handleClick}
+            />{" "}
+          </>
+        ) : (
+          <>
+            {" "}
+            <img id="liked" src={like} alt="liked" onClick={this.handleClick} />
+          </>
+        )}{" "}
       </>
     );
   }

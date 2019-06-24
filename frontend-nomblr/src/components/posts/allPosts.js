@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import NewLikes from "./newLikes";
+
+import edit from "../../images/edit.png";
 //use this for explore page: create a thum-temp like tumblrs
 
 class AllPosts extends React.Component {
@@ -50,13 +52,14 @@ class AllPosts extends React.Component {
         return (
           <div className="main-cont" key={post.id}>
             <div onClick={() => this.handleClick(post.user_id)}>
-              <img src={post.user_img} alt="" id="user_img" />
+              <img
+                src={post.user_img}
+                alt=""
+                id="user_img"
+                onClick={() => this.handleClick(post.user_id)}
+              />
             </div>
-            <div
-              className="imgPostCont"
-              key={post.id}
-              onClick={() => this.handleClick(post.user_id)}
-            >
+            <div className="imgPostCont" key={post.id}>
               <div
                 className="postUserName"
                 onClick={() => this.handleClick(post.user_id)}
