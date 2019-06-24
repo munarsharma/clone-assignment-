@@ -27,17 +27,6 @@
   font-family: "Itim", cursive;
 }
 
-.dash-header {
-  height: 10%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 1%;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eeecf3;
-  object-fit: contain;
-}
-
 .dashFeed {
   margin-left: 3%;
 }
@@ -50,17 +39,8 @@
   width: 20px;
 }
 
-.dash-navbar {
-  width: 200px;
-  height: auto;
-  display: flex;
-  flex-flow: row;
-  flex: auto;
-  justify-content: flex-end;
-}
-
 .posting-navbar {
-  width: 200px;
+  width: 40%;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -115,38 +95,9 @@
   align-items: center;
 }
 
-#newtextBtn {
-  width: 500px;
-  height: 80px;
-  box-sizing: content-box;
-}
-.home_nav {
-  width: 60px;
-  background: transparent;
-  margin-right: 3px;
-}
-
-.userAct_nav {
-  width: 60px;
-  background: transparent;
-  margin-right: 3px;
-}
-
 #h2 {
   font-family: "Itim", cursive;
   color: #a54811;
-}
-
-.explore_nav {
-  width: 60px;
-  background: transparent;
-  margin-right: 3px;
-}
-
-.account_nav {
-  width: 60px;
-  background: transparent;
-  margin-right: 6px;
 }
 
 /* whole dashboard minus header  */

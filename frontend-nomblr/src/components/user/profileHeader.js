@@ -2,7 +2,7 @@ import React from "react";
 import SearchBar from "../SearchBar";
 import { Link } from "react-router-dom";
 
-import img from "../../images/Logo.png";
+import img from "../../images/logo.png";
 import ProfileMainNav from "./profileMainNav";
 
 //add conditional rendering for nav button
@@ -13,7 +13,7 @@ const ProfileHeader = ({ logoutUser }) => {
     <>
       <header className="dash-header">
         <div id="logoSearch">
-          <Link to="/">
+          <Link to="/dashboard">
             <img className="logo_pic" src={img} alt="img" />
           </Link>
           <SearchBar />

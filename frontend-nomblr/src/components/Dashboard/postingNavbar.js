@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import text from "../../images/text.png";
+import link from "../../images/link.png";
+import video from "../../images/video.png";
+import photo from "../../images/img.png";
 
 import { setPostType } from "../../actions/postActions";
 //get all photos and sort them based on type.
@@ -27,30 +31,36 @@ class PostNavbar extends React.Component {
         <nav className="posting-navbar">
           <div>
             <Link to="/dashboard/new/text">
-              <button id="text" onClick={() => this.props.setPostType("text")}>
-                <i className="material-icons">text_format</i>
+              <button
+                className="nav-icons"
+                onClick={() => this.props.setPostType("text")}
+              >
+                <img className="nav-icon-img" src={text} alt="Aa" />
               </button>
             </Link>
           </div>
 
           <div>
             <Link to="/dashboard/new/photo">
-              <button id="photo" onClick={() => this.props.setPostType("img")}>
-                <i className="material-icons">add_a_photo</i>
+              <button
+                className="nav-icons"
+                onClick={() => this.props.setPostType("img")}
+              >
+                <img className="nav-icon-img" src={photo} alt="Aa" />
               </button>
             </Link>
           </div>
           <div>
             <Link to="/dashboard/new/link">
-              <button id="link">
-                <i className="material-icons">format_quote</i>
+              <button className="nav-icons">
+                <img className="nav-icon-img" src={link} alt="Aa" />
               </button>
             </Link>
           </div>
           <div>
             <Link to="/new/video">
-              <button id="video">
-                <i className="material-icons">movie</i>
+              <button className="nav-icons">
+                <img className="nav-icon-img" src={video} alt="Aa" />
               </button>
             </Link>
           </div>

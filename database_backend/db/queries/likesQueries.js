@@ -19,7 +19,7 @@ const getAllLikesByUser = (req, res, next) => {
   const userId = req.params.id;
 
   db.any(
-    "SELECT DISTINCT likes.id AS likes_id, posts.id AS liker_id, post_body, users.img_url AS user_img, posts.username, posts.img_url AS img_url, posts.user_id AS user_id, COUNT(DISTINCT likes.id ) AS all_likes FROM likes JOIN users ON users.id = likes.liker_id JOIN posts ON posts.id = likes.post_id WHERE likes.liker_id =11 GROUP BY likes_id, posts.id, users.id, username ORDER BY likes.id DESC",
+    "SELECT DISTINCT likes.id AS likes_id, posts.id AS id, post_body, users.img_url AS user_img, username, posts.img_url AS img_url, posts.user_id AS poster_id, COUNT(DISTINCT likes.id ) AS all_likes FROM likes JOIN users ON users.id = likes.liker_id JOIN posts ON posts.id = likes.post_id WHERE likes.liker_id = $1 GROUP BY posts.id, users.id,likes.id ORDER BY likes.id DESC",
     [userId]
   )
     .then(likes => {
