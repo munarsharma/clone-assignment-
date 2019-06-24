@@ -17,19 +17,27 @@ class UserDash extends React.Component {
     return (
       <>
         <div className="dashContainer">
-          <DashHeader logoutUser={this.props.logoutUser} />
+          <DashHeader
+            logoutUser={this.props.logoutUser}
+            currentUser={this.props.currentUser}
+          />
           <div className="mainDash">
             <br />
-            <PostNavbar />
-            <div className="dashFeed">
-              <AllPosts
-                posts={this.props.posts}
-                currentUser={this.props.currentUser}
-                goFetchPosts={this.props.goFetchPosts}
-              />
+            <div id="posting-nav-cont">
+              <PostNavbar />
             </div>
-            <div className="rightSidebar">
-              <Radar byPopularity={this.props.byPopularity} />
+            <div className="dash_feed">
+              <div className="renderedPosts">
+                <AllPosts
+                  posts={this.props.posts}
+                  currentUser={this.props.currentUser}
+                  goFetchPosts={this.props.goFetchPosts}
+                />
+              </div>
+
+              <div className="rightSidebar">
+                <Radar byPopularity={this.props.byPopularity} />
+              </div>
             </div>
           </div>
         </div>

@@ -1,9 +1,56 @@
+.dashContainer {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-size: cover;
+  font-family: "Itim", cursive;
+}
+
+.mainDash {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 90%;
+  grid-template-areas:
+    "navbar "
+    "dashfeed ";
+}
+
+.posting-navbar {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid #b05728;
+  margin-left: 3%;
+}
+
+.dash_feed {
+  grid-area: dashfeed;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 60% 5% 35%;
+  grid-template-rows: 15% 85%;
+  grid-template-areas:
+    "dashside . radarside "
+    "dashside . radarside ";
+}
+
+.renderedPosts {
+  grid-area: dashside;
+}
+
+.rightSidebar {
+  grid-area: radarside;
+}
+
 .main-cont {
   display: grid;
   grid-template-columns: 20% 80%;
   grid-template-rows: 100%;
   height: 600px;
-  max-width: 750px;
+  width: 90%;
+  max-width: 100%;
   border-radius: 2px;
   margin-bottom: 17px;
   padding-bottom: 10px;
@@ -19,17 +66,6 @@
   border: 1px solid transparent;
   border-radius: 73px;
 }
-.dashContainer {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  background-size: cover;
-  font-family: "Itim", cursive;
-}
-
-.dashFeed {
-  margin-left: 3%;
-}
 
 .backBtn {
   text-decoration: none;
@@ -37,15 +73,6 @@
   color: #3b4834;
   font-size: 18px;
   width: 20px;
-}
-
-.posting-navbar {
-  width: 40%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-left: 3%;
 }
 
 .imgFormPage {
@@ -108,13 +135,22 @@
 } */
 
 .radarArea {
-  width: 20%;
+  width: 60%;
   height: 500px;
   display: flex;
   flex-flow: column;
   align-content: space-between;
   border: 1px solid #a54811;
   margin: 1%;
+}
+
+.rader-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 1%;
+  padding-right: 1%;
+  align-items: baseline;
 }
 
 .followButton {
@@ -128,14 +164,24 @@
 
 #radarImg {
   margin: 2%;
-  width: 83%;
+  width: 100%;
   height: 80%;
+  object-fit: contain;
+}
+
+#radar-img-cont {
+  width: 100%;
+  margin-left: 8%;
+  margin-right: auto;
+}
+
+.post_likes {
 }
 
 .imgPostCont {
   display: grid;
-  grid-template-columns: 13% 72% 15%;
-  grid-template-rows: 9% 70% 15%;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 10% 70% 15%;
   height: auto;
   max-width: 100%;
   width: 750px;
@@ -149,9 +195,9 @@
   margin: 3%;
   object-fit: contain;
   grid-template-areas:
-    " username username username "
-    " . image image "
-    " . text text ";
+    " username username  "
+    " . image  "
+    " bottom bottom ";
 }
 
 /* post container  */
@@ -188,7 +234,7 @@
 /* post text  */
 
 .postContent {
-  grid-area: text;
+  grid-area: bottom;
   padding: 10px;
   margin-top: 6%;
   color: #8a3f1f;
@@ -242,7 +288,6 @@
   font-size: 20px;
 }
 
-/* img div */
 .imgPost {
   grid-area: image;
   align-self: center;
@@ -253,9 +298,6 @@
   margin: 1%;
 }
 
-.renderedPosts {
-  display: grid;
-  justify-content: flex-start;
-  width: 33%;
-  margin-left: 9%;
+#posting-nav-cont {
+  grid-area: navbar;
 }

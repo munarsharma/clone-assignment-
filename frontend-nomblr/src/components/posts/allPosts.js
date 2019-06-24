@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import NewLikes from './newLikes';
+import React from "react";
+import { Link, withRouter } from "react-router-dom";
+import NewLikes from "./newLikes";
 //use this for explore page: create a thum-temp like tumblrs
 
 class AllPosts extends React.Component {
@@ -14,7 +14,7 @@ class AllPosts extends React.Component {
     }
 
     const displayFeedPosts = this.props.posts.map((post, id) => {
-      if (post.posttype === 'text') {
+      if (post.posttype === "text") {
         return (
           <div className="main-cont" key={post.id}>
             <img src={post.user_img} alt="" id="user_img" />
@@ -41,7 +41,7 @@ class AllPosts extends React.Component {
             </div>
           </div>
         );
-      } else if (post.posttype === 'img') {
+      } else if (post.posttype === "img") {
         return (
           <div className="main-cont" key={post.id}>
             <div onClick={() => this.handleClick(post.user_id)}>
@@ -80,7 +80,7 @@ class AllPosts extends React.Component {
       }
     });
 
-    return <div className="renderedPosts">{displayFeedPosts}</div>;
+    return <div>{displayFeedPosts}</div>;
   }
 }
 

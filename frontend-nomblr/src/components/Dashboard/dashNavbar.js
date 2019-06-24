@@ -1,33 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import profile from "../../images/profile.png";
+import dash from "../../images/dash.png";
+import edit from "../../images/edit.png";
+import logout from "../../images/logout.png";
 
-const DashNavbar = ({ logoutUser }) => {
+const DashNavbar = ({ logoutUser, currentUser }) => {
+  let currentUserId;
+  if (currentUser) {
+    let currentUserId = currentUser.id;
+  }
+
   return (
     <nav className="dash-navbar">
       <div>
         <Link to="/dashboard" className="backBtn">
-          <i className="material-icons">bookmark_border</i>
+          <img className="nav-icon-img" src={dash} alt="Aa" />
         </Link>
       </div>
       <div>
-        <Link to="/dashboard/explore" className="backBtn">
-          <i className="material-icons">explore</i>
+        <Link to={`/users/${currentUserId}`} className="backBtn">
+          <img className="nav-icon-img" src={profile} alt="Aa" />
         </Link>
       </div>
       <div>
-        <Link to="/userActivity" className="backBtn">
-          <i className="material-icons">inbox</i>
+        <Link to="/users/edit" className="backBtn">
+          <img className="nav-icon-img" src={edit} alt="Aa" />
         </Link>
       </div>
+
       <div>
-        <Link to="/user" className="backBtn">
-          <i className="material-icons">account_circle</i>
-        </Link>
-      </div>
-      <div>
-        <button id="logoutBtn" onClick={logoutUser} type="submit">
-          Logout
-        </button>
+        <img
+          className="nav-icon-img"
+          src={logout}
+          alt="Aa"
+          onClick={logoutUser}
+        />
       </div>
     </nav>
   );

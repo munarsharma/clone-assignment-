@@ -80,15 +80,6 @@
   align-content: space-between;
 } */
 
-.radarArea {
-  width: 20%;
-  height: 500px;
-  display: flex;
-  flex-flow: column;
-  align-content: space-between;
-  border: 1px solid #a54811;
-  margin: 1%;
-}
 #blogname {
   text-decoration: none;
   color: #8a3f1f;
@@ -102,12 +93,6 @@
   flex-direction: column;
 }
 #logoutBtn {
-  border: 1px solid #fac999;
-  border-radius: 3px;
-  padding: 10px;
-  margin-right: 2%;
-  background-color: #d3b3b8;
-  font-family: "Itim", cursive;
 }
 
 .followButton {

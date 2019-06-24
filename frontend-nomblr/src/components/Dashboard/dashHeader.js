@@ -7,17 +7,19 @@ import img from "../../images/logo.png";
 //add conditional rendering for nav button
 //figure out how to use local logo file.
 
-const DashHeader = ({ logoutUser }) => {
+const DashHeader = ({ logoutUser, currentUser }) => {
   return (
     <>
       <header className="dash-header">
-        <div id="logoSearch">
+        <div id="leftside">
           <Link to="/dashboard">
             <img className="logo_pic" src={img} alt="img" />
           </Link>
           <SearchBar />
         </div>
-        <DashNavbar logoutUser={logoutUser} />
+        <div id="rightside">
+          <DashNavbar currentUser={currentUser} logoutUser={logoutUser} />
+        </div>
       </header>
     </>
   );

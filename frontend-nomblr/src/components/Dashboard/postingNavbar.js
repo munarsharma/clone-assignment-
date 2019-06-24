@@ -29,41 +29,31 @@ class PostNavbar extends React.Component {
     return (
       <>
         <nav className="posting-navbar">
-          <div>
-            <Link to="/dashboard/new/text">
-              <button
-                className="nav-icons"
-                onClick={() => this.props.setPostType("text")}
-              >
-                <img className="nav-icon-img" src={text} alt="Aa" />
-              </button>
-            </Link>
-          </div>
+          <Link to="/dashboard/new/text">
+            <img
+              className="nav-icon-img"
+              src={text}
+              alt="Aa"
+              onClick={() => this.props.setPostType("text")}
+            />
+          </Link>
 
-          <div>
-            <Link to="/dashboard/new/photo">
-              <button
-                className="nav-icons"
-                onClick={() => this.props.setPostType("img")}
-              >
-                <img className="nav-icon-img" src={photo} alt="Aa" />
-              </button>
-            </Link>
-          </div>
-          <div>
-            <Link to="/dashboard/new/link">
-              <button className="nav-icons">
-                <img className="nav-icon-img" src={link} alt="Aa" />
-              </button>
-            </Link>
-          </div>
-          <div>
-            <Link to="/new/video">
-              <button className="nav-icons">
-                <img className="nav-icon-img" src={video} alt="Aa" />
-              </button>
-            </Link>
-          </div>
+          <Link to="/dashboard/new/photo">
+            <img
+              className="nav-icon-img"
+              src={photo}
+              alt="Aa"
+              onClick={() => this.props.setPostType("img")}
+            />
+          </Link>
+
+          <Link to="/dashboard/new/link">
+            <img className="nav-icon-img" src={link} alt="Aa" />
+          </Link>
+
+          <Link to="/new/video">
+            <img className="nav-icon-img" src={video} alt="Aa" />
+          </Link>
         </nav>
       </>
     );
