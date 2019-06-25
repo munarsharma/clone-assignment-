@@ -8,7 +8,6 @@
     ". . . "
     "leftside . rightside"
     ". . . ";
-
   border-bottom: 1px solid #eeecf3;
 }
 
@@ -38,7 +37,7 @@
 }
 
 .dash-navbar {
-  width: 200px;
+  width: 50px;
   height: auto;
   display: flex;
   flex-flow: row;
@@ -59,29 +58,7 @@
   height: 80px;
   box-sizing: content-box;
 }
-.home_nav {
-  width: 60px;
-  background: transparent;
-  margin-right: 3px;
-}
 
-.userAct_nav {
-  width: 60px;
-  background: transparent;
-  margin-right: 3px;
-}
-
-.explore_nav {
-  width: 60px;
-  background: transparent;
-  margin-right: 3px;
-}
-
-.account_nav {
-  width: 60px;
-  background: transparent;
-  margin-right: 6px;
-}
 .dash-nav-icon {
   width: 50px;
   height: 50px;
@@ -107,6 +84,7 @@
   grid-area: logo;
   width: 90px;
   height: 90px;
+  margin-left: 50px;
 }
 
 .searchbar {
@@ -124,4 +102,5 @@
 .searchArea {
   display: flex;
   align-self: center;
+  margin-right: 50px;
 }

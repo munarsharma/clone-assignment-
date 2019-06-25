@@ -11,7 +11,7 @@ import ProfileMainNav from "./profileMainNav";
 const ProfileHeader = ({ logoutUser }) => {
   return (
     <>
-      <header className="dash-header">
+      <header id="profile-header">
         <div id="logoSearch">
           <Link to="/dashboard">
             <img className="logo_pic" src={img} alt="img" />

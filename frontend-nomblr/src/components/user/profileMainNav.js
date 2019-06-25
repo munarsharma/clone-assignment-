@@ -1,24 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import dash from '../../images/dash.png';
+import edit from '../../images/edit.png';
+import logout from '../../images/logout.png';
 
 const ProfileMainNav = ({ logoutUser }) => {
   return (
     <nav className="dash-navbar">
       <div>
         <Link to="/dashboard" className="backBtn">
-          <i className="material-icons">bookmark_border</i>
+          <img className="dash-nav-icon" src={dash} alt="Aa" />
         </Link>
       </div>
 
       <div>
-        <Link to="/new/photo" className="backBtn">
-          <i className="material-icons">account_circle</i>
+        <Link to="/users/edit" className="backBtn">
+          <img className="dash-nav-icon" src={edit} alt="Aa" />
         </Link>
       </div>
+
       <div>
-        <button id="logoutBtn" onClick={logoutUser} type="submit">
-          Logout
-        </button>
+        <img
+          className="dash-nav-icon"
+          src={logout}
+          alt="Aa"
+          onClick={logoutUser}
+        />
       </div>
     </nav>
   );
