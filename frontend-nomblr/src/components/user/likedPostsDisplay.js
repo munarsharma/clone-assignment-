@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // import NewLikes from "./newLikes";
 //use this for explore page: create a thum-temp like tumblrs
 
@@ -13,7 +13,7 @@ class LikedPostsDisplay extends React.Component {
     const displayLikedPosts = this.props.posts.map((post, id) => {
       return (
         <div className="userImgPostCont" key={post.id}>
-          <div className="userName">
+          <div className="postUserName">
             <h3> {post.username} </h3>
           </div>
           <div className="userImgPost">
