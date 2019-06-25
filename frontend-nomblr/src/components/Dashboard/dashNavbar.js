@@ -6,9 +6,8 @@ import edit from "../../images/edit.png";
 import logout from "../../images/logout.png";
 
 const DashNavbar = ({ logoutUser, currentUser }) => {
-  let currentUserId;
-  if (currentUser) {
-    let currentUserId = currentUser.id;
+  if (!currentUser) {
+    return null;
   }
 
   return (
@@ -19,12 +18,12 @@ const DashNavbar = ({ logoutUser, currentUser }) => {
         </Link>
       </div>
       <div>
-        <Link to={`/users/${currentUserId}`} className="backBtn">
+        <Link to={`/users/${currentUser.id}`} className="backBtn">
           <img className="dash-nav-icon" src={profile} alt="Aa" />
         </Link>
       </div>
       <div>
-        <Link to="/users/edit" className="backBtn">
+        <Link to={`/users/${currentUser.id}/edit`} className="backBtn">
           <img className="dash-nav-icon" src={edit} alt="Aa" />
         </Link>
       </div>

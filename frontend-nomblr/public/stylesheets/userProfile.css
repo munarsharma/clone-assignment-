@@ -27,7 +27,33 @@
   padding: 3%;
 }
 
-#profile-header {
+#edit-info-form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+#edit-info-form form {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  font-family: "Chonburi", cursive;
+  padding-bottom: 10px;
+}
+
+#edit-info-form h1 {
+  color: #b05728;
+  font-family: "Chonburi", cursive;
+  font-size: 29px;
+  align-self: center;
+}
+
+#edit-info-form input {
+  margin: 2%;
+}
+
+#message a {
+  color: #b05728;
+  font-size: 18px;
 }
 
 #h2 {

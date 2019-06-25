@@ -84,7 +84,7 @@
   margin-right: auto;
 }
 
-#signupBtn {
+.signupBtn {
   width: 263px;
   height: 23px;
   padding: 13px;
@@ -100,7 +100,7 @@
   -webkit-appearance: none;
 }
 
-#submitBtn {
+.submitBtn {
   margin-top: 13px;
   width: 346px;
   padding-left: 43px;

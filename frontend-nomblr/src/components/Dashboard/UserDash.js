@@ -14,6 +14,11 @@ class UserDash extends React.Component {
   }
 
   render() {
+    if (this.props.currentUser) {
+      let currentUserId = this.props.currentUser.id;
+    }
+    console.log("here", this.props.currentUser);
+
     return (
       <>
         <div className="dashContainer">

@@ -9,6 +9,7 @@ class UserProfile extends React.Component {
   render() {
     return (
       <>
+        <ProfileNav id={this.props.id} />
         <div className="userPostsDisplay">
           <UserPosts
             posts={this.props.userPosts}

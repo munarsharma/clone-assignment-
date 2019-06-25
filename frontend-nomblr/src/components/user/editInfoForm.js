@@ -1,11 +1,14 @@
 import React from "react";
-// import ProfileNav from "./profileNav";
+
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 class EditInfoForm extends React.Component {
   state = {
-    blogName: "",
-    user_img: "",
-    user_bio: ""
+    username: "",
+    img_url: "",
+    bio: "",
+    submitted: false
   };
 
   handleChange = e => {
@@ -14,47 +17,82 @@ class EditInfoForm extends React.Component {
     });
   };
 
-  handleSubmit = e => {
-    //use redux here
+  handleSubmit = async e => {
+    if (!this.props.currentUser) {
+      return null;
+    }
+
     e.preventDefault();
+
+    await axios.patch(`/users/${this.props.currentUser.id}`, {
+      username: this.props.currentUser.username,
+      img_url: this.state.img_url,
+      bio: this.state.bio
+    });
+
+    await this.setState({
+      submitted: true
+    });
   };
 
   render() {
-    const { blogName, user_img, user_bio } = this.state;
-    console.log("we are here");
+    const { username, img_url, bio, submitted } = this.state;
+
+    if (!this.props.currentUser) {
+      return null;
+    }
+
     return (
-      <>
-        <h1> Edit info: </h1>
-        <form>
-          <label htmlFor="blogName"> Blog name: </label>
+      <div id="edit-info-form">
+        <form onSubmit={this.handleSubmit}>
+          <h1> Edit info: </h1>
+
+          <label htmlFor="username"> Username: </label>
           <input
-            name="blogName"
-            id="blogName"
+            className="signupBtn"
+            name="username"
+            id="username"
             type="text"
-            placeholder="blog name"
-            value={blogName}
+            placeholder={this.props.currentUser.username}
+            value={this.props.currentUser.username}
             onChange={this.handleChange}
           />
-          <label htmlFor="userImg"> Proile Picture </label>
+
+          <label htmlFor="img_url"> Profile Picture: </label>
+
           <input
-            name="user_img"
-            id="userImg"
+            className="signupBtn"
+            name="img_url"
+            id="img_url"
             type="text"
             placeholder="url"
-            value={user_img}
+            value={img_url}
             onChange={this.handleChange}
           />
-          <label htmlFor="userBio"> Bio: </label>
+          <label htmlFor="bio"> Bio: </label>
           <input
-            name="user_bio"
-            id="userBio"
+            className="signupBtn"
+            name="bio"
+            id="bio"
             type="text"
-            placeholder="say something.. "
-            value={user_bio}
+            placeholder="say something pretty "
+            value={bio}
             onChange={this.handleChange}
           />
+          <input type="submit" className="submitBtn" />
+          <div id="message">
+            {submitted ? (
+              <>
+                {" "}
+                <p> Your info has been updated.</p>
+                <Link to="dashboard"> Back to Dashboard</Link>
+              </>
+            ) : (
+              ""
+            )}
+          </div>
         </form>
-      </>
+      </div>
     );
   }
 }

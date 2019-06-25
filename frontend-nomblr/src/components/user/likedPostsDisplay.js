@@ -1,5 +1,6 @@
 import React from "react";
-// import NewLikes from "./newLikes";
+import ProfileNav from "./profileNav";
+
 //use this for explore page: create a thum-temp like tumblrs
 
 class LikedPostsDisplay extends React.Component {
@@ -28,7 +29,12 @@ class LikedPostsDisplay extends React.Component {
         </div>
       );
     });
-    return <div className="userRenderedPosts"> {displayLikedPosts} </div>;
+    return (
+      <>
+        <ProfileNav id={this.props.id} />
+        <div className="userRenderedPosts"> {displayLikedPosts}</div>
+      </>
+    );
   }
 }
 

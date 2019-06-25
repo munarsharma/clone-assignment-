@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProfileNav = props => {
-  console.log(props);
   return (
     <nav className="profile-navbar">
       <div className="navLinks">

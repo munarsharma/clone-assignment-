@@ -18,7 +18,7 @@ const SignUp = ({
         <div className="signupForms">
           <form onSubmit={registerUser}>
             <input
-              id="signupBtn"
+              className="signupBtn"
               type="text"
               name="username"
               placeholder="username"
@@ -28,7 +28,7 @@ const SignUp = ({
             <br />
 
             <input
-              id="signupBtn"
+              className="signupBtn"
               type="text"
               name="email"
               placeholder="email"
@@ -38,7 +38,7 @@ const SignUp = ({
             <br />
 
             <input
-              id="signupBtn"
+              className="signupBtn"
               type="password"
               name="password"
               placeholder="password"
@@ -47,7 +47,7 @@ const SignUp = ({
             />
 
             <br />
-            <input id="submitBtn" type="submit" value="signup" />
+            <input className="submitBtn" type="submit" value="signup" />
           </form>
         </div>
       </div>

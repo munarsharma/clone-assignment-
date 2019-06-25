@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import EditInfoForm from "./editInfoForm";
 import LikedPostsDisplay from "./likedPostsDisplay";
 import ProfileNav from "./profileNav";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import SearchBar from "../SearchBar";
 import ProfileHeader from "./profileHeader";
 import UserPosts from "../posts/userPosts";
@@ -24,19 +24,15 @@ class UserProfileRoutes extends React.Component {
         </header>
 
         <div className="userProfilePage">
-          <Link to="/user/edit" id="blogname">
-            <h1 className="h1">
-              {" "}
-              {this.props.userPosts[0] ? (
-                <> {this.props.userPosts[0].username} </>
-              ) : (
-                <>'something' </>
-              )}{" "}
-            </h1>
-          </Link>
+          <h1 className="h1">
+            {" "}
+            {this.props.userPosts[0] ? (
+              <> {this.props.userPosts[0].username} </>
+            ) : (
+              <>'something' </>
+            )}{" "}
+          </h1>
         </div>
-
-        <ProfileNav id={this.props.id} />
 
         <br />
         <Switch>
@@ -47,6 +43,17 @@ class UserProfileRoutes extends React.Component {
                 {...props}
                 posts={this.props.likedPosts}
                 id={parseInt(this.props.match.params.id)}
+              />
+            )}
+          />
+
+          <Route
+            path={"/users/:id/edit"}
+            render={props => (
+              <EditInfoForm
+                {...props}
+                currentUser={this.props.currentUser}
+                fetchUserPosts={this.props.fetchUserPosts}
               />
             )}
           />
@@ -70,7 +77,7 @@ class UserProfileRoutes extends React.Component {
   }
 }
 
-export default UserProfileRoutes;
+export default withRouter(UserProfileRoutes);
 
 // blogName ? {blogName} : {username}
 //button should route to edit page. submit button fires patch request.
